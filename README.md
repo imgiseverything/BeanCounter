@@ -16,6 +16,14 @@ Copy the information from config.sample.php in the root folder to a new file cal
 At this stage you can also edit a few options in the config.php file - if you so wish.
 
 #### Step 3
+Ensure the following directories are writable:
+* site/cache
+* site/downloads
+* site/uploads
+* site/uploads/images
+
+
+#### Step 4
 Go to http://whatever-you-have-called-your-beancounter-installation.com/ and the install script should run automatically.
 
 
