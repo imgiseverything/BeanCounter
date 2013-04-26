@@ -88,7 +88,7 @@ class Cache{
 	 */
 	public function __construct($filename, $freshness = 1, $subfolder = false){
 		
-		$this->_folder = SITE_PATH . '/cache/';			
+		$this->_folder = SITE_PATH . 'cache/';			
 		$this->_filename = $filename;			
 		$this->_freshness = $freshness;
 		
@@ -226,7 +226,7 @@ class Cache{
 					// the file definitely exists 
 					// and that it starts with the $foldername
 					// variable then delete that file						
-					$directory_handle = @opendir($this->_folder) or die("Unable to open {$this->_folder}");
+					$directory_handle = @opendir($this->_folder) or die("Unable to open {$this->_folder}. Please ensure the site/cache directory is writable or owned by the web server (e.g. www-data)");
 					
 					$foldername = $filename . '_';
 				
