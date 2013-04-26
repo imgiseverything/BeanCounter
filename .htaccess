@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+RewriteEngine Off
+RewriteEngine On
+#RewriteBase /
+
+# Local files (javascript/css/images etc)
+RewriteRule ^(behaviour|images|style)/([a-zA-Z0-9-_\/.]+).(css|gif|htm|html|jpg|jpeg|js|png)$ /site/$1/$2.$3 [L]
+# Font files
+#RewriteRule ^fonts/([a-zA-Z0-9-_\/.]+)/([a-zA-Z0-9-_\/.]+).(eot|otf|svg|ttf|woff)$ /site/fonts/$1/$2.$3 [R]
+
+RewriteRule ^fonts/ss-symbolicons-block/ss-symbolicons-block.woff$ /fonts/bang!
+
+# Everything else to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# Cache files are not to be seen by the world
+<Files ~ "\.(cache)$">
+order allow,deny
+deny from all
+</Files>

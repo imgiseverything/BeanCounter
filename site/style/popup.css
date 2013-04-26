@@ -1,0 +1,38 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			popups
+ *	@media			all
+ *	@browsers		all
+ *	
+ *	@since			06/2008
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	24/04/2013
+ *	
+ */
+
+
+div#Container, 
+div#Content, 
+div#PrimaryContent{
+	margin: 0 auto;	
+	width: 640px;
+}
+
+body.popup{
+	background: #fff;
+	margin: 0;
+	width: 680px;
+}
+
+/* Hidden elements */
+div.breadcrumb,
+div#SecondaryContent{
+	display: none !important;
+}
+
+
+input, textarea{
+	max-width: 585px;
+}

@@ -1,0 +1,421 @@
+/** 
+ *
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			ones with forms:)
+ *	@media			all
+ *	
+ *	@since			03/2007
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	14/08/2010
+ *	
+ *	Table of Contents
+ *	
+ *	Form
+ *		
+ *		Paragraphs
+ *		Fieldset
+ *			Fieldset Fieldset
+ *			Legend
+ *			Help & instructions
+ *			Labels
+ *			Pre-input labels (e.g. currency signs)
+ *			Data entry
+ *				inputs
+ *				textareas
+ *				drop downs (select)
+ *				checkboxes/radio buttons & labels
+ *			Buttons
+ *		
+ *	Different types of forms:
+ *		form.incognito/tables in forms
+ *		form errors
+ *		sort form e.g. JavaScript sortable menus
+ *		
+ *		AJAX Tags
+ *		
+ */
+
+/* Form */
+form{
+	background: #EEEEEE;
+	border: 1px solid #DFDFDF;
+	margin: 1em 0;
+}
+
+
+label, input, textarea, select, button, a.button{
+	font-family: sans-serif;
+	font-size: 100%;
+	line-height: 1;
+}
+	
+	
+	/* P */
+
+	form p{
+		padding: 5px 0;
+	}
+
+	/* Fieldset*/
+	fieldset{
+		border: none;
+		margin: 1em 0;
+		padding: 10px; 
+	}
+	
+		fieldset fieldset{
+			border: 1px solid #DFDFDF;
+			clear: both;
+			padding: .5em 10px;
+		}
+	
+		/* Legend */
+		h2.legend{
+			padding: 0 0 10px;
+		}
+		
+		legend{
+			font-size: 24px;
+		}
+		
+		fieldset fieldset legend{
+			font-size: 16px;
+		}
+		
+			#filterForm legend{
+				font-size: 14px;
+			}
+			
+		form div.field{
+			clear: both;
+			float: left;
+			width: 100%;
+		}
+		
+		/* Help & feedback */
+		
+		p.instructions{
+			background: #EFEFEF;
+			border-bottom: 1px solid #DFDFDF;
+			clear: both;
+			color: #333;
+			margin: .5em 0 1em; 
+			padding: .5em 0 0;	
+		}
+		
+		form .help{
+			float: left;
+			margin: 0 0 1em;
+			padding: 0;
+			width: auto;
+		}
+		
+			form p.help{
+				clear: both;
+				display: block;
+			}
+			
+			form span.help{
+				color: #666;
+				float: none;
+				margin-left: 5px;
+				padding-top: 14px;
+				vertical-align: middle;
+				text-shadow: 1px 1px 0 rgba(255,255,255, 0.3);
+			}
+			
+			form select + span.help{
+				padding-top: 0;
+				vertical-align: top;
+			}
+			
+			form a.button{
+				background: transparent !important;
+				border: none !important;
+				margin-top: 5px;
+			}
+			
+			form a.button:hover:before{
+				color: #333;
+			}
+		
+		/* Labels */
+		
+		label{
+			clear: both;
+			color: #333;
+			display: block;
+			font-size: 16px;
+			margin: .75em 0 5px;
+		}
+		
+			/* Required field label */
+			label.required{
+				
+			}
+			
+			label.highlighted{
+				text-decoration: underline;
+			}
+			
+			form fieldset label span.required{
+				color: #666;
+				font-weight: bold;
+			}
+			
+			label.incognito{
+				color: inherit;
+				display: inline;
+				font-weight: inherit;
+				margin: 0;
+			}
+			
+			label[for]{
+				cursor: pointer;
+			}
+			
+		/* Pre Input */
+		span.pre-input{
+			float: left;
+			font-size: 14px;
+			font-style: italic;
+			font-weight: bold;
+			left: 20px;
+			margin: .75em 5px 0 -1em;
+			position: relative;
+			top: 1px;
+		}
+		
+		/* Secondary information */
+		span.secondary-info{
+			display: block;
+		}
+			
+		/* DATA ENTRY */
+		
+		/* Input */
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="text"],
+		input[type="url"],
+		textarea{
+			background: #FDFDFD;
+			border: 1px solid #333;
+			border-color: #848484 #C1C1C1 #E1E1E1;
+			border-radius: 2px;
+			color: #666;
+			float: left;
+			font-size: 16px;
+			margin: 0 0 .5em;
+			padding: 10px 5px;
+			width: 640px;
+			-moz-border-radius: 2px;
+			-webkit-border-radius: 2px;
+		}
+			/* Numerical input */
+			input.int{
+				width: 120px;
+			}
+			
+			div#SecondaryContent input.int{
+				width: 55px;
+			}
+		
+			input[type="hidden"]{
+				border: none;
+			}
+			
+			input#url{
+				max-width: 17em;
+			}
+
+			input.disabled{
+				background: #F7F7F7;
+				border: none;
+				font-style: italic;
+			}
+			
+			
+			input:focus,
+			textarea:focus
+			select:focus{
+				color: #333;
+			}
+			
+			
+		
+		span.pre-input + input{
+			padding-left: 15px;
+			width: 110px;
+		}
+		
+		/* Textarea */
+		textarea{
+			height: 10em;
+			line-height: 1.4;
+			margin: 0 0 .5em;
+			resize: vertical;
+		}
+		
+			textarea:focus{
+				
+			}
+			
+		/* Checkboxes/radio buttons */
+		input[type="checkbox"],
+		input[type="radio"]{
+			border: none;
+			clear: left;
+			display: inline-block;
+			font-size: 16px;
+			margin: .5em 0 .5em;
+			vertical-align: top;
+			width: auto;
+		}
+		
+		/* Labels for Checkboxes/radio buttons */
+		input[type="checkbox"] + label,
+		input[type="radio"] + label{
+			clear: none;
+			display: inline-block;
+			margin: .5em 0 .5em 5px;
+			vertical-align: top;
+			width: auto; /* IE6+ has trouble with this */
+		}
+		
+		
+		/* Drop downs <select> */
+		
+		select{
+			background: #FDFDFD;
+			border: 1px solid #333;
+			border-color: #848484 #C1C1C1 #E1E1E1;
+			color: #666;
+			font-size: 15px;
+			margin: 0 0 .5em;
+			max-width: 640px;
+			min-width: 375px;
+			padding: 4px 2px;
+		}
+		
+			select option{
+				padding-right: .75em;
+			}
+		
+				select option[selected="selected"]{
+					background: #FFB;
+				}
+				
+			fieldset.date select{
+				min-width: 1em;
+				width: auto;
+			}
+			
+			.fieldset-row select{
+				min-width: 150px;
+			}
+		
+		
+		
+		/* focus styles */
+		input:focus,
+		form fieldset textarea:focus,
+		select:focus{
+			background: #FFF;
+			color: #000;
+			
+		}
+		
+		
+		/* Buttons */
+		
+		input.button, 
+		button{
+			clear: both;
+			float: left;
+			font-size: 20px;
+			margin: .5em 0;
+			min-width: 200px;
+			padding: .5em 0;
+			width: auto;
+		}
+		
+		
+		form a.button{
+			color: inherit;
+			display: inline-block;
+			float: none;
+			margin: 3px 0 20px 5px;
+			padding: 3px 0 4px;
+			text-shadow: none;
+		}
+		
+		form a.inline-button{
+			background: #ddd !important;
+			padding: 3px 5px 2px;
+			text-indent: 0;
+			width: auto;
+		}
+		
+		/* Forms in table/Styleless forms (class="incognito") */
+		form.incognito,
+		form.incognito fieldset,
+		td form, 
+		td fieldset{
+			background: transparent;
+			border: none;
+			margin: 0;
+			padding: 0;
+		}
+	
+		form.incognito fieldset,
+		td fieldset{
+			padding: 0 10px;
+		}
+		
+		/* Errors */
+		div.field.error{
+			clear: both;
+		}
+		
+			div.field.error span.error{
+				clear: both;
+				color:#666;
+				display: block;
+				font-size: 95%;
+				margin: 0 0 20px;
+				padding: 2px 0 0;
+			}
+		
+		div.field.error input,
+		div.field.error textarea,
+		div.field.error select{
+			
+		}
+		
+		/* Pagination in forms */
+		form ul.pagination li{padding: 0 5px;}
+		
+		/* refresh_link */
+		form a.refresh_link{display: none;}
+
+
+/* Checkboxes */
+fieldset.checkboxes legend{
+	margin-top: 20px;
+}
+fieldset.checkboxes div.field{
+	clear: none;
+	float: left;
+	width: 200px;
+}
+
+	fieldset.checkboxes div.field label.checklabel{
+		line-height: 1.3;
+		max-width: 175px;
+	}

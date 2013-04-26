@@ -1,0 +1,27 @@
+# Local specific files #
+######################
+*.cache
+
+# Logs and databases #
+######################
+database/*
+*.log
+*.sql
+*.sqlite
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+
+# Misc #
+######################
+config.php

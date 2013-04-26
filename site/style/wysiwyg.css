@@ -1,0 +1,81 @@
+/** 
+ *
+ *	Bean Counter CSS :: wysiwyg
+ *	
+ *	Used to style the content (in iframe) produced by Tiny MCE HTML editor
+ *	
+ *	pages: none
+ *	media: all
+ *	
+ *	written by: Phil Thompson hello@philthompson.co.uk November 2007
+ *	last edited: 09/11/07/07 by Phil Thompson
+ *	
+ */
+
+@import url("/style/reset.css");
+@import url("/style/global.css");
+
+body{
+	background: #FFF;
+	color: #151515;
+	width: 100%;
+}
+
+h1, h2{
+	padding: 5px 10px 0;
+}
+
+h2{
+	font-size: 115%;
+}
+
+p, ul, ol, dl{
+	padding: 5px 10px 0;
+}
+
+sup{
+	font-size: 12px;
+	margin-top: -.5em;
+}
+
+
+/* WYSIWYG CLASSES */
+.highlight{
+	background: #FFB;
+	color: #000;
+}
+
+p.highlight{
+	margin: 5px 0;
+	padding: 5px;
+}
+
+span.highlight{
+	padding: 0 2px;
+}
+
+span.pullquote{
+	color: #B6C2D0;
+	float: right;
+	font-size: 170%;
+	font-style: italic;
+	margin: 0 0 10px 10px;
+	width: 35%;
+}
+
+p.intro{
+	font-size: 105%;
+	font-weight: bold;
+}
+
+/* Images */
+
+img.left{
+	float: left;
+	margin: 0 10px 10px 0;
+}
+
+img.right{
+	float: right;
+	margin: 0 0 10px 10px;
+}

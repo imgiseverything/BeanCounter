@@ -1,0 +1,1230 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			all
+ *	@media			all
+ *	@browsers		all
+ *	
+ *	@since			12/2007
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	24/04/2013
+ *	
+ *	
+ *	Contents
+ *
+ *	0 Reset and Font
+ *	
+ *	1 HTML Tags
+ *		*
+ *		html
+ *		body
+ *		a
+ *		h1-h6
+ *		p, ul, ol
+ *		
+ *	2 Common classes
+ *	
+ *		accessibility/screen-reader styles
+ *		clearfix
+ *		user feedback
+ *		highlight
+ *		pullquote
+ *		intro
+ *		img float
+ *		vcard
+ *		quotes
+ *		pagination
+ *		buttons
+ *		secondary info
+ *	
+ *	3 Layout
+ *		Bean Counter product branding
+ *		Welcome note
+ *		Holder
+ *		Branding
+ *		Navigation
+ *		Content
+ *			Primary content
+ *				options
+ *				Loading (ajax)
+ *			Secondary content
+ *				form
+ *				hr
+ *				legend
+ *		Footer
+ *			links
+ *			copyright
+ *			vcard
+ *		Timer
+ *	
+ */
+ 
+ 
+ 
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-symbolicons-block.css" rel="stylesheet" />
+*/
+
+@font-face {
+  font-family: "SSSymbolicons";
+  src: url('/site/fonts/ss-symbolicons-block/ss-symbolicons-block.eot');
+  src: url('/site/fonts/ss-symbolicons-block/ss-symbolicons-block.eot?#iefix') format('embedded-opentype'),
+       url('/site/fonts/ss-symbolicons-block/ss-symbolicons-block.woff') format('woff'),
+       url('/site/fonts/ss-symbolicons-block/ss-symbolicons-block.ttf')  format('truetype'),
+       url('/site/fonts/ss-symbolicons-block/ss-symbolicons-block.svg#SSSymboliconsBlock') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ 
+/**
+ *	0 Reset
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+
+/* remember to define focus styles! */
+*:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**
+ *	1. HTML Tags 
+ */
+
+body{
+	background: #EDEDED;
+	color: #333;
+	font: 14px/17px sans-serif;
+	margin: 0 auto;
+	width: 100%;
+}
+
+
+/* Links */
+
+a{
+	color: #777;
+	text-decoration: underline;
+}
+
+	a img{
+		border: none;
+	}
+
+a:visited{
+	color: #555;
+}
+a:hover{
+	color: #03F;
+	text-decoration: none;
+}
+
+a:active{
+	color: #03F;
+	text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6{
+	color: #444;
+	font: normal 20px/24px sans-serif;
+	padding: .5em 0 .25em;
+}
+
+h2{
+	font-size: 18px;
+}
+
+h3{
+	font-size: 16px;
+}
+
+h4, h5, h6{
+	font-size: 15px;
+}
+
+p{
+	padding: 0 0 1em;
+}
+
+/* Lists */
+
+ul, ol, dl{
+	padding: 1em 0;
+}
+
+	li{
+		margin: 0 0 0 20px;
+	}
+	
+		ul li ul{
+			padding: 0;
+		}
+	
+dt{
+	font-weight: bold;
+}
+
+dd{
+	margin-left: 20px;
+}
+
+
+hr{
+	background: #DFDFDF;
+	border: none;
+	clear: both;
+	height: 1px;
+	margin: .5em 0;
+}
+
+small{
+	color: #666;
+	font-size: 95%;
+}
+
+/**
+ *	2. Common classes
+ */
+
+/* Accessibility/Screen-reader styles */
+
+.hide,
+.off-screen{
+	left: -9999px;
+	position: absolute;
+	top: -9999px;
+}
+
+/* Image replacement */
+.ir { 
+	background-color: transparent; 
+	background-repeat: no-repeat; 
+	border: 0; 
+	direction: ltr; 
+	display: block; 
+	overflow: hidden; 
+	text-align: left; 
+	text-indent: -999em; 
+	*line-height: 0; 
+}
+
+.ir br { 
+	display: none; 
+}    
+
+.hidden { 
+	display: none; 
+	visibility: hidden; 
+} 
+
+
+/* Hidden but visible to screenreaders */
+.visuallyhidden { 
+	border: 0; 
+	clip: rect(0 0 0 0); 
+	height: 1px; 
+	margin: -1px; 
+	overflow: hidden; 
+	padding: 0; 
+	position: absolute; 
+	width: 1px; 
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { 
+	clip: auto; 
+	height: auto; 
+	margin: 0; 
+	overflow: visible; 
+	position: static; 
+	width: auto; 
+}
+
+.invisible { visibility: hidden; }
+
+/* Clearfix */
+.clearfix:before, 
+.clearfix:after { 
+	content: "\0020"; 
+	display: block; 
+	height: 0; 
+	overflow: hidden; 
+}
+
+.clearfix:after { clear: both; }
+
+.clearfix { zoom: 1; }  
+
+/* User feedback */
+
+div.feedback{
+	background: #FFE;
+	margin: 20px 0;
+}
+
+	div.feedback.error{
+		background-color: #FFB;
+	}
+
+	div.feedback.success{
+		background-color: #E6EFC2;
+	}
+
+	div.feedback p,
+	div.feedback ul{
+		padding: 0 10px 20px 30px;
+	}
+	
+		div.feedback h3{
+			font-size: 24px;
+			padding: 20px 20px 10px 0;
+		}
+		
+			div.feedback p,
+			div.feedback li{
+				font-size: 18px;
+				line-height: 1.3;
+			}
+			
+			div.feedback li{
+				padding-bottom: 0.5em;
+			}
+			
+			div.feedback ul li:first-child{
+				list-style: none;
+				margin-left: 0;
+			}
+
+		div.feedback p.hideFeedback{
+			float: right;
+		}
+
+.highlight{
+	background: #FFB;
+	color: #000;
+}
+
+p.highlight{
+	margin: 5px 10px;
+	padding: 5px;
+}
+
+span.highlight{
+	padding: 0 2px;
+}
+
+span.pullquote{
+	color: #B6C2D0;
+	float: right;
+	font-size: 170%;
+	font-style: italic;
+	margin: 0 0 10px 10px;
+	width: 45%;
+}
+
+p.intro{
+	font-size: 105%;
+	font-weight: bold;
+}
+
+/* Vcard */
+div.vcard{
+	display: block;
+	margin: 10px 0;
+}
+
+.clickable{
+	cursor: pointer;
+}
+	
+/* Table container */
+div.data{
+	background: #F5F5F5;
+	float: left;
+	margin: 60px 0;
+	padding: 10px 0;
+	width: 1020px;
+}
+
+	div.data + div.data{
+		margin-top: 0;
+	}
+	
+
+/* Pagination */
+.showing{
+	background: #F5F5F5;
+	clear: left;
+	float: left;
+	padding: 20px 10px 10px;
+	width: 600px;
+}
+
+ul.pagination{
+	background: #F5F5F5;
+	clear: both;
+	float: right;
+	padding: 20px 10px 10px;
+	text-align: right;
+	width: 1000px;
+}
+
+	ul.pagination:first-of-type{
+		width: 380px;
+	}
+
+	ul.pagination li{
+		border-right: 1px solid #D1D3CF;
+		display: inline;
+		line-height: 1;
+		margin-left: 0;
+		padding-right: 5px;
+	}
+	
+		ul.pagination li a{
+			color: inherit;
+			padding: 3px 0 1px;
+		}
+		
+		/* inactive links eg next link when on last page */
+		ul.pagination li.inactive a{
+			color: #BBB;
+			text-decoration: none;
+		}
+		/* active page */
+		ul.pagination li.selected{
+			border: none;
+			padding-right: 0;
+		}
+	
+			ul.pagination li.selected a{
+				background: #CCC;
+				color: inherit;
+				border: 1px solid #D1D3CF;
+				padding: 3px 2px 1px;
+				font-weight: bold;
+				text-decoration: none;
+			}
+			
+		/* next and previous, 1st and last links */
+		ul.pagination li.bookend{
+			border: none;
+			font-size: 90%;
+		}
+		
+		ul.pagination li.selected + li.bookend{
+			margin-left: 5px;
+		}
+		
+/* List styles */
+.grid-list{
+	float: left;
+	margin: 0 0 0 -10px;
+	padding: 10px 0;
+	width: 100%;
+}
+
+	.grid-list li{
+		border: 1px solid #EEE;
+		display: block;
+		float: left;
+		list-style: none;
+		margin: 0 0 10px 10px;
+	}
+	
+		.grid-list li a{
+			display: block;
+			padding: 10px;
+		}
+	
+.block-list{
+	
+}
+
+	.block-list li{
+		list-style: none;	
+		margin: 0;	
+	}
+		
+/* Buttons */
+div.buttons{
+	display: block;
+	margin: 10px;
+}
+
+div.buttons a, a.button, button{
+	background: #666;
+	border: none;
+	border-bottom: 3px solid #333;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	float: left;
+	font-weight: bold;
+	margin: 40px auto 20px;
+	padding: 20px 10px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
+	
+}
+	
+	/* STANDARD */
+	button:hover, a.button:hover, .buttons a:hover{
+		background: #333;
+		border-bottom-color: #000;
+	}
+	
+	a.button.date:before,
+	a.button.download:before,
+	a.button.html:before,
+	a.button.edit:before,
+	a.button.negative:before,
+	a.button.positive:before,
+	a.button.refresh:before,
+	span.error:before,
+	#cboxClose:before,
+	div.feedback h3:before{
+		color: #666;
+		content: '';
+		display: inline-block;
+		font-family: "SSSymbolicons";
+		font-size: 16px;
+		text-align: center;
+		vertical-align: middle;
+		width: 30px;
+	}
+	
+	
+	/* POSITIVE */	
+	button.positive, a.button.positive, .buttons a.positive{
+		color: #529214;
+	}
+	.buttons a.positive:hover,a.button.positive:hover, button.positive:hover{
+		background-color: #E6EFC2;
+		border: 1px solid #C6D880;
+		color: #529214;
+	}
+	.buttons a.positive:active, a.button.positive:active{
+		background-color: #529214;
+		border: 1px solid #529214;
+		color: #fff;
+	}
+	
+	a.button.positive:before{
+		content: '✓';
+	}
+	
+	/* Add new button */
+	a.button.positive.add:before{
+		content: '+';
+	}
+	
+	/* Edit button */
+	
+	a.button.edit:before{
+		content: '✎';
+	}
+	
+	/* Download */
+	
+	a.button.download:before{
+		content: '';
+	}
+	
+	/* Refresh */
+	
+	a.button.refresh:before{
+		content: '↻';
+	}
+	
+	/* Date */
+	a.button.date:before{
+		content: '📅';
+	}
+	
+	/* HTML / WYSIWYG */
+	button.html, a.button.html, .buttons a.html{
+	}
+	
+	.button.html:before{
+		content: '+';
+	}
+	
+	/* Negative (Delete/Error) */
+	
+	.buttons a.negative, a.button.negative, button.negative{
+		color: #d12f19;
+	}
+	
+		.buttons a.negative:hover, a.button.negative:hover, button.negative:hover{
+			background-color: #FBE3E4;
+			border: 1px solid #FBC2C4;
+			color: #D12F19;
+		}
+		
+		.buttons a.negative:active, a.button.negative:active{
+			background-color: #d12F19;
+			border: 1px solid #d12F19;
+			color: #FFF;
+		}
+	
+		a.button.negative:before{
+			content: '';
+		}
+		
+		a.inline-button{
+			display: inline-block;
+			float: none;
+			font-size: 14px;
+			margin: -5px 0 0 10px;
+			padding: 3px 5px 1px;
+		}
+		
+		div.feedback.error h3:before,
+		span.error:before{
+			content: '⚠';
+		}
+		
+		div.feedback.success h3:before{
+			content: '✓';
+		}
+		
+		#cboxClose:before{
+			content: '␡';
+		}
+
+ul.options{
+	
+}
+
+	ul.options li{
+		border-left: 1px solid #BBB;
+		display: inline;
+		padding-left: 10px;
+		margin-left: 7px;
+	}
+	
+	ul.options li:first-child{
+		border: none;
+		margin-left: 0;
+		padding-left: 0;
+	}
+						
+						
+/* Secondary information */
+span.secondary-info{
+	color: #666; 
+	display: block;
+	font-size: 90%; 
+	font-weight: normal;
+}
+
+.inner{
+	margin: 0 auto;
+	position: relative;
+	width: 1020px;
+}
+
+
+/**
+ *	 3.	Layout 
+ */
+ 
+/* Bean Counter branding */
+#BeanCounter{
+	background: #111;
+	float: left;
+	margin: -20px 0 0;
+	width: 100%;
+}
+
+	#BeanCounter .inner{
+		width: 1060px;
+	}
+
+	#BeanCounter span.logo{
+		background: #111;
+		color: #FFF;
+		display: block;
+		float: left;
+		font-size: 18px;
+		margin: 0 20px;
+		padding: 5px 5px 2px;
+		position: relative;
+		top: 12px;
+	}
+
+
+/* Welcome note */
+#Welcome{
+	float: left;
+	font-size: 90%;
+	padding-bottom: 3px;
+	text-align: right;
+	width: 100%;
+}
+
+	#Welcome .inner{
+		width: 1060px;
+	}
+
+	#Welcome p{
+		float: right;
+		text-align: right;
+		padding: 5px 20px 0;
+	}
+	
+		#Welcome a{
+			color: inherit;
+			padding: 0 .25em;
+		}
+			
+			#Welcome a:last-of-type{
+				padding-right: 0;
+			}
+			
+	/*#Welcome a.button{
+		background: #CCC;
+		border-color: #BBB;
+		border-radius: 0;
+		display: inline-block;
+		float: none;
+		margin: 0;
+		padding: 1 3px;
+	}*/
+
+/* Holding div/frame */
+#Container{
+	margin: 0 auto 20px;
+	width: 1060px;
+}
+
+	/* Header */
+	#Header{
+		background: #FFF;
+		float: left;
+		width: 100%;
+	}
+	
+		/* Branding */
+		#Branding{
+			float: left;
+		}
+	
+		#Header h1#Logo,
+		#Header span#Logo{
+			color: #111;
+			display: block;
+			font-size: 36px;
+			font-weight: normal;
+			line-height: 48px;
+			padding: 30px 0 20px;
+			text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+		}
+		
+			#Header span#Logo a{
+				color: #111;
+				display: block;
+				text-decoration: none;
+			}
+			
+		/* Search form */	
+		#Header form{
+			float: right;
+			margin: 10px;
+		}
+		
+		/* Main menu */
+		nav{
+			background: #999; 
+			border-top: 2px solid #FFF;
+			border-top-color: rgba(0, 0, 0, 0.2);
+			clear: both;
+			float: left;
+			width: 100%;
+		}
+		
+			nav ul{
+				clear: both;
+				padding: 0;
+			}
+		
+			nav ul li{
+				float: left;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}	
+			
+				nav ul li.first{
+					
+				}
+			
+				nav ul li.last{
+					
+				}
+			
+				nav ul li a{
+					color: #fff !important;
+					display: block;
+					float: left;
+					font-size: 16px;
+					padding: 10px;
+					text-decoration: none;
+					text-shadow: 0 1px 0 rgba(119, 119, 119, 0.2);
+					vertical-align: text-bottom;
+					/*width: 93px; */
+				}	
+				
+				nav ul li a:hover{
+					background: rgb(170, 170, 170);
+					background: rgba(255, 255, 255, 0.1);
+				}	
+				
+				/* active links*/
+				nav ul li.selected a,
+				body.home nav ul li#home-link a{
+					background: rgb(79, 79, 79); /* #777 */
+					background: rgba(79, 79, 79, 0.2);
+					text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+				}	
+				
+				nav ul li:first-child a,
+				nav ul li:last-child a{
+					/*width: 94px;*/
+				}
+			
+			/* Sub menu */	
+			
+			nav ul li ul{
+				background: rgb(79, 79, 79); /* #777 */
+				background: rgba(79, 79, 79, 0.8);
+				clear: both;
+				display: none;
+				left: 0;
+				margin: 0;
+				min-width: 200px;
+				padding: 0;
+				position: absolute;
+				top: 37px;
+				z-index: 999;
+			}
+			
+				nav ul li:hover ul{
+					display: block;
+				}
+			
+				nav ul li ul li{
+					display: block;
+					float: none;
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}	
+			
+				nav ul li ul li a{
+					color: #FFF;
+					display: block;
+					float: none;
+					font-size: 14px;
+					padding: 10px 10px 7px;
+					text-decoration: none;
+					text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+					vertical-align: text-bottom;
+				}	
+				
+				nav ul li ul li a:hover{
+					background: #EEE;
+					background: rgba(255, 255, 255, 0.4);
+					color: #333;
+				}	
+				
+				/* active links*/
+				nav ul li ul li.selected a{
+					color: #EEE;
+					text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+				}	
+			
+	/* Content holder */
+	#Content{
+		background: #FFF;
+		clear: both;
+		display: table;
+		float: left;
+		padding: 0;
+		width: 100%;
+	}
+	
+
+		/* Primary content */
+		#PrimaryContent{
+			background: #FFF;
+			float: left;
+			padding: 20px 0;
+			width: 100%;
+		}
+		
+			/* Breadcrumb trail */
+			div.breadcrumb{
+				background: #EEE;
+				font-size: 13px;
+				margin: 0 0 30px;
+				padding: 10px;
+			}
+			
+			#PrimaryContent h1{
+				font-size: 28px;
+			}
+			
+			#PrimaryContent h1 a{
+				font-size: 14px;
+			}
+			
+			#PrimaryContent .buttons{
+				float: right;
+				margin: 16px 3px 10px 10px;
+			}
+			
+			#PrimaryContent h1 + div.buttons {
+				margin: -30px 0 10px 10px;
+			}
+			
+				#PrimaryContent h1 + div.buttons a.add{
+					margin-right: 0;
+				}
+			
+			
+			/* Loading (AJAX holder) */
+			#Loading{
+				background: url("/images/icons/ajax_loading.gif") center top no-repeat;
+				color: #666;
+				font-size: 115%;
+				margin: 40px 0;
+				padding-top: 1.25em;
+				text-align: center;
+			} 
+			
+			/* Data list */
+			#PrimaryContent ul.data_list{
+			
+			}
+			
+				#PrimaryContent ul.data_list li{
+					border-bottom: 1px solid #DDD;
+					list-style: none;
+					margin-left: 0;
+					padding: 10px 0;
+				}
+				
+					#PrimaryContent ul.data_list li span.type{
+						font-size: 85%;
+						text-transform: uppercase;
+					}
+				
+					#PrimaryContent ul.data_list li a{
+						display: block;
+					}
+			
+			
+			
+				
+						
+		
+		/* Secondary content */
+		#SecondaryContent,
+		#Filter{
+			background: #DFDFDF;
+			clear: both;
+			float: left;
+			left: 0;
+			/*position: absolute;
+			top: 200px;*/
+			margin: 35px 0 0;
+			padding: 20px 0;
+			position: relative;
+			top: 0;
+			width: 100%;
+		}
+			
+			
+			/* Show/hide sidebar options*/
+			div.SecondaryContent-hidden *{
+				display: none;
+			}
+			
+			#FilterButton, a#ShowHideFilterLink{
+				display: block;		
+			}
+			
+			#FilterButton{
+				left: 0;
+				position: absolute;
+				top: -35px;
+			}
+			
+			a#ShowHideFilterLink{
+				background: #DFDFDF;
+				color: inherit;
+				padding: 10px;
+				text-decoration: none;
+				width: auto;
+			}	
+			
+				a#ShowHideFilterLink:hover{
+					text-decoration: underline;
+				}
+			
+			#SecondaryContent h2,
+			#SecondaryContent p,
+			#SecondaryContent h3,
+			#Filter h2{
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+
+				
+				#Filter form{
+					background: transparent;
+				}
+				
+				#Filter fieldset fieldset{
+					border: 1px solid #eee;
+				}
+				
+				#Filter  input,
+				#Filter form select{
+					padding: 5px;
+					max-width: 263px;
+				}
+				
+				#Filter form select{
+					padding: 5px 2px;
+				}
+				
+				
+				#Filter  span.help{
+					clear: both;
+					display: block;
+					margin: 0;
+					padding: 0;
+				}
+				
+				
+				fieldset.fieldset-row{
+					clear: both;
+				}
+				
+					fieldset.fieldset-row .field{
+						clear: none;
+						float: left;
+						width: 33%;
+					}
+					
+					fieldset.fieldset-row .year-list{
+						margin: 0 10px 0 0;
+						padding: 0;
+					}
+					
+						fieldset.fieldset-row .year-list li{
+							clear: both;
+							float: left;
+							list-style: none;
+							margin: 0 0 10px;
+							width: 48%;
+						}
+						
+							fieldset.fieldset-row .year-list li:nth-child(even){
+								clear: none;
+								float: right;
+							}
+						
+							fieldset.fieldset-row .year-list li a{
+								background: #f5f5f5;
+								border: 1px solid #ddd;
+								border-radius: 3px;
+								color: #000;
+								display: block;
+								padding: 10px;
+								text-align: center;
+							}
+			
+			/* Options */
+			#Options{
+			
+			}
+			
+				#Options ul{
+					padding: 0 10px;
+				}
+				
+					#Options ul li{
+						border-bottom: 1px solid #BBB;
+						list-style: none;
+						margin: 0;
+						padding: 0;
+					}
+					
+						#Options ul li a{
+							border-bottom: 1px solid #E5E5E5;
+							color: #666;
+							display: block;
+							padding: 3px 0;
+						}
+						
+						#Options ul li a:hover{
+							background: #E5E5E5;
+							border-color: #FFF;
+							color: #333;
+							padding: 3px 2px;
+						}
+			
+			/* Legend */
+			#legend{
+				background: #EEE;
+				border: 1px solid #DFDFDF;
+				margin: 10px;
+			}
+						
+				#legend li{
+					list-style: none;
+					margin: 0 0 5px;
+				}
+						
+					#legend li img{
+						background: #F5F5F5;
+						border: 1px solid #C2E1EF;
+						border-radius: 5px;
+						padding: 5px;
+						vertical-align: middle;							
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+					}
+
+
+			
+		
+	/* Footer */
+	#Footer{
+		background: #EEE;
+		border-top: 5px solid #BBB;
+		clear: both;
+		color: #333;
+		float: left;
+		font-size: 90%;
+		width: 100%;
+	}
+	
+		
+	
+		#Footer small{
+			display: block;
+			float: right;
+			padding: 20px 0;
+			text-align: right;
+			width: 500px;
+		}
+	
+				
+/* Timer */			
+#Timer{
+	clear: both;
+	float: left;
+	font-style: italic;
+	padding: 40px 0;
+	text-align: center;
+	width: 100%;
+}
+
+			
+			
+/* iPhone [portrait + landscape] */
+/*@media screen and (max-width: 640px) {
+
+
+	*{	
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.inner{
+		width: 100% !important;
+	}
+	
+	#Container,
+	#PrimaryContent,
+	#SecondaryContent,
+	div.data table{
+		max-width: 100%;
+		width: 100% !important;
+	}
+	
+	div.data{
+		max-width: 96%;
+		width: 96% !important;
+	}
+	
+	#SecondaryContent table{
+		margin: 0 auto;
+	}
+	
+	#BeanCounter span.logo{
+		font-size: 14px;
+		margin: 0;
+		top: 0;
+	}
+	
+	#Welcome p{
+		float: none;
+		padding: 5px;
+		text-align: left;
+	}
+	
+
+	
+}*/
+	

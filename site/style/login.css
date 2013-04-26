@@ -1,0 +1,75 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			login
+ *	@media			all
+ *	@browsers		all
+ *	
+ *	@since			06/2008
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	25/03/2010
+ *	
+ */
+
+#Menu, 
+#Submenu, 
+div#Welcome, 
+div.breadcrumb, 
+div#SecondaryContent{
+	display: none;
+}
+
+
+
+div#Container .inner, 
+div#Header .inner, 
+div#Branding, div#Content .inner, 
+div#PrimaryContent, 
+div#Footer .inner{
+	width: 360px;
+}
+
+div#Container{
+	margin-top: 20px;
+}
+
+
+div#PrimaryContent{
+	margin: 0 auto;
+	float: none;
+}
+
+
+div#PrimaryContent form fieldset{
+	margin: 0 auto;
+	width: 320px;
+}
+
+
+div#PrimaryContent form fieldset input{
+	max-width: 305px;
+}
+
+
+div#Footer div.vcard{
+	width: 300px;
+}
+
+div#Footer #Copyright{
+	float: none;
+	text-align: center;
+}
+
+div#PrimaryContent form fieldset input#password{
+	width: 120px;
+}
+
+form a.button{
+	display: inline;
+	float: none;
+	margin: 0 0 0 5px;
+	padding: 1px 14px 2px 7px;
+	text-indent: 0;
+	width: auto;
+}

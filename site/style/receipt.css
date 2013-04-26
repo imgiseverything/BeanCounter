@@ -1,0 +1,285 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	pages: invoice/receipt
+ *	media: all
+ *	
+ *	written by: Phil Thompson hello@philthompson.co.uk February 2008
+ *	
+ *	
+ *	ToC
+ *	
+ *	*- resize elements for email width
+ *	
+ *  hr
+ *	link
+ *	header
+ *		Branding
+ *			Logo
+ *		date
+ *	PrimaryContent	
+ *		vcard
+ *		project type/title
+ *		project stage
+ *		table - project details
+ *		appendix
+ *	powered by 
+ *	
+ */
+ 
+.download-container h1, .download-container h2, .download-container h3, .download-container h4, .download-container h5, .download-container h6, .download-container p, .download-container ul, .download-container ol, .download-container dl{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.download-container form, 
+.download-container hr{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.download-container table{
+	border: none;
+	margin: 1em 15px;
+}
+
+.download-container hr{
+	display: none;
+}
+
+body.download, 
+.download-container #Container, 
+.download-container #Header, 
+.download-container #Content, 
+.download-container #PrimaryContent{
+	width: 640px;
+}
+
+.download-container #Download{
+	padding: 10px 0 0;
+	text-align: center;
+}
+
+.download-container #Container{
+	background: #FFF;
+	border-radius: 6px;
+	margin-top: 0;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+	.download-container div#Link{
+		color: #151515; 
+		font-size: 90%;
+		margin: 15px 0 0; 
+		padding: 0 15px; 
+		text-align: center;
+	}
+
+	.download-container #Header{
+		border-bottom: 2px solid #DDD;
+		margin: 0;
+	}
+	
+	/* Branding - Logo/tagline */
+	.download-container #Branding{
+		float: left;
+		margin: 0 15px;
+		width: 440px;
+	}
+	
+	.download-container #Branding span#Logo{
+		font-size: 28px;
+		margin: 0;
+		padding: 15px 0 0;
+	}
+	
+	.download-container div.date{
+		color: #666;
+		float: right;
+		line-height: 1;
+		font-style: italic;
+		padding: 15px;
+		text-align: right;
+		width: 140px;
+	}
+	
+
+	.download-container .due{
+		color: #C00;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	
+	.download-container #Header .vcard{
+		clear: both;
+		padding-top: 10px;
+	}
+	
+	/* Primary content */
+	.download-container #PrimaryContent{
+	}
+	
+		.download-container .breadcrumb{
+			display: none;
+		}
+		
+	.download-container h1{
+		line-height: 1.1;
+		margin-bottom: 35px;
+	}
+	
+	
+	
+		.download-container h1 span.type{
+			display: block;
+			font-size: 13px;
+			margin: 0;
+			padding: 2px 0;
+			position: relative;
+			text-transform: uppercase;
+		}
+
+
+	/* Vcard - addresses/contact details */
+	.download-container #ClientDetails{
+		margin-bottom: 2em;
+	}
+	
+	.download-container .vcard{
+		margin: 15px;
+		width: 610px;
+	}
+	
+	.download-container .vcard div.fn{
+		display: block;
+	}
+
+	.download-container #Header div.vcard div.fn{
+		display: none;
+	}
+	
+	.download-container .vcard div{
+		display: inline;
+	}
+	
+	.download-container .vcard div.adr{
+		display: block;
+	}
+	
+	.download-container .vcard div.adr br{
+		display: none;
+	}
+	
+	.download-container h2.fao{
+		font-size: 100%;
+		font-weight: bold;
+		margin-bottom: -10px;
+		padding-bottom: 0;
+	}
+	
+	/* Project stage */
+	.download-container p.stage{
+		display: none;
+	}
+
+	.download-container p.stage.completed{
+		background: #E6EFC2;
+		border: 1px solid #C6D880;
+		display: block;
+		margin: 10px;
+		padding: 10px 5px;
+	}
+
+
+/* Project details (tasks table) */
+
+.download-container table{
+	/*page-break-before: always;*/
+	width: 610px;
+}
+
+.download-container table caption{
+	background: transparent;
+	display: none;
+	font-weight: normal;
+	margin: 30px 0 0;
+	padding: 0;
+}
+
+.download-container th, 
+.download-container td{
+	background: transparent;
+	border-bottom: 1px solid #E5E5E5;
+	color: #333;
+}
+
+.download-container tfoot th,
+.download-container tfoot td{
+	background: transparent;
+	border: 2px solid #E5E5E5;
+	border-width: 2px 0;
+	
+}
+
+.download-container th{
+	text-shadow: none;
+}
+
+.download-container th.options, 
+.download-container td.option{
+	display: none;
+}
+
+.download-container td p,
+.download-container td ul{
+	color: #666;
+	padding: 0 0 .25em;
+}
+
+
+.download-container td li{
+	margin-left: 14px;
+}
+
+.download-container tbody tr:last-child td{
+	border-bottom: none;
+}
+
+/* Appendix */
+
+.download-container #Appendix div.details h2{
+	float: none;
+	/*page-break-before: always;*/
+}
+
+.download-container #Appendix div.details{
+	max-height: 30000px;
+	overflow: visible;
+}
+
+/* Powered by */
+#PoweredBy{
+	clear: both;
+	float: left;
+	font-size: 90%;
+	margin: 10px 0 20px;
+	text-align: center;
+	width: 100%;
+}
+
+	#PoweredBy a{
+		background: #000;
+		border-bottom: 2px solid #000;
+		color: #FFF;
+		display: inline-block;
+		padding: 1px 3px 0;
+		text-decoration: none;
+	}
+	
+		#PoweredBy a:hover{
+			background: #FFF;
+			color: #000;
+		}

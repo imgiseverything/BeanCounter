@@ -1,0 +1,101 @@
+/** 
+ *
+ *	
+ *	Bean Counter CSS
+ *	
+ *	@pages			bookings
+ *	@media			all
+ *	
+ *	@since			12/2008
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	09/03/2010
+ *	
+ *	
+ */
+ 
+
+ 
+ table.calendar th{
+ 	text-align: left;
+ }
+ 
+
+ table.calendar td{
+ 	border: 1px solid #DDD;
+ 	padding: 10px 0;
+ 	vertical-align: top;
+ }
+ 
+ td.empty{
+ 	background: #EEE;
+ }
+ 
+ td div.day{
+ 	color: #DFDFDF !important;
+ 	font-size: 85%;
+ 	margin: 0 10px;
+ 	text-align: right;
+ }
+ 
+ 	div#PrimaryContent td div.day form,
+ 	div#PrimaryContent td div.day form fieldset,
+ 	div#PrimaryContent td div.day form fieldset button{
+ 		background: transparent;
+ 		border: none;
+ 		clear: none;
+ 		color: inherit;
+ 		float: none;
+ 		font-family: inherit;
+ 		font-size: 100%;
+ 		font-weight: normal;
+ 		margin: 0;
+ 		min-width: 1px;
+ 		padding: 0;
+ 		text-align: right;
+ 		width: 120px;
+ 	}
+	 	
+ 	div#PrimaryContent td div.day form fieldset button{
+ 		color: #03F;
+ 		text-decoration: underline;
+ 		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+ 	}
+ 	
+ 	div#PrimaryContent td div.day form fieldset button:hover{
+ 		text-decoration: none;
+ 	}
+ 
+  table.calendar td ul.bookings{
+  	margin: 10px 0 0;
+  	padding: 0;
+  }
+  
+  	table.calendar td ul.bookings li{
+  		font-size: 90%;
+  		line-height: 1.2;
+  		list-style: none !important;
+  		margin: 0 0 .25em;
+  		width: 140px;
+  	}
+  	
+  	table.calendar td ul.bookings li a{
+  		background: #DFDFDF;
+  		color: inherit;
+  		display: block;
+  		padding: 2px 5px;
+  		text-decoration: none;
+  		width: 132px;
+  	}
+  	
+  		table.calendar td ul.bookings li a:hover{
+  			background: #F5F5F5;
+  		}
+  	
+  	table.calendar td ul.bookings li.all-day a{
+  		
+  	}
+  	
+ 
+table.calendar td ul.bookings li.multiple a{
+	
+}

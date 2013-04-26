@@ -1,0 +1,5 @@
+# ROBOTS.TXT
+# Inform search engine bots which files/folders they canot see (all of them)
+
+User-agent: * # All bots
+Disallow: / # Disallow all: Remove once site goes live but leave on test server

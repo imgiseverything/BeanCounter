@@ -1,0 +1,240 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			none
+ *	@media			all
+ *	
+ *	@since			12/2007
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	14/08/2010
+ *	
+ *	Table of Contents
+ *	
+ *	Table
+ *		Caption
+ *		Thead
+ *			Th
+ *		Tbody
+ *			Td
+ *			Row styles
+ *			Parent / Child rows
+ *		Tfoot	
+ *		
+ *	Tiny MCE	
+ *	
+ */
+
+/* Table */
+table{
+	border: none;
+	border-collapse: collapse;
+	clear: left;
+	font-size: 100%;
+	margin: 0 10px;
+	width: 1000px;
+}
+
+	/* Caption */
+	table caption{
+		background: #F5F5F5;
+		color: #444;
+		font-size: 18px;
+		font-weight: normal;
+		margin: 1em 0 0;
+		padding: 10px 0;
+		text-align: left;
+	}
+	
+	th, td{
+		line-height: 1.4;
+		padding: .75em 10px;
+	}
+	
+	/* THEAD Table header */
+	
+	thead th{
+		background: #666;	
+		border: 1px solid #666;
+		border-width: 1px 0 0;
+		color: #FFF;
+		text-align: left;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+	}
+	
+		th[scope="col"]{
+			
+		}
+		
+		th[scope="row"]{
+			
+		}
+		
+		thead th a{
+			color: inherit;
+		}
+
+		
+	
+	
+	/* TBODY Table body */
+	tbody th,
+	td{
+		border: 1px solid #E8E8E8;
+		border-width: 0 0 1px;
+		color: #333;
+		vertical-align: top;
+	}
+	
+	td{
+		background: #FFF;	
+	}
+	
+	thead th.positive,
+	tbody tr.positive td,
+	tbody td.positive,
+	tfoot tr.positive td,
+	tr.positive th,
+	tr.completed td{
+		background: #EDFFE2;
+		border-color: #BECCB6;
+	}
+	
+	thead th.negative,
+	tbody tr.negative td,
+	tbody td.negative,
+	tfoot tr.negative td,
+	tr.negative th,
+	tr.late td,
+	tbody td.late{
+		background: #FFE9E8;
+		border-color: #CCBBBA;
+	}
+	
+	td a img{
+		display: block;
+	}
+	
+	table.mceEditor td a img{
+		display: inherit;
+	}
+	
+	/* Table row styles */
+	
+	/* Highlight an inactive item any table */
+	tr.inactive td{
+		background: #fbfbfb;
+		color: #999;
+	}
+	
+	tbody tr:last-child td{
+		border-bottom: 2px solid #D6D6D6;
+	}
+	
+	/* TFOOT - Footer */
+	
+	tfoot th, tfoot td{
+		background: #E8E8E8;
+		border: 2px solid #D6D6D6;
+		border-width: 2px 0;
+		color: #333;
+		vertical-align: bottom;
+	}
+	
+	tfoot th{
+		font-weight: bold;
+		text-align: right;
+	}
+	
+	/* Buttons within tables */
+	tbody td a.button{
+		background-position: center center;
+		margin: 0 !important;
+		padding: 5px !important;
+		text-indent: -9999px;
+		width: 17px;
+	}
+	/* Approved/unapproved*/
+	tr.unapproved td em.unapproved{
+		color: #AAA;
+		display: block;
+		font-size: 85%;
+		font-style: italic;
+
+	}
+	
+	
+.extra-options{
+	display: none;
+}
+
+	.extra-options li{
+		display: inline;
+		font-size: 90%;
+		margin: 0;
+	}
+	
+	.extra-options li:before{
+		content: ' | ';
+	}
+	
+	.extra-options li:first-child:before{
+		content: '';
+	}
+
+tr:hover .extra-options{
+	display: block;
+}
+
+
+	
+th.options{
+	width: 200px;
+}
+	
+	
+	
+div#PrimaryContent table form.options-form{
+	width: 180px;
+}
+
+	div#PrimaryContent table form.options-form fieldset{
+		padding: 0;
+	}
+
+	div#PrimaryContent table form.options-form select{
+		display: inline;
+		float: none;
+		font-size: 13px;
+		max-width: 135px;
+		min-width: 50px;
+		vertical-align: top;
+		width: 100px;
+	}
+
+	div#PrimaryContent table form.options-form button{
+		display: inline;
+		float: none;
+		font-size: 13px;
+		margin: 0;
+		padding: 2px;
+		vertical-align: top;
+		/*text-indent: -99999px;
+		width: 20px;*/
+	}
+	
+	
+	/* Accounts */
+	td span.minus{
+		margin-left: -.35em;
+	}
+	
+	
+/* iPad and lower */
+@media screen and (max-width: 768px) {
+
+	.extra-options{
+		display: block;
+	}
+
+}

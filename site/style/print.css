@@ -1,0 +1,31 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			all
+ *	@media			print
+ *	@browsers		all
+ *	
+ *	@since			08/2007
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	25/03/2010
+ *	
+ */
+
+body, div{
+	background-color: #FFF !important;
+	color: #000;
+}
+
+/* Hidden elements */
+div#Welcome, ul#Menu, ul#Submenu, div.breadcrumb, div#SecondaryContent{
+	display: none;
+}
+
+body, div#Container, div#Content, div#PrimaryContent, div#Footer{
+	width: 100%;
+}
+
+table{
+	width: 98%;
+}

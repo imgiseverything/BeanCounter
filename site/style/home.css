@@ -1,0 +1,98 @@
+/**
+ /** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			home/dashboard
+ *	@media			all
+ *	@browsers		all
+ *	
+ *	@since			10/2008
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	13/08/2010
+ *	
+ */
+
+	
+#PrimaryContent{
+	width: 700px;
+}	
+
+	div.data{
+		width: 680px;
+	}
+	
+	div.data table{
+		width: 660px;
+	}
+	
+		div.data table caption{
+			margin: 0;
+		}
+	
+	#PrimaryContent table form.options-form{
+		width: auto;
+	}
+	
+#SecondaryContent{
+	background: #F5F5F5;
+	clear: none;
+	float: right;
+	margin: 80px 0;
+	width: 320px;
+}	
+
+#SecondaryContent table{
+	width: 300px;
+}
+
+table.calendar th{
+	padding: 2px;
+	text-align: center;
+}
+
+table.calendar td{
+	padding: 2px 0;
+}
+
+td div.day{
+	float: right;
+	margin: 0;
+}
+
+#SecondaryContent form{
+	margin: 0;
+}
+
+#SecondaryContent table.calendar caption{
+	background: transparent;
+	margin-top: 0;
+	padding: 0 0 10px;
+}
+
+
+#SecondaryContent table.calendar td ul.bookings{
+	float: left;
+	clear: both;
+	padding: 0;
+	width: 100%;
+}
+
+#SecondaryContent table.calendar td ul.bookings li{
+	clear: both;
+	float: left;
+	margin: 0;
+	width: 100%;
+}
+
+table.calendar td ul.bookings li a {
+	margin: 0 auto 2px;
+	padding: 3px 0;
+	width: 90%;
+}
+
+#SecondaryContent table.calendar td button{
+	background: transparent;
+	border: none;
+	padding: 0;
+}

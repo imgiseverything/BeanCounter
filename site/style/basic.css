@@ -1,0 +1,66 @@
+/**
+ *
+ *	Bean Counter CSS
+ *
+ *  pages: login/register/install/errors
+ *	media: all
+ * 
+ */ 
+ 
+div#Container{
+	margin-top: 20px;
+}
+
+div#Header{
+	background: #EDEDED;
+}
+
+	span#Logo{
+		font-size: 120%;
+	}
+
+div#PrimaryContent{
+	width: 100%;
+}
+
+div#admin_links,
+div#Header form,
+span#tagline,
+div#welcome,
+ul#menu,
+div#Footer{
+	display: none;
+}
+
+
+div#Branding{
+	float: none;
+	xheight: 77px;
+}
+
+div#Header div#Branding span#Logo{
+	float: none;
+	margin: 10px auto;
+}
+
+h1{font-size: 200%;text-align: center;}
+div.buttons{float: none !important;margin: 60px 280px;text-align: center;}
+div.buttons a.button{float: none; font-size: 200%;}
+
+h1, h2, h3, h4, h5, h6, p{
+	clear: both;
+	line-height: 150%;
+	margin: 0;
+	padding: 0 10px .5em;
+}
+
+h1, h2, h3, h4, h5, h6{
+	padding: 1em 10px 10px;
+}
+
+table a.button{
+height: 16px;
+margin: 10px;
+width: 16px;
+vertical-align: middle;
+}
