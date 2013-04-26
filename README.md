@@ -1,6 +1,6 @@
 ## Bean Counter App
 
-A (hopefully) simple PHP invoicing/small buisness management tool for digital freelancers See the [project page](http://beancounterapp.com) for more details.  Released under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
+A (hopefully) simple PHP invoicing/small buisness management tool for digital freelancers See the [project page](http://beancounterapp.com) for more details.  
 
 
 ## Installation
@@ -23,3 +23,23 @@ Go to http://whatever-you-have-called-your-beancounter-installation.com/ and the
 
 ### v0.5b
 * Code reworked to make it simpler and work better for other people
+
+
+
+
+
+
+## Licensing
+
+
+Released under the [Creative Commons Attribution-NonCommercial 3.0 License](http://creativecommons.org/licenses/by-nc/3.0/).
+
+The following also applies:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
