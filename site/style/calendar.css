@@ -15,36 +15,36 @@
  
 
  
- table.calendar th{
+.calendar th{
  	text-align: left;
  }
  
 
- table.calendar td{
- 	border: 1px solid #DDD;
+.calendar td{
+ 	border: 1px solid #ddd;
   	width: 120px;
  	padding: 10px 0;
  	vertical-align: top;
  }
  
- #SecondaryContent table.calendar td{
+ #SecondaryContent .calendar td{
  	width: auto;
  }
  
  td.empty{
- 	background: #EEE;
+ 	background: #eee;
  }
  
  td div.day{
- 	color: #DFDFDF !important;
+ 	color: #dfdfdf !important;
  	font-size: 85%;
  	margin: 0 10px;
  	text-align: right;
  }
  
- 	.calendar div.day form,
- 	.calendar div.day form fieldset,
- 	.calendar div.day form fieldset button{
+ 	.calendar .day form,
+ 	.calendar .day fieldset,
+ 	.calendar .day button{
  		background: transparent;
  		border: none;
  		clear: none;
@@ -73,16 +73,16 @@
  		color: #333;
  	}
  	
- 	.calendar div.day form fieldset button:hover{
+ 	.calendar button:hover{
  		text-decoration: none;
  	}
  
-  table.calendar td ul.bookings{
+ .calendar .bookings{
   	margin: 10px 0 0;
   	padding: 0;
   }
   
-  	table.calendar td ul.bookings li{
+  	.calendar .bookings li{
   		font-size: 90%;
   		line-height: 1.2;
   		list-style: none !important;
@@ -91,7 +91,7 @@
   		width: 96%;
   	}
   	
-  	table.calendar td ul.bookings a{
+  	.calendar .bookings a{
   		background: #DFDFDF;
   		color: inherit;
   		display: block;
@@ -101,15 +101,10 @@
   		width: 100%;
   	}
   	
-  		table.calendar td ul.bookings a:hover{
-  			background: #F5F5F5;
+  		.calendar .bookings a:hover{
+  			background: #f5f5f5;
   		}
-  	
-  	table.calendar td ul.bookings li.all-day a{
-  		
-  	}
-  	
  
-table.calendar td ul.bookings .multiple a{
-	max-width: 133px;
-}
+		.calendar .bookings .multiple a{
+			max-width: 133px;
+		}

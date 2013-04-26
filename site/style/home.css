@@ -26,11 +26,11 @@
 		width: 660px;
 	}
 	
-		div.data table caption{
+		div.data caption{
 			margin: 0;
 		}
 	
-	#PrimaryContent table form.options-form{
+	#PrimaryContent .options-form{
 		width: auto;
 	}
 	
@@ -52,10 +52,11 @@ table.calendar th{
 }
 
 table.calendar td{
+	min-height: 20px;
 	padding: 2px 0;
 }
 
-td div.day{
+table.calendar .day{
 	float: right;
 	margin: 0;
 }
@@ -64,34 +65,38 @@ td div.day{
 	margin: 0;
 }
 
-#SecondaryContent table.calendar caption{
+.calendar caption{
 	background: transparent;
 	margin-top: 0;
 	padding: 0 0 10px;
 }
 
 
-#SecondaryContent table.calendar td ul.bookings{
+.calendar .bookings{
 	float: left;
 	clear: both;
 	padding: 0;
 	width: 100%;
 }
 
-#SecondaryContent table.calendar td ul.bookings li{
+.calendar .bookings li{
 	clear: both;
 	float: left;
 	margin: 0;
 	width: 100%;
 }
 
-table.calendar td ul.bookings li a {
+table.calendar .bookings a {
 	margin: 0 auto 2px;
 	padding: 3px 0;
-	width: 90%;
+	width: 100%;
 }
 
-#SecondaryContent table.calendar td button{
+table.calendar .multiple a {
+	width: 101%;
+}
+
+.calendar button{
 	background: transparent;
 	border: none;
 	padding: 0;
