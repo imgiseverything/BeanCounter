@@ -11,22 +11,29 @@
  *	@lastmodified	29/04/2013
  *	
  */
+ 
+ 
+*{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 #Menu, 
 #Submenu, 
-div#Welcome, 
-div.breadcrumb, 
-div#SecondaryContent{
+#Welcome, 
+.breadcrumb, 
+#SecondaryContent{
 	display: none;
 }
 
 
 
-div#Container .inner, 
-div#Header .inner, 
-div#Branding, div#Content .inner, 
-div#PrimaryContent, 
-div#Footer .inner{
+#Container .inner, 
+#Header .inner, 
+#Branding, #Content .inner, 
+#PrimaryContent, 
+#Footer .inner{
 	width: 360px;
 }
 
@@ -34,36 +41,48 @@ div#Footer .inner{
 	width: 460px;
 }
 
-div#Container{
+#Container{
 	margin-top: 20px;
 	width: 460px;
 }
 
 
-div#PrimaryContent{
+#PrimaryContent{
 	margin: 0 auto;
 	float: none;
 }
 
-
-div#PrimaryContent form fieldset{
-	margin: 0 auto;
-	width: 320px;
+#Header span#Logo{
+	padding: 40px 0 0;
 }
 
 
-div#PrimaryContent form fieldset input{
+fieldset{
+	margin: 0 auto;
 	width: 100%;
 }
 
+body.login input{
+	width: 100%;
+}
 
-div#Footer div.vcard{
+body.login input[type="checkbox"]{
+	width: auto;
+}
+
+
+
+div.vcard{
 	width: 300px;
 }
 
-div#Footer #Copyright{
+#Copyright{
 	float: none;
 	text-align: center;
+}
+
+body.login button{
+	width: 100%;
 }
 
 form a.button{
