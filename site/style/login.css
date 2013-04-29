@@ -8,7 +8,7 @@
  *	
  *	@since			06/2008
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	25/03/2010
+ *	@lastmodified	29/04/2013
  *	
  */
 
@@ -30,8 +30,13 @@ div#Footer .inner{
 	width: 360px;
 }
 
+#BeanCounter .inner{
+	width: 460px;
+}
+
 div#Container{
 	margin-top: 20px;
+	width: 460px;
 }
 
 
@@ -48,7 +53,7 @@ div#PrimaryContent form fieldset{
 
 
 div#PrimaryContent form fieldset input{
-	max-width: 305px;
+	width: 100%;
 }
 
 
@@ -59,10 +64,6 @@ div#Footer div.vcard{
 div#Footer #Copyright{
 	float: none;
 	text-align: center;
-}
-
-div#PrimaryContent form fieldset input#password{
-	width: 120px;
 }
 
 form a.button{

@@ -46,6 +46,6 @@
                 	<button name="submit" type="submit">Submit</button>
                 </fieldset>
             </form>
-            <p>I've got an account but <a href="/forgot/<?php echo $url_forwarder; ?>">I've forgotten my password</a><br /> <em>or</em> <br />I haven't got an account so, <a href="/register/<?php echo $url_forwarder; ?>"> I need to register</a>.</p>
+            <p>I've got an account but <a href="/forgot/<?php echo $url_forwarder; ?>">I've forgotten my password</a>.</p>
 	</div>
 <?php include($objTemplate->getFooterHTML()); ?>
