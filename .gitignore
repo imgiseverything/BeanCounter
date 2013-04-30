@@ -25,3 +25,4 @@ Thumbs.db
 # Misc #
 ######################
 config.php
+site/cache/*
