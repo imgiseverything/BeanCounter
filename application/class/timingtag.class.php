@@ -52,7 +52,7 @@ class TimingTag extends Scaffold{
 	
 		$this->_name = 'timing tag';
 		$this->_namePlural = 'timing tags';
-		$this->_folder = '/timings/tags';
+		$this->_folder = '/timings/tags/';
 		$this->_sql['main_table'] = 'timing_tag';
 		
 		$this->_filter = $filter;

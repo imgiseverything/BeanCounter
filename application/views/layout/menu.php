@@ -29,11 +29,13 @@ if(isset($objAuthorise)):
 	    <li id="leads-link"<?php echo isURLSelected('/leads'); ?>><a href="/leads/">Leads</a>
 	    	<ul>
 	    		<li><a href="/leads/add/">Add a new lead</a>
+	    		<li><a href="/leads/types/">Lead types</a>
 	    	</ul>
 	    </li>
 	     <li id="timings-link"<?php echo isURLSelected('/timings'); ?>><a href="/timings/">Time tracking</a>
 	    	<ul>
 	    		<li><a href="/timings/add/">Add new timing</a>
+	    		<li><a href="/timings/tags/">Timing tags</a>
 	    	</ul>
 	    </li>
 	    <?php endif; // end if not basic ?>
