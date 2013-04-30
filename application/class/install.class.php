@@ -18,7 +18,7 @@
  *	@author			philthompson.co.uk
  *	@since			16/06/2008
  *	
- *	@lastmodified	14/08/2010
+ *	@lastmodified	30/04/2013
  *	
  *	=========================================================================
  *	
@@ -533,15 +533,6 @@ class Install{
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
 		
-		/*
-			Table structure for table `outgoing_category`
-		*/
-		$query = "INSERT INTO `outgoing` (`outgoing_supplier`, `outgoing_category`, `outgoing_payment`, `title`, `description`, `status`, `transaction_id`, `transaction_date`, `price`, `claimable_price`, `date_added`) VALUES
-		(1, 2, 1, %s, '', 1, '0001', Now(), %s, %s, Now());";
-		// Run query
-		$prepared_query = @$this->_db->prepare($query, $this->_application->getApplicationName() . ' software', APPLICATION_PRICE, APPLICATION_PRICE);
-		@$this->_db->query($prepared_query);
-		
 		
 		/*
 		 Table structure for table `outgoing_documentation`
@@ -562,7 +553,7 @@ class Install{
 		  KEY `status` (`status`),
 		  FULLTEXT KEY `title` (`title`),
 		  FULLTEXT KEY `description` (`description`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Documentation as files/images for outgoings eg receipts';";
+		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Documentation as files/images for outgoings eg PDF receipts';";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -666,15 +657,6 @@ class Install{
 		@$this->_db->query($prepared_query);
 		
 
-		/*
-		 Content for `outgoing_supplier`
-		*/
-		$query = "INSERT INTO `outgoing_supplier` 
-		(`title`, `description`, `main_contact`, `address1`, `address2`, `address3`, `address4`, `postal_code`, `country`, `email`, `telephone`, `status`, `date_added`) VALUES
-		('Phil Thompson', 'Software', 'Phil Thompson', 'First Floor, 14 Russell Avenue', 'Whalley Range', 'Manchester', NULL, 'M16 8JQ', 'UK', 'hello@philthompson.co.uk', '+447764754097', 1, Now());";
-		// Run query
-		$prepared_query = @$this->_db->prepare($query);
-		@$this->_db->query($prepared_query);
 		
 		/*
 			Table structure for table `payment_method`
@@ -738,7 +720,7 @@ class Install{
 		  KEY `requires_deposit` (`requires_deposit`),
 		  KEY `project_stage` (`project_stage`),
 		  KEY `status` (`status`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Projects are invoices or proposals. They contain tasks (line items) and/or discounts.';
 		";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
@@ -770,7 +752,7 @@ class Install{
 		  PRIMARY KEY  (`id`),
 		  KEY `project` (`project`),
 		  KEY `status` (`status`)
-		) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
+		) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='An invoice may need a discount';";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -794,7 +776,7 @@ class Install{
 		  KEY `project` (`project`),
 		  KEY `payment_method` (`payment_method`),
 		  KEY `status` (`status`)
-		) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
+		) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Record of payments for an invoice';";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -812,7 +794,7 @@ class Install{
 		  `date_edited` datetime default NULL,
 		  PRIMARY KEY  (`id`),
 		  KEY `status` (`status`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Where is this project up to? About to start? Invoiced?';
 		";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
@@ -850,7 +832,7 @@ class Install{
 		  PRIMARY KEY  (`id`),
 		  KEY `project` (`project`),
 		  KEY `status` (`status`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Individual task (line item) for invoices/proposals.';
 		";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
@@ -918,7 +900,7 @@ class Install{
 		  `date_edited` datetime DEFAULT NULL,
 		  PRIMARY KEY (`id`),
 		  KEY `project` (`project`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8;";
+		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Record of time spent on a project (in hours).';";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -932,7 +914,7 @@ class Install{
 		  `date_added` datetime NOT NULL,
 		  `date_edited` datetime DEFAULT NULL,
 		  PRIMARY KEY (`id`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8;";
+		) ENGINE=MyISAM  DEFAULT CHARSET=utf8  COMMENT='Tags for Timings - to see what type of work is most popular.';";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -1019,17 +1001,17 @@ class Install{
 		if($all_data_present === true){
 			
 			$query = "INSERT INTO config (title, description, max_length, value) VALUES
-			('Business name', 'The name of your website/brand name', 50, %s),
-			('Address line 1', 'First line of company address', 100, 'Address line 1'),
-			('Address line 2', 'Second line of company address', 100, ''),
-			('Address line 3', 'Third line of company address', 100, ''),
-			('City/Town', 'The city/town where this company is based', 100, 'City/Town'),
-			('County/State', 'The county/state that this organisation is in.', 100, 'County'),
-			('Postal code', 'The postal code of this organisation', 15, ''),
+			('Business name', 'The business name you trade under (which may be your own name or your company name)', 50, %s),
+			('Address line 1', 'First line of your business address', 100, 'Address line 1'),
+			('Address line 2', 'Second line of your business address', 100, ''),
+			('Address line 3', 'Third line of your business address', 100, ''),
+			('City/Town', 'The city/town where this business is based', 100, 'City/Town'),
+			('County/State', 'The county/state that this business is in.', 100, 'County'),
+			('Postal code', 'The postal code of this business', 15, ''),
 			('Country', 'The country you are based in.', 255, 'UK'),
-			('Main telephone number', 'The telephone number for this organisation', 50, ''),
-			('Email address', 'Email address where contact forms go to', 99, %s),
-			('Main currency', 'The default currency for products for sales on this website', 50, 'GBP'),
+			('Main telephone number', 'The telephone number for your business', 50, ''),
+			('Email address', 'The email address that invoices are sent from', 99, %s),
+			('Main currency', 'The default currency that your business trades in', 50, 'GBP'),
 			('Bank account number','', '8', '12345678'), 
 			('Bank sort code','', '8','12-34-56'),
 			('IBAN', 'International bank account number', '30', 'GBkkBBBBSSSSSSCCCCCCCC'),
@@ -1037,7 +1019,7 @@ class Install{
 			('National insurance', 'Percentage of each incoming fee that goes towards your UK national insurance payment.', '50', '0'),
 			('VAT rate', 'Value added tax. Percentage of each incoming fee that is VAT. Leave blank if you do not pay VAT.', '50', '0'),
 			('Start of financial year', 'Upon which date (DD/MM) does your financial year start?', '4', '0604'),
-			('Invoice appendix', 'Default details about payment which appear at the bottom the invoice/proposals.', 20000, '')
+			('Invoice appendix', 'Default details about payment which appear at the bottom of invoices/proposals.', 20000, ' ')
 			;";
 			niceError($query);
 			
@@ -1106,7 +1088,7 @@ class Install{
 			
 			// No website name
 			if(!$business_name){
-				$user_feedback['content'][] = 'Website name. Call this your name or your business name';
+				$user_feedback['content'][] = 'Business name. Call this the name you trade under which may be your own name or your company name';
 			} //end if
 			
 			// No firstname
@@ -1126,7 +1108,7 @@ class Install{
 			
 			// No password
 			if(!$password_x){
-				$user_feedback['content'][] = 'Your password. We need a password so you can securely access this the system';
+				$user_feedback['content'][] = 'Your password. We need a password so you can securely access this system';
 			} //end if
 			
 		} // end else
