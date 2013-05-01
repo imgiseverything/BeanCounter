@@ -695,16 +695,16 @@ span.secondary-info{
 		width: 1060px;
 	}
 
-	.product-branding span.logo{
+	.product-branding .logo{
 		background: #111;
-		color: #FFF;
+		color: #fff;
 		display: block;
 		float: left;
-		font-size: 18px;
+		font-size: 14px;
 		margin: 0 20px;
-		padding: 5px 5px 2px;
+		padding: 5px 0 2px;
 		position: relative;
-		top: 12px;
+		text-decoration: none;
 	}
 
 
@@ -735,19 +735,9 @@ span.secondary-info{
 			.logged-in-status a:last-of-type{
 				padding-right: 0;
 			}
-			
-	/*.logged-in-status a.button{
-		background: #CCC;
-		border-color: #BBB;
-		border-radius: 0;
-		display: inline-block;
-		float: none;
-		margin: 0;
-		padding: 1 3px;
-	}*/
 
 /* Holding div/frame */
-#Container{
+.site-container{
 	margin: 0 auto 20px;
 	width: 1060px;
 }

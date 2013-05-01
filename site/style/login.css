@@ -19,9 +19,8 @@
 	box-sizing: border-box;
 }
 
-#Menu, 
-#Submenu, 
-#Welcome, 
+.site-nav,
+.logged-in-status, 
 .breadcrumb, 
 #SecondaryContent{
 	display: none;
