@@ -8,7 +8,7 @@
  *	
  *	@since			12/2008
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	09/03/2010
+ *	@lastmodified	01/05/2013
  *	
  *	
  */
@@ -108,3 +108,62 @@
 		.calendar .bookings .multiple a{
 			max-width: 133px;
 		}
+		
+		
+/* Mini Calendar */
+
+.calendar-mini{
+	width: 300px;
+}
+
+.calendar-mini th{
+	padding: 2px;
+	text-align: center;
+}
+
+.calendar-mini td{
+	min-height: 20px;
+	padding: 2px 0;
+}
+
+.calendar-mini .day{
+	float: right;
+	margin: 0;
+}
+
+.calendar-mini caption{
+	background: transparent;
+	margin-top: 0;
+	padding: 0 0 10px;
+}
+
+
+.calendar-mini .bookings{
+	float: left;
+	clear: both;
+	padding: 0;
+	width: 100%;
+}
+
+.calendar-mini .bookings li{
+	clear: both;
+	float: left;
+	margin: 0;
+	width: 100%;
+}
+
+.calendar-mini .bookings a {
+	margin: 0 auto 2px;
+	padding: 3px 0;
+	width: 100%;
+}
+
+.calendar-mini .multiple a {
+	width: 101%;
+}
+
+.calendar-mini button{
+	background: transparent;
+	border: none;
+	padding: 0;
+}

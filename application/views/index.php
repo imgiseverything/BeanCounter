@@ -83,7 +83,7 @@
 	</div>
 	<div id="SecondaryContent">
 <?php if($objAuthorise->getLevel() == 'Superuser'): ?>
-		<table class="calendar">
+		<table class="calendar calendar-mini">
 			<caption>This month&#8217;s <a href="<?php echo $objBooking->getFolder(); ?>" title="View in more detail">bookings</a></caption>
 	       		<thead>
 	       			<tr>

@@ -9,7 +9,7 @@
  *	
  *	@since			10/2008
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	26/04/2013
+ *	@lastmodified	01/05/2013
  *	
  */
 
@@ -42,62 +42,6 @@
 	width: 320px;
 }	
 
-.calendar{
-	width: 300px;
-}
-
-.calendar th{
-	padding: 2px;
-	text-align: center;
-}
-
-.calendar td{
-	min-height: 20px;
-	padding: 2px 0;
-}
-
-.calendar .day{
-	float: right;
-	margin: 0;
-}
-
-#SecondaryContent form{
-	margin: 0;
-}
-
-.calendar caption{
-	background: transparent;
-	margin-top: 0;
-	padding: 0 0 10px;
-}
-
-
-.calendar .bookings{
-	float: left;
-	clear: both;
-	padding: 0;
-	width: 100%;
-}
-
-.calendar .bookings li{
-	clear: both;
-	float: left;
-	margin: 0;
-	width: 100%;
-}
-
-.calendar .bookings a {
-	margin: 0 auto 2px;
-	padding: 3px 0;
-	width: 100%;
-}
-
-.calendar .multiple a {
-	width: 101%;
-}
-
-.calendar button{
-	background: transparent;
-	border: none;
-	padding: 0;
-}
+	#SecondaryContent form{
+		margin: 0;
+	}
