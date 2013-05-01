@@ -6,7 +6,7 @@
  */
  
 ?>
-<div id="Welcome" class="logged-in">
+<div class="logged-in-status logged-in">
 	<div class="inner">
 		<p><strong>Hello <a href="/users/edit/<?php echo $objAuthorise->getId(); ?>/"><?php echo $objAuthorise->getName(); ?></a></strong>
 		<?php if($objAuthorise->getLevel() == 'Superuser'): ?>

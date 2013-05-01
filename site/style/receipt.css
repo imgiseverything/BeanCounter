@@ -49,9 +49,9 @@
 }
 
 body.download, 
-.download-container #Container, 
-.download-container #Header, 
-.download-container #Content, 
+.download-container .site-container, 
+.download-container .site-header, 
+.download-container .site-content, 
 .download-container #PrimaryContent{
 	width: 640px;
 }
@@ -61,7 +61,7 @@ body.download,
 	text-align: center;
 }
 
-.download-container #Container{
+.download-container .site-container{
 	background: #FFF;
 	border-radius: 6px;
 	margin-top: 0;
@@ -78,7 +78,7 @@ body.download,
 		text-align: center;
 	}
 
-	.download-container #Header{
+	.download-container .site-header{
 		border-bottom: 2px solid #DDD;
 		margin: 0;
 	}
@@ -113,7 +113,7 @@ body.download,
 		font-weight: bold;
 	}
 	
-	.download-container #Header .vcard{
+	.download-container .site-header .vcard{
 		clear: both;
 		padding-top: 10px;
 	}
@@ -157,7 +157,7 @@ body.download,
 		display: block;
 	}
 
-	.download-container #Header div.vcard div.fn{
+	.download-container .site-header div.vcard div.fn{
 		display: none;
 	}
 	

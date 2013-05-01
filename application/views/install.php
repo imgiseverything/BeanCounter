@@ -18,7 +18,7 @@
 	}
 
 	body{
-		background: #EEE;
+		background: #eee;
 		font: 16px sans-serif;
 		margin: 0 auto;
 		padding: 0;
@@ -35,8 +35,8 @@
 		padding: 0 20px 20px;
 	}
 	
-	#Container{
-		background: #FFF;
+	.site-container{
+		background: #fff;
 		border-bottom: 5px solid #ddd;
 		color: #333;
 		margin: 40px auto;
@@ -45,7 +45,7 @@
 	}
 		
 	form{
-		background: #F5F5F5;
+		background: #f5f5f5;
 		padding: 20px 0;
 	}
 	
@@ -80,7 +80,7 @@
 	}
 	
 	input{
-		border: 1px solid #DDD;
+		border: 1px solid #ddd;
 		color: #666;
 		padding: 10px 10px;
 		width: 100%;
@@ -128,16 +128,16 @@
 	}
 	
 	div.feedback{
-		background: #FFE;
+		background: #ffe;
 		margin: 20px;
 	}
 
 	div.feedback.error{
-		background-color: #FFB;
+		background-color: #ffb;
 	}
 
 	div.feedback.success{
-		background-color: #E6EFC2;
+		background-color: #e6efc2;
 	}
 
 	div.feedback p,
@@ -199,8 +199,8 @@
 </style>
 </head>
 <body>
-<div id="Container">
-	<div id="Content">
+<div class="site-container">
+	<div class="group site-content">
 		<div class="inner">
 
 			<div id="PrimaryContent">

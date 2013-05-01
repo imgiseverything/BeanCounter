@@ -15,10 +15,9 @@
 <title><?php echo $objTemplate->getTitle(); ?></title>
 <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<?php echo $objTemplate->getDescription(); ?>
 <?php echo $objTemplate->getStyle(); ?>
 <?php echo $objTemplate->getRobots(); ?>
 </head>
 <body id="<?php echo $objTemplate->getBodyId(); ?>" class="<?php echo $objTemplate->getBodyClass(); ?>">
-<div id="Container">
-	<div id="Content">
+<div id="Container" class="site-container">
+	<div id="Content"class="site-content">

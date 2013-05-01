@@ -662,6 +662,16 @@ span.secondary-info{
 	font-weight: normal;
 }
 
+
+/* layout classes */
+
+.group{
+	clear: both;
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
 .inner{
 	margin: 0 auto;
 	position: relative;
@@ -674,18 +684,18 @@ span.secondary-info{
  */
  
 /* Bean Counter branding */
-#BeanCounter{
+.product-branding{
 	background: #111;
 	float: left;
 	margin: -20px 0 0;
 	width: 100%;
 }
 
-	#BeanCounter .inner{
+	.product-branding .inner{
 		width: 1060px;
 	}
 
-	#BeanCounter span.logo{
+	.product-branding span.logo{
 		background: #111;
 		color: #FFF;
 		display: block;
@@ -699,7 +709,7 @@ span.secondary-info{
 
 
 /* Welcome note */
-#Welcome{
+.logged-in-status{
 	float: left;
 	font-size: 90%;
 	padding-bottom: 3px;
@@ -707,26 +717,26 @@ span.secondary-info{
 	width: 100%;
 }
 
-	#Welcome .inner{
+	.logged-in-status .inner{
 		width: 1060px;
 	}
 
-	#Welcome p{
+	.logged-in-status p{
 		float: right;
 		text-align: right;
 		padding: 5px 20px 0;
 	}
 	
-		#Welcome a{
+		.logged-in-status a{
 			color: inherit;
 			padding: 0 .25em;
 		}
 			
-			#Welcome a:last-of-type{
+			.logged-in-status a:last-of-type{
 				padding-right: 0;
 			}
 			
-	/*#Welcome a.button{
+	/*.logged-in-status a.button{
 		background: #CCC;
 		border-color: #BBB;
 		border-radius: 0;
@@ -743,7 +753,7 @@ span.secondary-info{
 }
 
 	/* Header */
-	#Header{
+	.site-header{
 		background: #FFF;
 		float: left;
 		width: 100%;
@@ -754,8 +764,8 @@ span.secondary-info{
 			float: left;
 		}
 	
-		#Header h1#Logo,
-		#Header span#Logo{
+		.site-header h1#Logo,
+		.site-header span#Logo{
 			color: #111;
 			display: block;
 			font-size: 36px;
@@ -765,20 +775,20 @@ span.secondary-info{
 			text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 		}
 		
-			#Header span#Logo a{
+			.site-header span#Logo a{
 				color: #111;
 				display: block;
 				text-decoration: none;
 			}
 			
 		/* Search form */	
-		#Header form{
+		.site-header form{
 			float: right;
 			margin: 10px;
 		}
 		
 		/* Main menu */
-		nav{
+		.site-nav{
 			background: #999; 
 			border-top: 2px solid #FFF;
 			border-top-color: rgba(0, 0, 0, 0.2);
@@ -787,12 +797,12 @@ span.secondary-info{
 			width: 100%;
 		}
 		
-			nav ul{
+			.site-nav ul{
 				clear: both;
 				padding: 0;
 			}
 		
-			nav ul li{
+			.site-nav li{
 				float: left;
 				list-style: none;
 				margin: 0;
@@ -800,15 +810,7 @@ span.secondary-info{
 				position: relative;
 			}	
 			
-				nav ul li.first{
-					
-				}
-			
-				nav ul li.last{
-					
-				}
-			
-				nav ul li a{
+				.site-nav a{
 					color: #fff !important;
 					display: block;
 					float: left;
@@ -817,32 +819,24 @@ span.secondary-info{
 					text-decoration: none;
 					text-shadow: 0 1px 0 rgba(119, 119, 119, 0.2);
 					vertical-align: text-bottom;
-					/*width: 93px; */
 				}	
 				
-				nav ul li a:hover{
-					background: rgb(170, 170, 170);
-					background: rgba(255, 255, 255, 0.1);
+				.site-nav a:hover{
+					background: #a3a3a3;
 				}	
 				
 				/* active links*/
-				nav ul li.selected a,
-				body.home nav ul li#home-link a{
+				.site-nav .selected a,
+				body.home #home-link a{
 					background: rgb(79, 79, 79); /* #777 */
 					background: rgba(79, 79, 79, 0.2);
 					text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 				}	
-				
-				nav ul li:first-child a,
-				nav ul li:last-child a{
-					/*width: 94px;*/
-				}
 			
 			/* Sub menu */	
 			
-			nav ul li ul{
-				background: rgb(79, 79, 79); /* #777 */
-				background: rgba(79, 79, 79, 0.8);
+			.site-nav li ul{
+				background: #a3a3a3;
 				clear: both;
 				display: none;
 				left: 0;
@@ -854,20 +848,18 @@ span.secondary-info{
 				z-index: 999;
 			}
 			
-				nav ul li:hover ul{
+				.site-nav li:hover ul{
 					display: block;
 				}
 			
-				nav ul li ul li{
+				.site-nav li li{
 					display: block;
 					float: none;
-					list-style: none;
-					margin: 0;
-					padding: 0;
+					width: 100%;
 				}	
 			
-				nav ul li ul li a{
-					color: #FFF;
+				.site-nav li li a{
+					color: #fff;
 					display: block;
 					float: none;
 					font-size: 14px;
@@ -877,21 +869,20 @@ span.secondary-info{
 					vertical-align: text-bottom;
 				}	
 				
-				nav ul li ul li a:hover{
-					background: #EEE;
-					background: rgba(255, 255, 255, 0.4);
+				.site-nav li li a:hover{
+					background: #a9a9a9;
 					color: #333;
 				}	
 				
 				/* active links*/
-				nav ul li ul li.selected a{
-					color: #EEE;
+				.site-nav li li.selected a{
+					color: #eee;
 					text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 				}	
 			
 	/* Content holder */
-	#Content{
-		background: #FFF;
+	.site-content{
+		background: #fff;
 		clear: both;
 		display: table;
 		float: left;
@@ -902,15 +893,15 @@ span.secondary-info{
 
 		/* Primary content */
 		#PrimaryContent{
-			background: #FFF;
+			background: #fff;
 			float: left;
 			padding: 20px 0;
 			width: 100%;
 		}
 		
 			/* Breadcrumb trail */
-			div.breadcrumb{
-				background: #EEE;
+			.breadcrumb{
+				border-bottom: 1px solid #eee;
 				font-size: 13px;
 				margin: 0 0 30px;
 				padding: 10px;
@@ -949,30 +940,26 @@ span.secondary-info{
 			} 
 			
 			/* Data list */
-			#PrimaryContent ul.data_list{
+			#PrimaryContent .data_list{
 			
 			}
 			
-				#PrimaryContent ul.data_list li{
+				#PrimaryContent .data_list li{
 					border-bottom: 1px solid #DDD;
 					list-style: none;
 					margin-left: 0;
 					padding: 10px 0;
 				}
 				
-					#PrimaryContent ul.data_list li span.type{
+					#PrimaryContent .data_list li span.type{
 						font-size: 85%;
 						text-transform: uppercase;
 					}
 				
-					#PrimaryContent ul.data_list li a{
+					#PrimaryContent .data_list li a{
 						display: block;
 					}
-			
-			
-			
-				
-						
+
 		
 		/* Secondary content */
 		#SecondaryContent,
@@ -1148,7 +1135,7 @@ span.secondary-info{
 			
 		
 	/* Footer */
-	#Footer{
+	.site-footer{
 		background: #EEE;
 		border-top: 5px solid #BBB;
 		clear: both;
@@ -1160,7 +1147,7 @@ span.secondary-info{
 	
 		
 	
-		#Footer small{
+		.site-footer small{
 			display: block;
 			float: right;
 			padding: 20px 0;
@@ -1212,13 +1199,13 @@ span.secondary-info{
 		margin: 0 auto;
 	}
 	
-	#BeanCounter span.logo{
+	.product-branding span.logo{
 		font-size: 14px;
 		margin: 0;
 		top: 0;
 	}
 	
-	#Welcome p{
+	.logged-in-status p{
 		float: none;
 		padding: 5px;
 		text-align: left;

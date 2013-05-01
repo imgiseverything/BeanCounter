@@ -9,7 +9,7 @@
  
 if(isset($objAuthorise)):
 ?>
-<nav id="Menu">
+<nav class="site-nav">
 	<ul class="inner">
 		<li id="home-link"><a href="/" accesskey="1">Dashboard</a></li>
 	    <?php if($objAuthorise->getStatus() && $objAuthorise->getStatus() == 'logged-in'): // show menu items if the user is logged in ?>

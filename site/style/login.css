@@ -29,19 +29,19 @@
 
 
 
-#Container .inner, 
-#Header .inner, 
+.site-container .inner, 
+.site-header .inner, 
 #Branding, #Content .inner, 
 #PrimaryContent, 
-#Footer .inner{
+.site-footer .inner{
 	width: 360px;
 }
 
-#BeanCounter .inner{
+.product-branding .inner{
 	width: 460px;
 }
 
-#Container{
+.site-container{
 	margin-top: 20px;
 	width: 460px;
 }
@@ -52,7 +52,7 @@
 	float: none;
 }
 
-#Header span#Logo{
+.site-header span#Logo{
 	padding: 40px 0 0;
 }
 

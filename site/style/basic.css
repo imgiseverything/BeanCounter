@@ -7,11 +7,11 @@
  * 
  */ 
  
-div#Container{
+.site-container{
 	margin-top: 20px;
 }
 
-div#Header{
+.site-header{
 	background: #EDEDED;
 }
 
@@ -24,11 +24,10 @@ div#PrimaryContent{
 }
 
 div#admin_links,
-div#Header form,
+.site-header form,
 span#tagline,
-div#welcome,
-ul#menu,
-div#Footer{
+.logged-in-status,
+.site-footer{
 	display: none;
 }
 
@@ -38,7 +37,7 @@ div#Branding{
 	xheight: 77px;
 }
 
-div#Header div#Branding span#Logo{
+.site-header div#Branding span#Logo{
 	float: none;
 	margin: 10px auto;
 }

@@ -29,8 +29,8 @@
 </head>
 <body class="download invoice">
 <div class="download-container">
-<div id="Container">
-	<div id="Header">
+<div class="site-container">
+	<div class="group site-header">
 		<div class="date"><?php echo DateFormat::getDate('date', $properties['transaction_date']);?></div>
 	<?php echo $objTemplate->getBranding(); ?>
 	<?php echo $objVcard->getVcard(); ?>

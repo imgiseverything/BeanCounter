@@ -29,8 +29,8 @@
 	<div id="Download">
 		<p><a href="http://<?php echo $objApplication->getSiteUrl(); ?><?php echo $objScaffold->getFolder(); ?>pdf/<?php echo md5(SECRET_PHRASE . $objScaffold->getId()); ?>/">Download this document as a PDF (beta)</a></p>
 	</div>
-<div id="Container">
-	<div id="Header">
+<div class="site-container">
+	<div class="group site-header">
 		<div class="date">
 		<?php
 		 // If the invoice is fully paid up: state when the invoice was paid

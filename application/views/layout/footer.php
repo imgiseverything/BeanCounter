@@ -7,7 +7,7 @@
 ?>
 		</div>
 	</div>
-	<footer id="Footer" class="group">
+	<footer class="group site-footer">
 		<div class="inner">
 			<small><?php echo $objTemplate->getCopyright(); ?></small>
 	    </div>

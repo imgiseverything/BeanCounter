@@ -13,13 +13,12 @@
  *	
  */
  
-
+ 
  
 .calendar th{
  	text-align: left;
  }
  
-
 .calendar td{
  	border: 1px solid #ddd;
   	width: 120px;
@@ -27,15 +26,12 @@
  	vertical-align: top;
  }
  
- #SecondaryContent .calendar td{
- 	width: auto;
- }
- 
- td.empty{
+ .calendar .empty,
+ .calendar td:empty{
  	background: #eee;
  }
  
- td div.day{
+ .calendar .day{
  	color: #dfdfdf !important;
  	font-size: 85%;
  	margin: 0 10px;
@@ -71,9 +67,6 @@
  	
  	.calendar button:hover{
  		color: #333;
- 	}
- 	
- 	.calendar button:hover{
  		text-decoration: none;
  	}
  
@@ -124,6 +117,7 @@
 .calendar-mini td{
 	min-height: 20px;
 	padding: 2px 0;
+	width: auto;
 }
 
 .calendar-mini .day{
@@ -136,7 +130,6 @@
 	margin-top: 0;
 	padding: 0 0 10px;
 }
-
 
 .calendar-mini .bookings{
 	float: left;

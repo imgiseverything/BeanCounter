@@ -16,22 +16,20 @@
 		<title><?php echo $objTemplate->getTitle(); ?></title>
 		<script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
 		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<?php echo $objTemplate->getDescription(); ?>
 		<?php echo $objTemplate->getStyle(); ?>
-		<link rel="stylesheet" type="text/css" media="print" href="/style/print.css" />
+		<link rel="stylesheet" media="print" href="/style/print.css" />
 		<link rel="home" title="Home" href="http://<?php echo $objApplication->getSiteUrl(); ?>/" />
-		<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
 		<?php echo $objTemplate->getRobots(); ?>
 	</head>
 <body id="<?php echo $objTemplate->getBodyId(); ?>" class="<?php echo $objTemplate->getBodyClass(); ?>">
-<div id="BeanCounter" class="group">
+<div class="group product-branding">
 	<div class="inner">
-		<span class="logo">Bean Counter</span>
+		<a href="<?php echo $objApplication->getApplicationUrl(); ?>" class="logo"><?php echo $objApplication->getApplicationName(); ?></a>
 	</div>
 </div>
 <?php include($objApplication->getViewFolder() . $objTemplate->getWelcomeNote()); ?>
-<div id="Container" class="group">
-    <header id="Header" class="group">
+<div class="site-container">
+    <header class="group site-header">
     	<div class="inner">
         	<?php echo $objTemplate->getBranding(); ?>
         </div>
@@ -40,5 +38,5 @@
 	// Menu
 	include_once($objApplication->getViewFolder() . $objTemplate->getMenu()); 
 ?>
-<div id="Content" class="group">
+<div class="group site-content">
 	<div class="inner">

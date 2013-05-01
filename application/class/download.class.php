@@ -181,14 +181,14 @@ class Download{
 					</div>';
 				}
 				
-				$this->_fileHeader .= '<div id="Container">
-				<div id="Header">
+				$this->_fileHeader .= '<div class="site-container">
+				<div class="group site-header">
 				' . $objTemplate->getBranding() . '
 				<div class="date">' . DateFormat::getDate('date', date('Y-m-d H:i:s')) . '</div>' . 
 				$objVcard->getVcard() . '
 				</div>
 				<hr>
-				<div id="Content">
+				<div class="group site-content">
 				<div id="PrimaryContent">
 				';
 				
