@@ -10,10 +10,7 @@
  *	@since		27/02/2008
  *	
  *	edited by:  Phil Thompson
- *	@modified	24/04/2013
- *
- *	Contents
- *	document.ready
+ *	@modified	02/05/2013
  *
  */
 
@@ -22,7 +19,10 @@
 (function ($) {
 
     beancounterAjaxFilter = {
-
+    
+    	config: {
+    		container: 'PrimaryContent'
+    	},
 
         // Run misc/generic functionality and call specific functions
         onReady: function () {
@@ -37,8 +37,7 @@
         
         
         	var self = this,
-        		containerId = 'PrimaryContent',
-				$container = $('#' + containerId),
+				$container = $('#' + self.config.container),
 				loader = '<div id="Loading">Loading new content&hellip;</div>';
 			
 			if($container.find('.ajax-container').length === 0){
@@ -58,12 +57,8 @@
 			})
 			.done(function(data) { 
 		
-				var ajaxData = $('<div>').html(data).find('#' + containerId).html();
+				var ajaxData = $('<div>').html(data).find('#' + self.config.container).html();
 				$(this).html(ajaxData);
-				// re-run function to allow future AJAX calls
-				if(typeof autoSubmitOptions == 'function'){
-		  			autoSubmitOptions();
-		  		}
 		
 			})
 			.fail(function() { } )
@@ -102,7 +97,7 @@
         	});
 
 			$form.find('input').bind('keyup', function() {
-		        if(searchTimeout != undefined) {
+		        if(searchTimeout !== undefined) {
 		            clearTimeout(searchTimeout);
 		        }
 		        searchTimeout = setTimeout(function() {
@@ -120,11 +115,6 @@
 				$form.submit();
 			});
 			
-			/*$form.on('click', 'a', function(e){		
-				var href = $(this).attr('href') + '&mode=ajax';
-				$form.submit();
-				e.preventDefault();
-			});*/
 		}
 
 	}

@@ -89,9 +89,6 @@
 		  		if(typeof styliseCalendar === 'function'){
 		  			styliseCalendar();
 		  		}
-		  		if(typeof autoSubmitOptions === 'function'){
-		  			autoSubmitOptions();
-		  		}
 		
 			})
 			.fail(function() { } )

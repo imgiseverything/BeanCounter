@@ -43,25 +43,6 @@ function ajaxClientVcard(){
 	});
 	
 }
- 
- 
-/**
- *	autoSubmitOptions
- */
-function autoSubmitOptions(){
-
-	var $optionsForm = $('#PrimaryContent').find('.options-form');
-	
-	if($optionsForm.length === 0){
-		return
-	}
-
-	$optionsForm.find('button').hide();
-	$optionsForm.change(function(){
-		window.location = $(this).find('option:selected').val();
-	});	
-	
-}
 
 
 
@@ -316,15 +297,15 @@ function styliseCalendar(){
 		i = 0,
 		reservedClasses = new Array('single', 'multiple');
 	
-	if($('table.calendar').length === 0){
+	if($('.calendar').length === 0){
 		return;
 	}
 	
 	
 	// Grab all the bookings then process the list and 
 	// create a new list of all the classes used on the bookings
-	$('table.calendar').each(function(){
-		bookings = $(this).find('ul.bookings li');
+	$('.calendar').each(function(){
+		bookings = $(this).find('.bookings').find('li');
 	});
 	
 
@@ -369,9 +350,8 @@ function styliseCalendar(){
 	var y;
 	for(y in uniques){
 		$('ul.bookings li.' + uniques[y] + ' a').css('background-color', colours[i]).css('color', '#FFF');
-		//console.log('ul.bookings li.' + uniques[y] + ' a MAKE IT ' + i);
 		i++;
-		// reset counter so we don't run out fo colours
+		// reset counter so we don't run out of colours
 		if(i >= colours.length){
 			i = 0;
 		}
@@ -483,17 +463,14 @@ function toggleProjectTasks(){
 		var $child = $(this).parent().parent().children('div.field');
 		
 		$child.slideToggle(slideSpeed);
-		//alert($this.text());
 		
 		if($(this).text() == toggleShowText){
 			$(this).text(toggleHideText);
 		} else{
 			$(this).text(toggleShowText);
 		}
-		
-		
+			
 	});
-	
 	
 	
 	if($manageTasks.find('.edit-task').length === 0){
@@ -522,8 +499,6 @@ function beancounterInit(){
 
 	$('.hidden').hide().removeClass('hidden');
 	
-	autoSubmitOptions();
-	
 	toggleProjectDetails();
 		
 	// Textarea autogrow: run onload and whenever people type inside a textarea
@@ -546,7 +521,6 @@ function beancounterInit(){
 	popularClients();
 		
 	closePopup();
-	
 	
 	beancounterSettings();
 	
