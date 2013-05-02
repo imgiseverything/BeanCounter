@@ -18,7 +18,10 @@
 (function ($) {
 
     beancounterAjaxPagination = {
-
+      
+    	config: {
+    		container: 'PrimaryContent'
+    	},
 
         // Run misc/generic functionality and call specific functions
         onReady: function () {
@@ -26,7 +29,7 @@
         	var self = this;
         	
         	
-        	$('#PrimaryContent').on('click', '.pagination a', function(e){
+        	$('#' + self.config.container).on('click', '.pagination a', function(e){
         	
         		
 				var	URL = $(this).attr("href"); // href value of clicked link
@@ -58,8 +61,7 @@
         loadByAjax: function(URL){
         
         	var self = this,
-        		containerId = 'PrimaryContent',
-				$container = $('#' + containerId),
+				$container = $('#' + self.config.container),
 				loader = '<div id="Loading">Loading new content&hellip;</div>',
 				jqxhr,
 				ajaxData;
@@ -81,7 +83,7 @@
 			})
 			.done(function(data) { 
 		
-				ajaxData = $('<div>').html(data).find('#' + containerId).html();
+				ajaxData = $('<div>').html(data).find('#' + self.config.container).html();
 				$(this).html(ajaxData);
 				// Re-run function to allow future AJAX calls
 		  		if(typeof styliseCalendar === 'function'){
