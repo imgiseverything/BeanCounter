@@ -921,7 +921,7 @@ span.secondary-info{
 			
 			/* Loading (AJAX holder) */
 			#Loading{
-				background: url("/images/icons/ajax_loading.gif") center top no-repeat;
+				background: transparent url(/site/images/icons/ajax_loading.gif) center top no-repeat;
 				color: #666;
 				font-size: 115%;
 				margin: 40px 0;
