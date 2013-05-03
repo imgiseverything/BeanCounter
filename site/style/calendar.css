@@ -20,7 +20,7 @@
  }
  
 .calendar td{
- 	border: 1px solid #ddd;
+ 	border: none;
   	width: 120px;
  	padding: 10px 0;
  	vertical-align: top;
@@ -28,7 +28,7 @@
  
  .calendar .empty,
  .calendar td:empty{
- 	background: #eee;
+ 	background: #d9d9d9;
  }
  
  .calendar .day{
@@ -106,7 +106,7 @@
 /* Mini Calendar */
 
 .calendar-mini{
-	width: 300px;
+	width: 260px;
 }
 
 .calendar-mini th{
@@ -115,7 +115,6 @@
 }
 
 .calendar-mini td{
-	min-height: 20px;
 	padding: 2px 0;
 	width: auto;
 }
@@ -123,11 +122,12 @@
 .calendar-mini .day{
 	float: right;
 	margin: 0;
+	min-height: 25px;
 }
 
 .calendar-mini caption{
 	background: transparent;
-	margin-top: 0;
+	margin-top: 20px;
 	padding: 0 0 10px;
 }
 

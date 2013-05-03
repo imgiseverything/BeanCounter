@@ -38,7 +38,7 @@
 	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination', 'jquery.date', 'jquery.datepicker', 'datepicker'));
+	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination', 'colorbox', 'jquery.form', 'jquery.date', 'jquery.datepicker', 'datepicker', 'ajax_filter'));
 	
 	// HTML header
 	include($objTemplate->getHeaderHTML());

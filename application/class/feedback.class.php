@@ -113,7 +113,7 @@
 						
 					}
 					
-					$this->_feedbackHTML = '<div class="feedback' . $type_class . '">' . "\n";
+					$this->_feedbackHTML = '<div class="group feedback' . $type_class . '">' . "\n";
 					$this->_feedbackHTML .= '<' . $this->_tags['heading'] . '>' . $title . '</' . $this->_tags['heading'] . '>' . "\n";
 					
 					// more than one message in feedback so show <ul>
