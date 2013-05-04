@@ -1,6 +1,8 @@
 ## Bean Counter App
 
-A (hopefully) simple PHP invoicing/small buisness management tool for digital freelancers See the [project page](http://beancounterapp.com) for more details.  
+A simple (PHP-based) invoicing/small business management tool for digital freelancers.
+
+See the [project page](http://beancounterapp.com) for more details.  
 
 
 ## Installation
