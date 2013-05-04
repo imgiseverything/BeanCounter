@@ -175,7 +175,9 @@ table{
 	
 	
 .extra-options{
-	display: none;
+	height: 1px;
+	min-width: 150px;
+	overflow: hidden;
 }
 
 	.extra-options li{
@@ -192,15 +194,17 @@ table{
 		content: '';
 	}
 
+tr .extra-options{
+  -webkit-transition: all 1.5s ease-in-out;
+  -moz-transition: all 1.5s ease-in-out;
+  -o-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
 tr:hover .extra-options{
-	display: block;
+	height: 50px;
 }
 
-
-	
-th.options{
-	width: 200px;
-}
 	
 	
 	

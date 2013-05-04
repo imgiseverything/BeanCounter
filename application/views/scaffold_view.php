@@ -20,6 +20,9 @@
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('jquery', 'beancounter'));
 	
+	// Menus
+	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());
+	
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>

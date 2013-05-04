@@ -30,10 +30,11 @@
 			<tr>
 				<?php if($type == 'invoice'): ?>
 				<td>&nbsp;</td>
-				<?php else: ?>
-				<td><small>* Expected due date</small></td>
-				<?php endif; ?>
 				<th scope="row" colspan="2">Subtotal</th>
+				<?php else: ?>
+				<td colspan="2"><small>* Expected due date</small></td>
+				<th scope="row">Subtotal</th>
+				<?php endif; ?>
 				<td><?php echo currency($total); ?></td>
 			</tr>
 		</tfoot>

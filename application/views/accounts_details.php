@@ -47,7 +47,6 @@
 	<div id="PrimaryContent">
     	<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1><?php echo $accounts_title; ?></h1>
-    	<?php include(APPLICATION_PATH . '/views/common/tax_year_links.php'); ?> 
 		<?php
 		
 		// results exist

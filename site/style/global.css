@@ -8,7 +8,7 @@
  *	
  *	@since			12/2007
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	24/04/2013
+ *	@lastmodified	04/05/2013
  *	
  *	
  *	Contents
@@ -713,10 +713,13 @@ span.secondary-info{
 
 /* Welcome note */
 .logged-in-status{
+	color: #fff;
 	float: left;
 	font-size: 90%;
 	padding-bottom: 3px;
+	position: absolute;
 	text-align: right;
+	top: 0;
 	width: 100%;
 }
 
@@ -742,7 +745,6 @@ span.secondary-info{
 /* Holding div/frame */
 .site-container{
 	margin: 0 auto 20px;
-	width: 1060px;
 }
 
 	/* Header */
@@ -805,7 +807,7 @@ span.secondary-info{
 					display: block;
 					float: left;
 					font-size: 16px;
-					padding: 10px;
+					padding: 20px 10px;
 					text-decoration: none;
 					vertical-align: text-bottom;
 				}	
@@ -817,7 +819,7 @@ span.secondary-info{
 				/* active links*/
 				.site-nav .selected a,
 				body.home #home-link a{
-					background: #ccc;
+					background: #bbb;
 				}	
 			
 			/* Sub menu */	
@@ -831,7 +833,7 @@ span.secondary-info{
 				min-width: 200px;
 				padding: 0;
 				position: absolute;
-				top: 37px;
+				top: 57px;
 				z-index: 999;
 			}
 			
@@ -890,8 +892,12 @@ span.secondary-info{
 				border-bottom: 1px solid #eee;
 				font-size: 13px;
 				margin: 0 0 30px;
-				padding: 10px;
+				padding: 10px 0;
 			}
+			
+				.breadcrumb span:after{
+					content: ' > ';
+				}
 			
 			#PrimaryContent h1{
 				font-size: 28px;
@@ -954,10 +960,7 @@ span.secondary-info{
 			clear: both;
 			float: left;
 			left: 0;
-			/*position: absolute;
-			top: 200px;*/
 			margin: 35px 0 0;
-			padding: 20px 0;
 			position: relative;
 			top: 0;
 			width: 100%;

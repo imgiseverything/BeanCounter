@@ -98,7 +98,6 @@
 <?php
 			else:
 ?>
-	    	<?php include(APPLICATION_PATH . '/views/common/tax_year_links.php'); ?> 
 				<div class="buttons clearfix">
 					<a href="<?php echo $objScaffold->getFolder(); ?>download/<?php echo (!empty($_SERVER['QUERY_STRING'])) ? '?' . $_SERVER['QUERY_STRING'] : ''; ?>" class="download">Download these figures</a>
 				</div>

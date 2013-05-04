@@ -15,6 +15,9 @@
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'jquery.form', 'jquery.date', 'jquery.datepicker', 'datepicker', 'ajax_form_submit', 'colorbox'));
 	
+	// Menus
+	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());
+	
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>

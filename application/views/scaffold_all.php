@@ -17,7 +17,10 @@
 	$objTemplate->setStyle(array('forms', 'tables', 'colorbox'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_add_new', 'ajax_pagination', 'sidebar', 'colorbox'));
+	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination', 'colorbox'));
+	
+	// Menus
+	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());
 	
 	// HTML header
 	include($objTemplate->getHeaderHTML());
