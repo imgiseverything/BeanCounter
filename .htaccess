@@ -5,10 +5,6 @@ RewriteEngine On
 
 # Local files (javascript/css/images etc)
 RewriteRule ^(behaviour|images|style)/([a-zA-Z0-9-_\/.]+).(css|gif|htm|html|jpg|jpeg|js|png)$ /site/$1/$2.$3 [L]
-# Font files
-#RewriteRule ^fonts/([a-zA-Z0-9-_\/.]+)/([a-zA-Z0-9-_\/.]+).(eot|otf|svg|ttf|woff)$ /site/fonts/$1/$2.$3 [R]
-
-RewriteRule ^fonts/ss-symbolicons-block/ss-symbolicons-block.woff$ /fonts/bang!
 
 # Everything else to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
