@@ -26,12 +26,13 @@
 	// into a holding page
 	$objMaintenance = new Maintenance(false);
 
+
 	// Grab website owner's configuration settings
-	if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/config.php')){
-		require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
+	if(file_exists(BEANCOUNTER_PATH . '/config.php')){
+		require_once(BEANCOUNTER_PATH . '/config.php');
 	} else{
 		// Config file is absent :(
-		die("<html><head><title>" . $objApplication->getApplicationName() . " Error</title></head><body><style>@import url(\"/style/reset.css\");@import url(\"/style/global.css\");@import url(\"/style/basic.css\");h1{font-size: 200%;}h1,h2{text-align: center;}</style></head><body><div id=\"holder\"><h1>Configuration file (<var>" . SITE_PATH . "/inc/config.php</var>) is missing</h1><h2>Please add it with the correct values in place</h2></div></body></html>");
+		die("<html><head><title>" . $objApplication->getApplicationName() . " Error</title></head><body><style>body{background: #fff; color: #333; text-align: center; margin: 0 auto; width: 620px;}</style></head><body><div id=\"holder\"><h1>Configuration file (<var>" . BEANCOUNTER_PATH . "/config.php</var>) is missing</h1><h2>Please add it with the correct values in place</h2></div></body></html>");
 	}
 
 	/**

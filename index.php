@@ -11,9 +11,10 @@
 	// Define application and site paths
 	// this is so we can avoid using $_SERVER["DOCUMENT_ROOT'] everywhere 
 	// and so the application folder can sit above the site root
-	define('SITE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/site/');
-	define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/application/'));
-	define('LIBRARY_PATH', realpath(dirname(__FILE__) . '/library/'));
+	define('BEANCOUNTER_PATH', getcwd());
+	define('SITE_PATH', BEANCOUNTER_PATH . '/site/');
+	define('APPLICATION_PATH', BEANCOUNTER_PATH . '/application/');
+	define('LIBRARY_PATH', BEANCOUNTER_PATH . '/library/');
 
 	// Include required rewrite class files
 	require_once(APPLICATION_PATH . '/class/rewrite.class.php');
