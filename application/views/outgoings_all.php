@@ -21,7 +21,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
 		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
@@ -54,7 +54,7 @@
 				if(!empty($id)):
 					$tense_class = (strtotime($transaction_date) > strtotime('now')) ? 'future inactive' : '';
 			?>
-				<tr class="<?php echo assignOrderClass($i, $properties_size); ?> <?php echo $tense_class; ?>">
+				<tr class="<?php echo $tense_class; ?>">
 					<td><?php echo DateFormat::getDate('ddmmyyyy', $transaction_date); ?></td>
 					<td>
 						<a href="<?php echo $objScaffold->getFolder(); ?><?php echo $id; ?>/"><?php echo $title; ?></a>

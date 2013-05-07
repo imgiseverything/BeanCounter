@@ -48,7 +48,7 @@
 					extract($properties[$i]);
 					$title = stripslashes($title);
 				?>	
-					<tr class="<?php echo assignOrderClass($i, $properties_size); ?>" id="row-<?php echo $id; ?>">
+					<tr id="row-<?php echo $id; ?>">
 						<td><?php echo $title; ?></td>
 						<td><?php echo $total; ?></td>
 						<td><span class="secondary-info">Line <?php echo $line; ?> on <?php echo $file; ?></span></td>

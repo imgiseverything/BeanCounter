@@ -38,8 +38,7 @@
  	text-align: right;
  }
  
- 	 .calendar .empty .day,
- 	 .calendar td:empty .day{
+ 	 .calendar .no-bookings .day{
  	 	min-height: 105px;
  	 }
  
@@ -124,8 +123,8 @@
 	margin: 0;
 }
 
-	.calendar-mini .empty .day{
-		min-height: 25px;
+	.calendar-mini .no-bookings .day{
+		min-height: 35px;
 	}
 
 .calendar-mini caption{

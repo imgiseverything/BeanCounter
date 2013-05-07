@@ -113,7 +113,7 @@
 			
 			// Loop through all properites show we can show basic details and links for each one
 			foreach($properties as $property){
-				$html .= '<li class="' . assignOrderClass($i, $properties_size) . '"><a href="' . $objScaffold->getFolder() . $property['id'] . '/">' . stripslashes($property['title']) . '</a></li>' . "\n";
+				$html .= '<li><a href="' . $objScaffold->getFolder() . $property['id'] . '/">' . stripslashes($property['title']) . '</a></li>' . "\n";
 				$i++; // increment counter
 			}
 			
@@ -168,7 +168,7 @@
 			
 				$title = (!empty($property['title'])) ? stripslashes($property['title']) : $property['id'];
 			
-				$html .= '<tr class="' . assignOrderClass($i, sizeof($properties)) . '">';
+				$html .= '<tr>';
 				$html .= '<td>
 					<a href="' . $objScaffold->getFolder() . $property['id'] . '/">'. $title . '</a>
 					<div class="group extra-options">

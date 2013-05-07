@@ -572,6 +572,11 @@ div.buttons a, a.button, button{
 		a.button-add{
 			float: right;
 		}
+		
+		a.button-add:hover,
+		a.button-add span:hover:before{
+			color: #333;
+		}
 	
 	
 	
@@ -664,6 +669,27 @@ ul.options{
 		border: none;
 		margin-left: 0;
 		padding-left: 0;
+	}
+	
+	
+/* Tags */
+.tags{
+	margin: 0;
+	padding: 0;
+}
+
+	.tags li{
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.tags li:after{
+		content: ", ";
+	}
+	
+	.tags li:last-child:after{
+		content: "";
 	}
 						
 						

@@ -46,7 +46,7 @@
 		
 		<h2>Tags</h2>
 		<?php if(!empty($timing_tag)): ?>
-		<ul>
+		<ul class="tags">
 			<?php foreach($timing_tag as $tag): ?>
 			<li><?php echo $tag['title']; ?></li>
 			<?php endforeach;?>

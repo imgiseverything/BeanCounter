@@ -852,7 +852,7 @@
 								$('<h2></h2>'),
 								$('<div class="dp-nav-prev"></div>')
 									.append(
-										$('<a class="dp-nav-prev-year" href="#" title="' + $.dpText.TEXT_PREV_YEAR + '">&lt;&lt;</a>')
+										$('<a class="dp-nav-prev-year" href="#" title="' + $.dpText.TEXT_PREV_YEAR + '">⏪</a>')
 											.bind(
 												'click',
 												function()
@@ -860,7 +860,7 @@
 													return c._displayNewMonth.call(c, this, 0, -1);
 												}
 											),
-										$('<a class="dp-nav-prev-month" href="#" title="' + $.dpText.TEXT_PREV_MONTH + '">&lt;</a>')
+										$('<a class="dp-nav-prev-month" href="#" title="' + $.dpText.TEXT_PREV_MONTH + '">◅</a>')
 											.bind(
 												'click',
 												function()
@@ -871,7 +871,7 @@
 									),
 								$('<div class="dp-nav-next"></div>')
 									.append(
-										$('<a class="dp-nav-next-year" href="#" title="' + $.dpText.TEXT_NEXT_YEAR + '">&gt;&gt;</a>')
+										$('<a class="dp-nav-next-year" href="#" title="' + $.dpText.TEXT_NEXT_YEAR + '">⏩</a>')
 											.bind(
 												'click',
 												function()
@@ -879,7 +879,7 @@
 													return c._displayNewMonth.call(c, this, 0, 1);
 												}
 											),
-										$('<a class="dp-nav-next-month" href="#" title="' + $.dpText.TEXT_NEXT_MONTH + '">&gt;</a>')
+										$('<a class="dp-nav-next-month" href="#" title="' + $.dpText.TEXT_NEXT_MONTH + '">▻</a>')
 											.bind(
 												'click',
 												function()

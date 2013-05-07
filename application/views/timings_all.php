@@ -15,27 +15,7 @@
 	
 	// Style / Appearance (CSS)
 	$objTemplate->setStyle(array('forms', 'tables', 'datepicker'));
-	
-	$objTemplate->setExtraStyle('
-		td .tags{
-			margin: 0;
-			padding: 0;
-		}
-		
-		.tags li{
-			display: inline;
-			margin: 0;
-			padding: 0;
-		}
-		
-		.tags li:before{
-			content: ", ";
-		}
-		
-		.tags li:first-child:before{
-			content: "";
-		}
-	');
+
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination', 'colorbox', 'jquery.form', 'jquery.date', 'jquery.datepicker', 'datepicker', 'ajax_filter'));
@@ -43,7 +23,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
 		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
@@ -74,7 +54,7 @@
 					// create easy to use variable names
 					extract($properties[$i]);
 			?>
-				<tr class="<?php echo assignOrderClass($i, $properties_size); ?>">
+				<tr>
 						<td><span title="<?php echo DateFormat::howManyDays($date_added) . ' ago'; ?>"><?php echo DateFormat::getDate('ddmmyyyy', $start_date); ?></span></td>
 						<td>
 							<?php echo $title; ?>

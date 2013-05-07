@@ -19,7 +19,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
 		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
@@ -70,7 +70,7 @@
 					$percentage = number_format($percentage, 2, '.', ',') . '%';
 				
 			?>
-				<tr class="<?php echo assignOrderClass($i, $properties_size); ?> <?php echo $tr_class;?>">
+				<tr class="<?php echo $tr_class;?>">
 						<td><span title="<?php echo DateFormat::howManyDays($date_added) . ' ago'; ?>"><?php echo DateFormat::getDate('ddmmyyyy', $date_added); ?></span></td>
 						<?php if($objAuthorise->getLevel() == 'Superuser'): ?>
 						<td>

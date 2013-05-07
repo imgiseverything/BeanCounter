@@ -206,15 +206,15 @@ tr:hover .extra-options{
 	
 	
 	
-div#PrimaryContent table form.options-form{
+div.content-primary table form.options-form{
 	width: 180px;
 }
 
-	div#PrimaryContent table form.options-form fieldset{
+	div.content-primary table form.options-form fieldset{
 		padding: 0;
 	}
 
-	div#PrimaryContent table form.options-form select{
+	div.content-primary table form.options-form select{
 		display: inline;
 		float: none;
 		font-size: 13px;
@@ -224,7 +224,7 @@ div#PrimaryContent table form.options-form{
 		width: 100px;
 	}
 
-	div#PrimaryContent table form.options-form button{
+	div.content-primary table form.options-form button{
 		display: inline;
 		float: none;
 		font-size: 13px;

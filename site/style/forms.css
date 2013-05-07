@@ -204,6 +204,7 @@ label, input, textarea, select, button, a.button{
 		
 		/* Input */
 		input,
+		select,
 		textarea{
 			background: #fff;
 			border: none;
@@ -213,8 +214,6 @@ label, input, textarea, select, button, a.button{
 			margin: 0 0 .5em;
 			padding: 10px 5px;
 			width: 640px;
-			-moz-border-radius: 2px;
-			-webkit-border-radius: 2px;
 		}
 			/* Numerical input */
 			input.int{
@@ -257,6 +256,12 @@ label, input, textarea, select, button, a.button{
 			width: 110px;
 		}
 		
+		span.post-input{
+			display: inline-block;
+			padding: 10px 0 10px 5px;
+			vertical-align: middle;
+		}
+		
 		/* Textarea */
 		textarea{
 			height: 10em;
@@ -295,21 +300,15 @@ label, input, textarea, select, button, a.button{
 		/* Drop downs <select> */
 		
 		select{
-			background: #FDFDFD;
-			border: none;
-			color: #666;
-			font-size: 15px;
-			margin: 0 0 .5em;
 			max-width: 640px;
 			min-width: 375px;
-			padding: 4px 2px;
 		}
 		
 			select option{
 				padding-right: .75em;
 			}
 		
-				select option[selected="selected"]{
+				select option[selected]{
 					background: #FFB;
 				}
 				
@@ -320,6 +319,7 @@ label, input, textarea, select, button, a.button{
 			
 			.fieldset-row select{
 				min-width: 150px;
+				max-width: 320px;
 			}
 		
 		
@@ -352,14 +352,14 @@ label, input, textarea, select, button, a.button{
 			color: inherit;
 			display: inline-block;
 			float: none;
-			margin: 3px 0 20px 5px;
-			padding: 3px 0 4px;
+			margin: 0 0 0 5px;
+			padding: 10px 0;
 			text-shadow: none;
 		}
 		
 		form a.inline-button{
-			background: #ddd !important;
-			padding: 3px 5px 2px;
+			margin: 20px 0;
+			padding: 3px 0 2px;
 			text-indent: 0;
 			width: auto;
 		}

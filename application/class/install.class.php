@@ -704,7 +704,6 @@ class Install{
 		  `for_the_attention_of` mediumtext NOT NULL,
 		  `description` mediumtext COMMENT 'Details that precede the itemised costs in the invoice/quote',
 		  `appendix` mediumtext COMMENT 'Details that go after the itemised costs in the invoice/quote',
-		  `requires_deposit` enum('Y','N') DEFAULT 'N' COMMENT 'If a deposit is required (Y) then invoice total is split into 2',
 		  `project_stage` int(11) DEFAULT NULL COMMENT 'FK on project_stage table',
 		  `charge_vat` enum('Y','N') DEFAULT 'N' COMMENT 'Does this invoice include VAT?',
 		  `vat_rate` decimal(5,2) NOT NULL COMMENT 'The VAT rate at the time of invoicing',

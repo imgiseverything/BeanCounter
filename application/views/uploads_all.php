@@ -55,7 +55,7 @@
 					$directory = $objFile->upload->getDirectory();
 					$filesize = Upload::convertBytes(filesize($directory . $file['filename']));
 			?>
-				<tr class="<?php echo assignOrderClass($i, sizeof($properties)); ?>">
+				<tr>
 					<td><img src="/images/icons/<?php echo $objFile->upload->getIcon($file['upload_type_title']); ?>" alt="<?php echo $file['upload_type_title']; ?>" title="<?php echo $file['upload_type_title']; ?>" /></td>
 					<td>
 						<a href="<?php echo $objFile->getFolder() . $file['id']; ?>/"><?php echo stripslashes($file['title'])?></a>

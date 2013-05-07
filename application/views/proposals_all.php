@@ -45,7 +45,7 @@
 					
 				
 			?>
-				<tr class="<?php echo assignOrderClass($i, $properties_size); ?>">
+				<tr>
 						<td><span title="<?php echo DateFormat::howManyDays($date_added) . ' ago'; ?>"><?php echo DateFormat::getDate('ddmmyyyy', $date_added); ?></span></td>
 						<td>
 							<a href="<?php echo $objScaffold->getFolder() . $id; ?>/"><?php echo stripslashes($title); ?></a>

@@ -23,7 +23,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1><?php echo $page_title; ?></h1>
     	<p>Click a date to add a new booking starting on that day.</p>
@@ -61,7 +61,7 @@
 	       			$days_i = 1;
 	       			for($i = 0; $i < $weeks; $i++):
 	       			?>
-	       			<tr class="<?php echo assignOrderClass($i, $weeks); ?>">
+	       			<tr>
 	       				<?php 
 	       				
 	       				for($ii = 1; $ii < 8; $ii++):
@@ -72,6 +72,7 @@
 	       				// is date empty?
 	       				$empty = (($days_i < $objCalendar->getStartWeekDay() || $actual_day > $objCalendar->getDays())) ? true : false;
 	       				$td_class = ($empty === true) ? 'empty' : 'date';
+	       				$td_class .= (empty($date[$actual_day])) ? ' no-bookings' : '';
 	       				       				
 	       				?>
 	       				<td id="date-<?php echo $i; ?>-<?php echo $ii; ?>" class="<?php echo $td_class?>"><?php if($empty !== true) : ?>

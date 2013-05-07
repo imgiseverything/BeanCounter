@@ -54,7 +54,7 @@
 			$invoice_class = ($project_stage == 3 && $invoice_days > 0) ? ' late' : '';	
 			
 		?>
-		<tr class="<?php echo assignOrderClass($i, $invoice_size); ?><?php echo $invoice_class; ?>">
+		<tr class="<?php echo $invoice_class; ?>">
 				<?php if($type == 'invoice'): ?>
 				<td><?php echo DateFormat::getDate('ddmmyyyy', $payment_required); ?><?php if($invoice_days > 0 && (!isset($proposal) || $proposal !== true)): ?><span class="secondary-info"><?php echo $invoice_days; ?> days late</span><?php endif;?></td>
 				<?php else: ?>

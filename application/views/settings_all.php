@@ -48,7 +48,7 @@
 					extract($properties[$i]);
 					if($title != 'currency_value'):
 				?>
-					<tr class="<?php echo assignOrderClass($i, $properties_size); ?>">
+					<tr>
 						<td><?php echo stripslashes($title); ?></td>
 						<td><?php echo stripslashes($value); ?></td>
 						<td class="description"><?php echo stripslashes($description); ?></td>
@@ -78,7 +78,7 @@
 					extract($properties[$i]);
 					if($title != 'currency_value'):
 				?>
-					<tr class="<?php echo assignOrderClass($i, $properties_size); ?>">
+					<tr>
 						<td><?php echo stripslashes($title); ?></td>
 						<td><?php echo stripslashes($value); ?></td>
 						<td class="description"><?php echo stripslashes($description); ?></td>

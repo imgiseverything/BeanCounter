@@ -46,7 +46,7 @@
 				// basic details and links for each one
 				foreach($projects as $property):
 					if(!empty($property['title'])):
-						echo '<tr class="' . assignOrderClass($i, sizeof($projects)) . ' ' . strtolower(stripslashes($property['project_stage_title'])) . '">
+						echo '<tr class="' . strtolower(stripslashes($property['project_stage_title'])) . '">
 						<td><a href="/projects/' . $property['id'] . '/">' . stripslashes($property['title']) . '</a></td>						<td>' . stripslashes($property['project_stage_title']) . '</td>
 						<td>' . currency(stripslashes(read($property, 'total', 0))) . '</td>
 						<td>' . DateFormat::getDate('date', $property['date_added']) . '</td>

@@ -19,7 +19,7 @@
  *	@author			philthompson.co.uk
  *	@since			11/02/2008
  *
- *	@lastmodified	14/03/2010
+ *	@lastmodified	07/05/2013
  *	
  *	=========================================================================
  *	
@@ -416,8 +416,7 @@ class Form{
 		if($text == false){
 			$text = $this->labelText($field);
 		}
-		
-		
+	
 		
 		$label = '<label for="' . $field . '"' . $this->setRequired($field, $force_required) . '>' . $text . $this->setRequiredLabel($field, $force_required) . '</label>' . "\n";
 		return  $label;
@@ -580,9 +579,9 @@ class Form{
 		if($this->_action == 'edit' && $field == 'password'){
 			// If this is edit mdoe and this is a password field then don't show it
 			// because we change passwords on a separate form.
-			$input = '<a href="' . str_replace('/edit/', '/password/', $_SERVER['REQUEST_URI']) . '">Change password</a><br />' . "\n";
+			$input = '<a href="' . str_replace('/edit/', '/password/', $_SERVER['REQUEST_URI']) . '">Change password</a>' . "\n";
 		} else{
-			$input = '<input type="' . $type . '" value="' . stripslashes(htmlentities($value)) . '" id="' . $field . '" name="' . $field . '" maxlength="' . $maxlength . '" /><br />' . "\n";
+			$input = '<input type="' . $type . '" value="' . stripslashes(htmlentities($value)) . '" id="' . $field . '" name="' . $field . '" maxlength="' . $maxlength . '" />' . "\n";
 		}
 		
 		// URL values
@@ -615,7 +614,7 @@ class Form{
 	 */
 	public function inputPassword($field, $value = ''){
 		
-		$input = '<input type="password" value="' . stripslashes(htmlentities($value)) . '" id="' . $field . '" name="' . $field . '" /><br />' . "\n";
+		$input = '<input type="password" value="' . stripslashes(htmlentities($value)) . '" id="' . $field . '" name="' . $field . '" />' . "\n";
 		
 		return $input;
 	}
@@ -635,7 +634,7 @@ class Form{
 		$type = ($field == 'password') ? 'password' : 'text';
 		
 		if($this->_action == 'edit' && $field == 'password'){
-			$input = '<a href="' . str_replace('/edit/', '/password/', $_SERVER['REQUEST_URI']) . '">Change password</a><br />' . "\n";
+			$input = '<a href="' . str_replace('/edit/', '/password/', $_SERVER['REQUEST_URI']) . '">Change password</a>' . "\n";
 		} else{
 			$input = '<div class="input" id="' . $field . '-display">' . stripslashes(htmlentities($value)) . "\n" . $this->inputHidden($field, $value) . '</div>' . "\n";
 		}
@@ -699,7 +698,7 @@ class Form{
 	 */
 	public function textarea($field, $value = ''){
 	
-		$input = '<textarea name="' . $field . '" id="' . $field . '" rows="5" cols="10">' . stripslashes(htmlentities($value)).'</textarea><br />' . "\n";
+		$input = '<textarea name="' . $field . '" id="' . $field . '" rows="5" cols="10">' . stripslashes(htmlentities($value)).'</textarea>' . "\n";
 		
 		return $input;
 	}
@@ -740,7 +739,7 @@ class Form{
 		} else{
 			// element doesn't have a corresponding 'extra details' table
 			// so just draw up an input element
-			$input = '<input type="text" value="' . stripslashes(htmlentities($value)) . '" id="' . $field . '" name="' . $field . '" class="int" /><br />' . "\n";
+			$input = '<input type="text" value="' . stripslashes(htmlentities($value)) . '" id="' . $field . '" name="' . $field . '" class="int" />' . "\n";
 			
 			
 			

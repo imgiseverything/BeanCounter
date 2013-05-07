@@ -116,7 +116,7 @@
 	                            $link = ($property['type'] == 'negative') ? '/outgoings/' : '/projects/';
 	                            $cost = (!empty($property['price'])) ? $property['price'] : read($property, 'total', 0);
 	                            
-	                            echo '<tr class="' . assignOrderClass($i, $properties_size) . ' ' . $property['type'] . '">
+	                            echo '<tr class="' . $property['type'] . '">
 	                            <td>' . DateFormat::getDate('ddmmyyyy', $property['transaction_date']) . '</td>
 	                            <td>' . $property['payee_name'] . '</td>
 	                            <td><a href="' . $link . $property['id'] . '/">' . stripslashes($property['title']) . '</a></td>

@@ -76,7 +76,7 @@
 			for($i = 0; $i < sizeof($outgoings); $i++):
 				extract($outgoings[$i]);
 		?>
-			<tr class="<?php echo assignOrderClass($i, sizeof($outgoings))?>">
+			<tr>
 				<td><?php echo DateFormat::getDate('ddmmyyyy', $transaction_date)?></td>
 				<td>
 					<?php echo stripslashes($title); ?>

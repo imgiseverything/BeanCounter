@@ -107,7 +107,7 @@
 	       			$days_i = 1;
 	       			for($i = 0; $i < $weeks; $i++):
 	       			?>
-	       			<tr class="<?php echo assignOrderClass($i, $weeks); ?>">
+	       			<tr>
 	       				<?php 
 	       				
 	       				for($ii = 1; $ii < 8; $ii++):
@@ -118,6 +118,7 @@
 	       				// is date empty?
 	       				$empty = (($days_i < $objCalendar->getStartWeekDay() || $actual_day > $objCalendar->getDays())) ? true : false;
 	       				$td_class = ($empty === true) ? 'empty' : 'date';
+	       				$td_class .= (empty($date[$actual_day])) ? ' no-bookings' : '';
 	       				       				
 	       				?>
 	       				<td id="date-<?php echo $i . '-' . $ii; ?>" class="<?php echo $td_class?>"><?php if($empty !== true) : ?>

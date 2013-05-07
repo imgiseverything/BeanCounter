@@ -642,8 +642,6 @@
 				$clientProperties = $objClient->getProperties();	
 			
 				$content = $objDownload->getFileHeader() . $objDownload->getFileBody() . $objDownload->getFileFooter();
-				
-				exit($content);
 
 				if(CACHE === true){
 					$objCache->createCache($content, false, false);
@@ -984,21 +982,7 @@
 				}
 				
 				$pdf->SetFont('Arial', 'B', 12);
-				// 50% deposit
-				if($this->_properties['requires_deposit'] == 'Y'){
-					$pdf->Cell(140, 10, 'Deposit', 1);
-					$pdf->Cell(40, 10, html_entity_decode(currency($this->getGrandTotal()/2), ENT_NOQUOTES, 'ISO-8859-1'));
-					$pdf->Ln(10);
-					$pdf->Cell(180, 1, '', 0, 1, 'L', true);
-					
-					$pdf->Cell(140, 10, 'Final payment');
-					$pdf->Cell(40, 10, html_entity_decode(currency($this->getGrandTotal()/2), ENT_NOQUOTES, 'ISO-8859-1'));
-					$pdf->Ln(10);
-					$pdf->Cell(180, 1, '', 0, 1, 'L', true);
-				}
-				
-				
-				
+
 				
 				// VAT
 				if($this->getVATTotal()){

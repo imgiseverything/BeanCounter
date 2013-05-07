@@ -87,16 +87,6 @@
 				<th scope="col"><?php echo CURRENCY; ?></th>
 		</thead>
 		<tfoot>
-			<?php if($requires_deposit == 'Y'): // is a deposit required? ?>
-			<tr>
-				<th scope="row">Deposit</th>
-				<td colspan="2"><?php echo currency($objScaffold->getGrandTotal()/2); ?></td>
-			</tr>
-			<tr>
-				<th scope="row">Final payment</th>
-				<td colspan="2"><?php echo currency($objScaffold->getGrandTotal() / 2); ?></td>
-			</tr>
-			<?php endif; // end if deposit required ?>
 			<?php if($objScaffold->getVATTotal()): ?>
 			<tr>
 				<th scope="row">Subtotal</th>

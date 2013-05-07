@@ -22,7 +22,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
 		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
@@ -45,7 +45,7 @@
 				if(!empty($properties[$i]['id'])):
 					extract($properties[$i]);
 			?>
-				<tr class="<?php echo assignOrderClass($i, $properties_size); ?>">
+				<tr>
 					<td><a href="<?php echo $objScaffold->getFolder() . $id; ?>/"><?php echo stripslashes($title); ?></a>
 					<span class="secondary-info"><?php echo upload::convertBytes($filesize); ?></span></td>
 					<td><a href="/outgoings/<?php echo $outgoing_id; ?>/"><?php echo stripslashes($outgoing_title); ?><span class="secondary-info">#<?php echo Project::referenceNumber($outgoing_id, $outgoing_transaction_date); ?></span></td>

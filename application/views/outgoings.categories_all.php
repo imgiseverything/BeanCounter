@@ -20,7 +20,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 		<?php echo $objMenu->getBreadcrumb(); ?>
 		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
 		<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
@@ -50,7 +50,7 @@
 				if(!empty($properties[$i]['id'])):
 					extract($properties[$i]);
 			?>
-				<tr class="<?php echo assignOrderClass($i, $properties_size); ?>">
+				<tr>
 					<td><?php echo stripslashes($title); ?></td>
 					<td><?php echo currency($total); ?></td>
 					<td><?php echo round($percentage, 2); ?>%</td>
