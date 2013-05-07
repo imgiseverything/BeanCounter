@@ -577,6 +577,10 @@ div.buttons a, a.button, button{
 		a.button-add span:hover:before{
 			color: #333;
 		}
+		
+		a.button-download span:before{
+			content: '';
+		}
 	
 	
 	
