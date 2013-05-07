@@ -38,7 +38,7 @@
 
 
 /* iPhone [portrait + landscape] */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1019px) {
 
 	.layout-b .content-primary,
 	.layout-b .content-secondary{

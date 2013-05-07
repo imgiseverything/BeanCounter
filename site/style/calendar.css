@@ -103,6 +103,7 @@
 		
 		
 /* Mini Calendar */
+@media screen and (min-width: 1019px) {
 
 .calendar-mini{
 	width: 260px;
@@ -156,4 +157,6 @@
 	background: transparent;
 	border: none;
 	padding: 0;
+}
+
 }
