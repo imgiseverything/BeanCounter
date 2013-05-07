@@ -33,7 +33,7 @@ var ajaxFormOptions = {
 };
 
 if(typeof ajaxForm == 'function'){
-	//$('#PrimaryContent form').ajaxForm(ajaxFormOptions);
+	//$('.content-primary form').ajaxForm(ajaxFormOptions);
 }
 
 $('form').bind('form-pre-serialize', function(e) {
@@ -42,7 +42,7 @@ $('form').bind('form-pre-serialize', function(e) {
 
 function beforeAjaxFormSubmit(){
 	
-	var theForm = $('#PrimaryContent form');
+	var theForm = $('.content-primary form');
 
 	theForm.height(theForm.height());
 	theForm.find('div.field').hide();
@@ -51,7 +51,7 @@ function beforeAjaxFormSubmit(){
 
 function ajaxFormSuccess(){
 
-	$('#PrimaryContent form').ajaxForm(ajaxFormOptions);
+	$('.content-primary form').ajaxForm(ajaxFormOptions);
 	
 	if(typeof beancounterColorbox == 'function'){
 		beancounterColorbox();

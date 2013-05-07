@@ -51,7 +51,7 @@
 		<?php echo $objTemplate->getBranding(); ?>
 		<?php echo (!empty($sender_address)) ? '<div class="vcard">' . $sender_address . '</div>' : $objVcard->getVcard(); ?>
 	</div>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 	<?php
 		// create easy to use variables
 		extract($properties);

@@ -39,15 +39,12 @@
     </fieldset>
 </form>
 <hr />
-<?php include(APPLICATION_PATH . '/views/common/cancel_link.php'); ?>
+<p><a href="/">Cancel</a></p>
 <?php else:  // we have successfully submitted the form so give user some options ?>
 <?php include(APPLICATION_PATH . '/views/common/close_popup.php'); ?>
 <hr />
 <h2>Your options</h2>
 <ul class="options">
-    <li><a href="<?php echo $objScaffold->getFolder(); ?><?php echo $objScaffold->getId(); ?>/">View <?php echo stripslashes($properties['title']); ?></a></li>
-    <li><a href="<?php echo $objScaffold->getFolder(); ?>edit/<?php echo $objScaffold->getId(); ?>/">Edit <?php echo stripslashes($properties['title']); ?></a></li>
-    <li><a href="<?php echo $objScaffold->getFolder(); ?>">View all <?php echo $objScaffold->getNamePlural(); ?></a></li>
-    <li><a href="<?php echo $objScaffold->getFolder(); ?>add/">Add another <?php echo $objScaffold->getName(); ?></a></li>
+    <li><a href="/">View dashboard</a></li>
 </ul>
 <?php endif; ?>

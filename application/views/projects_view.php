@@ -21,7 +21,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
         <?php echo $objFeedback->getFeedback(); ?>
 		<?php
@@ -170,7 +170,7 @@
 		?>	
 	</div>
 <?php if($objTemplate->getMode() != 'ajax'): ?>
-<div id="SecondaryContent">
+<div class="content-secondary">
 	<?php if($project_stage > 1): ?>
 	<div id="legend">
 		<h2>Money</h2>

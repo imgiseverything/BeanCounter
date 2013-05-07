@@ -11,7 +11,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 		<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1>Cache cleared</h1>
     	<p>The website's cache has been cleared. Meaning any changes made to the website will now be in effect.</p>

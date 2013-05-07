@@ -28,9 +28,6 @@
     	<h1><?php echo $page_title; ?></h1>
     	<p>Click a date to add a new booking starting on that day.</p>
         <?php echo $objFeedback->getFeedback(); ?>
-        <div class="buttons clearfix">
-        	<?php /*<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button add">Add new <?php echo $objScaffold->getName(); ?></a> */ ?>
-        </div>
         <?php 
         	/**
         	 * Display bookings in a calendar format

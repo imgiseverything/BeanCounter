@@ -8,7 +8,7 @@
 // only show sidebar if we're in normal mode - if we're in AJAX mode it isn't required
 if($objTemplate->getMode() == 'normal'):
 ?>
-<div id="SecondaryContent">
+<div class="content-secondary">
 	
 </div>
 <?php endif; ?>

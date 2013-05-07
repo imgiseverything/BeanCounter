@@ -16,7 +16,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1>Back-up</h1>
         <?php echo $objFeedback->getFeedback(); ?>

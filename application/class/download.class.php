@@ -189,7 +189,7 @@ class Download{
 				</div>
 				<hr>
 				<div class="group site-content">
-				<div id="PrimaryContent">
+				<div id="PrimaryContent" class="content-primary">
 				';
 				
 				break;

@@ -22,7 +22,7 @@
 	
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
           	<h1>Website error</h1>
 			<?php 
            	if(isset($_GET['error'])): // make sure an error variable is set

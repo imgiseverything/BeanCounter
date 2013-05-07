@@ -22,7 +22,7 @@
 .site-nav,
 .logged-in-status, 
 .breadcrumb, 
-#SecondaryContent{
+.content-secondary{
 	display: none;
 }
 
@@ -31,7 +31,7 @@
 .site-container .inner, 
 .site-header .inner, 
 #Branding, #Content .inner, 
-#PrimaryContent, 
+.content-primary, 
 .site-footer .inner{
 	width: 360px;
 }
@@ -46,7 +46,7 @@
 }
 
 
-#PrimaryContent{
+.content-primary{
 	margin: 0 auto;
 	float: none;
 }

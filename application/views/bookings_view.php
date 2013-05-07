@@ -21,7 +21,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1><?php echo stripslashes($title); ?> <em>(<?php echo $booking_type_title; ?>)</em></h1>
         <?php echo $objFeedback->getFeedback(); ?>

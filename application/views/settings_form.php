@@ -25,7 +25,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1>Edit your <?php echo $settings_type . ' ' . $objScaffold->getNamePlural(); ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>

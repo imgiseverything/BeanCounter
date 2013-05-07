@@ -10,7 +10,7 @@
  *	@since		27/02/2008
  *	
  *	edited by:  Phil Thompson
- *	@modified	02/05/2013
+ *	@modified	07/05/2013
  *
  */
 
@@ -81,7 +81,7 @@
         		$form = $('#filterForm'),
         		button = '<div id="FilterButton"><a href="#" id="ShowHideFilterLink">Show filter options</a></div>';
 
-        	$('#Filter').prepend(button);
+        	$('.filter-form').prepend(button);
         	
         	$('#FilterButton').click(function(e){
         		e.preventDefault();

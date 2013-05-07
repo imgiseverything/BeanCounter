@@ -19,18 +19,11 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
-    	<?php echo $objMenu->getBreadcrumb(); ?>
+	<div id="PrimaryContent" class="content-primary">
+    	<?php echo $objMenu->getBreadcrumb(); ?>	
+    	<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>	
-		<div class="buttons clearfix">
-		<?php if($objAuthorise->getLevel() == 'Superuser'): ?>
-		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button add">Add new <?php echo $objScaffold->getName(); ?></a>
-		<?php endif; ?>
-		<?php if($objScaffold->client && $objAuthorise->getLevel() != 'Basic'): ?>
-		<a href="<?php echo $objScaffold->getFolder(); ?>" class="button ">View all <?php echo $objScaffold->getNamePlural(); ?></a>
-		<?php endif; ?>
-		</div>
 		<div class="data">
 			<?php echo $objPagination->getPagination(); ?>
 			<p class="showing"><?php echo getShowingXofX($objScaffold->getPerPage(), $objScaffold->getCurrentPage(), $properties_size, $objScaffold->getTotal()) . ' ' . $objScaffold->getNamePlural(); ?></p>

@@ -12,28 +12,28 @@
 	$objTemplate->setStyle(array('forms', 'tables', 'datepicker'));
 	$objTemplate->setExtraStyle('
 	
-	ul#yearly_figures_options li.selected{font-weight: bold;}
-	div#PrimaryContent form#YearSelectForm, 
-	div#PrimaryContent form#YearSelectForm fieldset{
+	#yearly_figures_options .selected{font-weight: bold;}
+	#YearSelectForm, 
+	#YearSelectForm fieldset{
 		background: transparent;
 		border: none;
 		padding: 0;
 		width: auto;
 	}
 	
-	div#PrimaryContent form#YearSelectForm label{
+	#YearSelectForm label{
 		margin: 0;
 	}
 	
-	div#PrimaryContent form#YearSelectForm select, 
-	div#PrimaryContent form#YearSelectForm button{
+	#YearSelectForm select, 
+	#YearSelectForm button{
 		display: inline;
 		float: none;
 		margin: 0;
 		width: auto;
 	}
 	
-	div#PrimaryContent form#YearSelectForm button{
+	#YearSelectForm button{
 		padding: 2px;
 	}
 	');
@@ -44,30 +44,22 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
+    	<?php if($action != 'download'): ?>
+    	<a href="<?php echo $objScaffold->getFolder(); ?>download/" class="button-add download"><span></span>Download these transactions</a>
+    	<?php endif; ?>
     	<h1><?php echo $accounts_title; ?></h1>
 		<?php
 		
 		// results exist
 		if(!empty($properties)):
 		
-			// we're downloading data
-			if($action == 'download'):
-		?>
-            <div class="buttons clearfix">
-				<?php echo $objCSV->getDownload(); ?>
-				<a href="<?php echo $objScaffold->getFolder(); ?>" class="button">View accounts</a>
-			</div>
-		<?php
-			else:
 				$i = 1; // counter
 				// Tabular/Listings
 		?>
-				<!--<h2>View by trading year</h2>-->
-	    		<?php// include(APPLICATION_PATH . '/views/common/tax_year_links.php'); ?> 
 				<div class="buttons clearfix">
-					<a href="<?php echo $objScaffold->getFolder(); ?>download/" class="button download">Download these transactions</a>
+					
 				</div>
 				<div class="data">
 					<?php echo $objPagination->getPagination(); ?>
@@ -139,7 +131,6 @@
 				<?php echo $objPagination->getPagination(); ?>
 				</div>
 		<?php
-			endif;
 		else:
 			/* 
 			No Results!!!
@@ -162,7 +153,7 @@
     <?php 
     if($objTemplate->getMode() == 'normal'):
     ?>
-    <div id="Filter">
+    <div class="filter-form">
     	<form id="filterForm" method="get" action="<?php echo $objScaffold->getFolder(); ?>" class="hidden">
             <fieldset>
             	<fieldset class="fieldset-row">

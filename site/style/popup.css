@@ -15,7 +15,7 @@
 
 div#Container, 
 div#Content, 
-div#PrimaryContent{
+div.content-primary{
 	margin: 0 auto;	
 	width: 640px;
 }
@@ -28,7 +28,7 @@ body.popup{
 
 /* Hidden elements */
 div.breadcrumb,
-div#SecondaryContent{
+div.content-secondary{
 	display: none !important;
 }
 

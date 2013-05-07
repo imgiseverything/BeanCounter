@@ -41,7 +41,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 		<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1><?php echo ucfirst($objFile->getNamePlural()); ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>

@@ -25,7 +25,7 @@
 	include($objTemplate->getHeaderHTML());
 ?>
 	 <!-- // PRIMARY CONTENT DIV  // -->
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 		<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1><?php echo ucwords($objFile->getNamePlural()); ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>

@@ -13,35 +13,37 @@
  *	
  */
 
-	
-#PrimaryContent{
-	width: 700px;
+.layout-b .content-primary{
+	width: 680px;
 }	
-
-	div.data{
-		width: 680px;
-	}
 	
-	div.data table{
-		width: 620px;
-	}
-	
-		div.data caption{
+		.layout-b .data caption{
 			margin: 0;
 		}
+
 	
-	#PrimaryContent .options-form{
-		width: auto;
-	}
-	
-#SecondaryContent{
+.layout-b .content-secondary{
 	background: #f5f5f5;
 	clear: none;
 	float: right;
 	margin: 80px 0;
+	padding: 20px 30px 30px;
 	width: 320px;
 }	
 
-	#SecondaryContent form{
+	.layout-b .content-secondary form{
 		margin: 0;
 	}
+
+
+
+/* iPhone [portrait + landscape] */
+@media screen and (max-width: 640px) {
+
+	.layout-b .content-primary,
+	.layout-b .content-secondary{
+		float: left;
+		width: 100%;
+	}
+	
+}

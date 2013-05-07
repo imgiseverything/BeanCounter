@@ -8,7 +8,7 @@
  *	
  *	@since			03/2007
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	14/08/2010
+ *	@lastmodified	07/05/2013
  *	
  *	Table of Contents
  *	
@@ -66,8 +66,9 @@ label, input, textarea, select, button, a.button{
 	}
 	
 		fieldset fieldset{
-			background: rgba(255, 255, 255, 0.2);
+			background: rgba(255, 255, 255, 0.4);
 			clear: both;
+			margin: 0 0 30px;
 			padding: .5em 30px;
 		}
 		
@@ -202,13 +203,7 @@ label, input, textarea, select, button, a.button{
 		/* DATA ENTRY */
 		
 		/* Input */
-		input[type="email"],
-		input[type="number"],
-		input[type="password"],
-		input[type="search"],
-		input[type="tel"],
-		input[type="text"],
-		input[type="url"],
+		input,
 		textarea{
 			background: #fff;
 			border: none;
@@ -226,12 +221,16 @@ label, input, textarea, select, button, a.button{
 				width: 120px;
 			}
 			
-			div#SecondaryContent input.int{
+			.content-secondary input.int{
 				width: 55px;
 			}
 		
 			input[type="hidden"]{
 				border: none;
+			}
+			
+			input[type="search"]{
+				-webkit-appearance: none;
 			}
 			
 			input#url{
@@ -412,6 +411,7 @@ label, input, textarea, select, button, a.button{
 fieldset.checkboxes legend{
 	margin-top: 20px;
 }
+
 fieldset.checkboxes div.field{
 	clear: none;
 	float: left;
@@ -422,3 +422,36 @@ fieldset.checkboxes div.field{
 		line-height: 1.3;
 		max-width: 175px;
 	}
+	
+	
+/* iPhone [portrait + landscape] */
+@media screen and (max-width: 640px) {
+
+
+	form{
+		margin: 30px 0;
+	}
+	
+	fieldset{
+		padding: 15px;
+	}
+	
+		fieldset fieldset{
+			padding: 0.5em 15px;
+		}
+	
+	
+	input, select, textarea{
+		max-width: 100%;
+		width: 100%;
+	}
+	
+	input[type="checkbox"],
+	input[type="radio"]{
+		height: auto;
+		width: auto;
+	}
+
+
+	
+}

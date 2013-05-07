@@ -35,7 +35,7 @@
 	<?php echo $objTemplate->getBranding(); ?>
 	<?php echo $objVcard->getVcard(); ?>
 	</div>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 	<?php
 			// create easy to use variables
 			extract($properties);

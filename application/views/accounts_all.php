@@ -81,82 +81,64 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
+    	<?php if($action != 'download'): ?>
+    	<a href="<?php echo $objScaffold->getFolder(); ?>download/" class="button-add download"><span></span>Download these transactions</a>
+    	<?php endif; ?>
     	<h1><?php echo $accounts_title; ?></h1>
-<?php
-
-		// results exist
-		//if(!empty($properties)):
-			// we're downloading data
-			if($action == 'download'):
-?>
-            <div class="buttons clearfix">
-				<?php echo $objCSV->getDownload(); ?>
-				<a href="<?php echo $objScaffold->getFolder(); ?>" class="button">View accounts</a>
+			<div id="VisualData" style="clear:both;">
+				&nbsp;
 			</div>
-<?php
-			else:
-?>
-				<div class="buttons clearfix">
-					<a href="<?php echo $objScaffold->getFolder(); ?>download/<?php echo (!empty($_SERVER['QUERY_STRING'])) ? '?' . $_SERVER['QUERY_STRING'] : ''; ?>" class="download">Download these figures</a>
-				</div>
-				<div id="VisualData" style="clear:both;">
-					&nbsp;
-				</div>
-				<div class="data">
-	                <table id="<?php echo strtolower($objScaffold->getNamePlural()); ?>_table">
-	                    <thead>
-	                        <tr>
-	                            <th scope="col">Month</th>
-	                            <th scope="col">Revenue</th>
-	                            <th scope="col">Expenses</th>
-	                            <th scope="col">Profit/Loss</th>
-	                        </tr>
-	                    </thead>
-	                    <tfoot>
-	                    <?php if($months_size > 0): ?>
-	                    	<tr>
-								<th scope="row">Averages</th>
-								<th scope="col" class="positive"><?php echo currency($objScaffold->getProjectsTotal() / $months_size); ?></th>
-								<th scope="col" class="negative"><span class="minus">-</span><?php echo currency($objScaffold->getOutgoingsTotal() / $months_size); ?></th>
-								<th scope="col"><?php echo currency($objScaffold->getSubtotal() / $months_size); ?></th>
-	                        </tr>
-	                     <?php endif; ?>
-	                    	<tr>
-								<th scope="row">Totals</th>
-								<th scope="col" class="positive"><?php echo currency($objScaffold->getProjectsTotal()); ?></th>
-								<th scope="col" class="negative"><span class="minus">-</span><?php echo currency($objScaffold->getOutgoingsTotal()); ?></th>
-								<th scope="col"><?php echo currency($objScaffold->getSubtotal()); ?></th>
-	                        </tr>
-	                    </tfoot>
-	                    <tbody>
-							<?php
-							
-							/**
-							 *	Loop through all the months since we started trading
-							 *	and show the incomings/outgoings and profit/loss column to boot
-							 *
-							 */
-							foreach($months as $key => $value):
-								$subtotal_class = (strpos($objScaffold->getMonthlySubtotal($key), '-') === false) ? 'positive' : 'negative';
-								$nice_name = date('M Y', strtotime(trim($key . '-01 00:00:00')));
-							?>
-								<tr>
-									<th scope="row"><?php echo $nice_name; ?></th>
-									<td class="positive"><?php echo currency($objScaffold->getMonthlyProfit($key)); ?></td>
-									<td class="negative"><span class="minus">-</span><?php echo currency($objScaffold->getMonthlyLoss($key)); ?></td>
-									<td class="<?php echo $subtotal_class; ?>"><?php echo ($objScaffold->getMonthlySubtotal($key) < 0) ? '<span class="minus">-</span>' : ''; echo currency($objScaffold->getMonthlySubtotal($key)); ?></td>
-								</tr>
-							<?php
-							endforeach;
-							?>
-	                    </tbody>
-	                </table>
-                </div>
-				<?php
-			endif; // end else
-		//endif;
-		?>
+			<div class="data">
+                <table id="<?php echo strtolower($objScaffold->getNamePlural()); ?>_table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Month</th>
+                            <th scope="col">Revenue</th>
+                            <th scope="col">Expenses</th>
+                            <th scope="col">Profit/Loss</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                    <?php if($months_size > 0): ?>
+                    	<tr>
+							<th scope="row">Averages</th>
+							<th scope="col" class="positive"><?php echo currency($objScaffold->getProjectsTotal() / $months_size); ?></th>
+							<th scope="col" class="negative"><span class="minus">-</span><?php echo currency($objScaffold->getOutgoingsTotal() / $months_size); ?></th>
+							<th scope="col"><?php echo currency($objScaffold->getSubtotal() / $months_size); ?></th>
+                        </tr>
+                     <?php endif; ?>
+                    	<tr>
+							<th scope="row">Totals</th>
+							<th scope="col" class="positive"><?php echo currency($objScaffold->getProjectsTotal()); ?></th>
+							<th scope="col" class="negative"><span class="minus">-</span><?php echo currency($objScaffold->getOutgoingsTotal()); ?></th>
+							<th scope="col"><?php echo currency($objScaffold->getSubtotal()); ?></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+						<?php
+						
+						/**
+						 *	Loop through all the months since we started trading
+						 *	and show the incomings/outgoings and profit/loss column to boot
+						 *
+						 */
+						foreach($months as $key => $value):
+							$subtotal_class = (strpos($objScaffold->getMonthlySubtotal($key), '-') === false) ? 'positive' : 'negative';
+							$nice_name = date('M Y', strtotime(trim($key . '-01 00:00:00')));
+						?>
+							<tr>
+								<th scope="row"><?php echo $nice_name; ?></th>
+								<td class="positive"><?php echo currency($objScaffold->getMonthlyProfit($key)); ?></td>
+								<td class="negative"><span class="minus">-</span><?php echo currency($objScaffold->getMonthlyLoss($key)); ?></td>
+								<td class="<?php echo $subtotal_class; ?>"><?php echo ($objScaffold->getMonthlySubtotal($key) < 0) ? '<span class="minus">-</span>' : ''; echo currency($objScaffold->getMonthlySubtotal($key)); ?></td>
+							</tr>
+						<?php
+						endforeach;
+						?>
+                    </tbody>
+                </table>
+            </div>
 	</div>
 <?php include($objTemplate->getFooterHTML()); ?>

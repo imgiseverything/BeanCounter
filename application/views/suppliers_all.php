@@ -39,15 +39,13 @@
 ?>
 	<div id="PrimaryContent">
     	<?php echo $objMenu->getBreadcrumb(); ?>
+		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>
 		<?php	
 			// results exist
 			if(!empty($properties)):
 		?>
-			<div class="buttons clearfix">
-				<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button add">Add new <?php echo $objScaffold->getName(); ?></a>
-		   	</div>
 		   	<div class="data">
 			<?php echo $objPagination->getPagination(); ?>
 			<p class="showing"><?php echo getShowingXofX($objScaffold->getPerPage(), $objScaffold->getCurrentPage(), $properties_size, $objScaffold->getTotal()) . ' ' . $objScaffold->getNamePlural(); ?></p>	

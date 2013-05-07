@@ -64,11 +64,9 @@
 ?>
 	<div id="PrimaryContent">
     	<?php echo $objMenu->getBreadcrumb(); ?>
+		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>
-        <div class="buttons clearfix">
-        	<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button add">Add new <?php echo $objScaffold->getName(); ?></a>
-        </div>
         <div id="VisualData" style="clear:both;">
 			&nbsp;
 		</div>

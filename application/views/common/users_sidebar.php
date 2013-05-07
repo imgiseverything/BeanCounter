@@ -5,7 +5,7 @@
  */
 
 ?>
-<div id="SecondaryContent">
+<div class="content-secondary">
 	<form id="filterForm" method="get" action="<?php echo $objScaffold->getFolder(); ?>" class="hidden">
 			<fieldset>
 				<legend>Filter <?php echo $objScaffold->getNamePlural(); ?></legend>

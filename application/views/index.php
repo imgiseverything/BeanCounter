@@ -6,7 +6,7 @@
 	
 	// Page details
 	$objTemplate->setTitle('Dashboard');
-	$objTemplate->setBodyClass('home');
+	$objTemplate->setBodyClass('home layout-b');
 	
 	// Style / Appearance (CSS)
 	$objTemplate->setStyle(array('tables', 'calendar', 'home')); // must be an array
@@ -19,7 +19,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 	<?php
         // Show last invoiced projects
         if($objAuthorise->getLevel() == 'Superuser'):
@@ -81,7 +81,7 @@
         endif;
         ?>    
 	</div>
-	<div id="SecondaryContent">
+	<div class="content-secondary">
 <?php if($objAuthorise->getLevel() == 'Superuser'): ?>
 		<table class="calendar calendar-mini">
 			<caption>This month&#8217;s <a href="<?php echo $objBooking->getFolder(); ?>" title="View in more detail">bookings</a></caption>

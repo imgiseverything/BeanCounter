@@ -27,7 +27,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 	    <h1>Email <?php echo SITE_NAME; ?></h1>
 		<?php echo $objFeedback->getFeedback(); ?>
         <?php if(form_success($user_feedback) !== true): /* don't show form if email successfully sent */ ?>
@@ -47,7 +47,7 @@
         <p>I'll be in touch shortly</p>
         <?php endif; ?>
 	</div>
-	<div id="SecondaryContent">
+	<div class="content-secondary">
 		<h2>Contact details</h2>
         <?php echo $objVcard->getVcard(); ?>
 	</div>

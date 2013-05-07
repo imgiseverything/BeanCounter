@@ -8,7 +8,7 @@
  *	
  *	@since			08/2007
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	25/03/2010
+ *	@lastmodified	07/05/2013
  *	
  */
 
@@ -18,11 +18,11 @@ body, div{
 }
 
 /* Hidden elements */
-div#Welcome, ul#Menu, ul#Submenu, div.breadcrumb, div#SecondaryContent{
+.logged-in-status, .site-nav, div.breadcrumb, div.content-secondary{
 	display: none;
 }
 
-body, div#Container, div#Content, div#PrimaryContent, div#Footer{
+.inner{
 	width: 100%;
 }
 

@@ -50,17 +50,17 @@
 /**
  *	Bean counter fixes
  */
-#colorbox div#PrimaryContent form{
+#colorbox div.content-primary form{
 	padding: 0 10px;
 }
 
-#colorbox div#PrimaryContent form div.field{
+#colorbox div.content-primary form div.field{
 	clear: both;
 }
 
-#colorbox div#PrimaryContent form div.field label,
-#colorbox div#PrimaryContent form div.field input,
-#colorbox div#PrimaryContent form div.field select,
-#colorbox div#PrimaryContent form div.field textarea{
+#colorbox div.content-primary form div.field label,
+#colorbox div.content-primary form div.field input,
+#colorbox div.content-primary form div.field select,
+#colorbox div.content-primary form div.field textarea{
 	display: block;
 }

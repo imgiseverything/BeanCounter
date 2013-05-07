@@ -12,7 +12,7 @@
 	$objTemplate->setStyle(array('forms', 'tables', 'colorbox', 'datepicker'));
 	
 	$objTemplate->setExtraStyle('
-		div#PrimaryContent form fieldset textarea#description{
+		div.content-primary form fieldset textarea#description{
 			height: 10em;
 		}
 	');
@@ -49,7 +49,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>

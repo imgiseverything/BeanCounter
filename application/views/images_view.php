@@ -35,7 +35,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
     	<h1>Images</h1>
         <?php echo $objFeedback->getFeedback(); ?>
         <form id="image_upload" action="" method="post" enctype="multipart/form-data">

@@ -37,7 +37,7 @@
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>
-	<div id="PrimaryContent">
+	<div id="PrimaryContent" class="content-primary">
 		<?php
 			// create easy to use variables
 			extract($properties);			

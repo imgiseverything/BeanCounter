@@ -8,7 +8,7 @@
 
 if($objTemplate->getMode() == 'normal'): 
 ?>
- <div id="Filter">
+ <div class="filter-form">
 	<form id="filterForm" method="get" action="<?php echo $objScaffold->getFolder(); ?>" class="hidden">
 		<fieldset>
 			<fieldset class="fieldset-row">

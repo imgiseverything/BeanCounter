@@ -52,7 +52,7 @@ body.download,
 .download-container .site-container, 
 .download-container .site-header, 
 .download-container .site-content, 
-.download-container #PrimaryContent{
+.download-container .content-primary{
 	width: 640px;
 }
 
@@ -119,7 +119,7 @@ body.download,
 	}
 	
 	/* Primary content */
-	.download-container #PrimaryContent{
+	.download-container .content-primary{
 	}
 	
 		.download-container .breadcrumb{

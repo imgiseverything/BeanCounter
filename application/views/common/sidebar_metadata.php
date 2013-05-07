@@ -7,7 +7,7 @@
  */
 
 ?>
-<div id="SecondaryContent">
+<div class="content-secondary">
 	<h2>Relevant dates</h2>
 	<p>Date added: <?php echo DateFormat::getDate('date', $date_added); ?> <em><?php echo DateFormat::howManyDays($date_added); ?> ago</em><br />
 Date edited: <?php echo (!empty($date_edited)) ? DateFormat::getDate('date', $properties['date_edited']) . ' <em>' . DateFormat::howManyDays($date_edited) . ' ago</em>' : 'N/A'; ?></p>

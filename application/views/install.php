@@ -203,7 +203,7 @@
 	<div class="group site-content">
 		<div class="inner">
 
-			<div id="PrimaryContent">
+			<div id="PrimaryContent" class="content-primary">
 		        <?php 
 				// only show form if it hasn't been completed successfully: to save repeated inserts/edits
 				if(form_success($user_feedback) !== true):

@@ -6,5 +6,5 @@
 
 
 ?>
-<div id="SecondaryContent">
+<div class="content-secondary">
 </div>

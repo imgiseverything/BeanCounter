@@ -2,10 +2,9 @@
 table.jCalendar {
 	border: none;
 	background: #FFF;
-    border-collapse: separate;
-    border-spacing: 2px;
-	margin: 0 5px 5px 3px;
-	width: 120px;
+    border-collapse: collapse;
+	margin: 0;
+	width: 100%;
 }
 table.jCalendar th {
 	background: #333;
@@ -36,26 +35,25 @@ table.jCalendar td.selected:hover {
 	background: #f33;
 	color: #fff;
 }
-table.jCalendar td:hover, table.jCalendar td.dp-hover {
+table.jCalendar td:hover, 
+table.jCalendar td.dp-hover {
 	background: #fff;
 	color: #000;
 }
-table.jCalendar td.disabled, table.jCalendar td.disabled:hover {
+table.jCalendar td.disabled, 
+table.jCalendar td.disabled:hover {
 	background: #bbb;
 	color: #888;
 }
 
 /* For the popup */
 
-/* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
-
 div.dp-popup {
 	position: relative;
 	background: #ccc;
-	font-size: 10px;
-	font-family: arial, sans-serif;
-	padding: 2px;
-	width: 171px;
+	font: 11px sans-serif;
+	padding: 10px;
+	width: 300px;
 	line-height: 1.2em;
 }
 div#dp-popup {
@@ -63,7 +61,7 @@ div#dp-popup {
 	z-index: 199;
 }
 div.dp-popup h2 {
-	font-size: 12px;
+	font-size: 14px;
 	text-align: center;
 	margin: 2px 0;
 	padding: 0;
@@ -82,10 +80,11 @@ div.dp-popup a {
 	text-decoration: none;
 	padding: 3px 2px 0;
 }
-div.dp-popup div.dp-nav-prev {
+div.dp-popup div.dp-nav-prev,
+div.dp-popup div.dp-nav-next {
 	position: absolute;
-	top: 2px;
-	left: 4px;
+	top: 13px;
+	left: 15px;
 	width: 100px;
 }
 div.dp-popup div.dp-nav-prev a {
@@ -99,10 +98,8 @@ div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled
 	cursor: default;
 }
 div.dp-popup div.dp-nav-next {
-	position: absolute;
-	top: 2px;
-	right: 4px;
-	width: 100px;
+	left: auto;
+	right: 15px;
 }
 div.dp-popup div.dp-nav-next a {
 	float: right;
@@ -114,8 +111,8 @@ div.dp-popup a.disabled {
 
 div.dp-popup td {
 	cursor: pointer;
-
 }
+
 div.dp-popup td.disabled {
 	cursor: default;
 }

@@ -5,7 +5,7 @@
  */
 
 ?>
-<div id="SecondaryContent">
+<div class="content-secondary">
  	<h2>Help</h2>
  	<p>Forms can be confusing so this handy-guide should explain what the forms to your left mean.</p>
  	<h3>Questions</h3>
