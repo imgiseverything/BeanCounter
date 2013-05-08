@@ -8,66 +8,78 @@
  *	@package	jQuery
  *
  */
- 
- 
- 		
+
+
+(function ($) {
+
+    beancounterTax = {
+    
+    	config: {
+    		
+    	},
+
+        // Run misc/generic functionality and call specific functions
+        onReady: function () {
+        
+        	var self = this,
+        		vatOptionHTML = '<div class="field"><input type="checkbox" class="checkbox" id="vat-checkbox" value="Y" /><label for="vat-checkbox" class="checklabel">Add VAT on top?</label></div>',
+				$tax = $('#vat'),
+				$taxCheckbox = $('#vat-checkbox'),
+				$price = $('#price');
+		
+			// add tax checkbox
+			if($tax.length === 0){
+				return;
+			}
+			
+			$tax.parent().before(vatOptionHTML);
+			
+			if($tax.val().length === 0){
+				$tax.parent().hide();
+			}
+			
+			$taxCheckbox.click(function(){
+				if($taxCheckbox.attr('checked') === true){
+					$tax.parent().show();
+					self.calculateVAT();
+				} else{
+					$tax.val();
+					$tax.parent().hide();
+				}
+			});
+			
+			
+			// Update the VAT (sales tax) values as and when the price field is edited
+			$price.keyup(function(){
+				if($taxCheckbox.attr('checked') === true){
+					calculateVAT();
+				}
+			});
+        	
+        	
+        },
+        
+        
+        
+        // Take Tax value (e.g. sales tax or VAT in the UK) (from hidden field) and create sales tax value from price field
+        calculateTax : function(){
+        	
+        	var	rate = $("#vat_rate").val(),
+				price = $("#price").val(),
+				taxRate = (price * (rate / 100));
+			
+			
+			$("#vat").val(taxRate);
+        	
+        }
+        
+	}
+      
+}(jQuery));
+
+
 $(document).ready(function(){
-
-	initVat();
-
+	beancounterTax.onReady();
 });
 
-
-/**
- *	initVAT
- */
-function initVat(){
-
-	var vatOptionHTML = '<div class="field"><input type="checkbox" class="checkbox" id="vat-checkbox" value="Y" /><label for="vat-checkbox" class="checklabel">Add VAT on top?</label></div>';
-
-	// add vat checkbox
-	if($("#vat").length == 0){
-		return;
-	}
-	
-	$("#vat").parent().before(vatOptionHTML);
-	
-	if($("#vat").val().length == 0){
-		$("#vat").parent().hide();
-	}
-	
-	$("#vat-checkbox").click(function(){
-		if($("#vat-checkbox").attr("checked") == true){
-			$("#vat").parent().show();
-			calculateVAT();
-		} else{
-			$("#vat").val();
-			$("#vat").parent().hide();
-		}
-	});
-	
-	
-	
-	$("#price").keyup(function(){
-		if($("#vat-checkbox").attr("checked") == true){
-			calculateVAT();
-		}
-	});
-		
-}
-
-
-/**
- *	calculateVAT
- */
-function calculateVAT(){
-	
-	// take VAT rate (from database) and create VAT from price
-	var	rate = $("#vat_rate").val(),
-		price = $("#price").val(),
-		vat_rate = (price * (rate / 100));
-	
-	
-	$("#vat").val(vat_rate);
-}
 

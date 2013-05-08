@@ -18,7 +18,7 @@
  *	@author			philthompson.co.uk
  *	@since			10/01/2008
  *	
- *	@lastmodified	12/03/2010
+ *	@lastmodified	08/05/2013
  *	
  *	=========================================================================
  *	
@@ -732,8 +732,7 @@
 				}
 				// give user feedback;
 				$user_feedback['type'] = 'error';
-				
-				
+						
 			}
 			
 			return $user_feedback;
@@ -759,6 +758,7 @@
 			return $user_feedback;
 		}
 		
+		
 		/**
 		 *	delete
 		 *	
@@ -769,6 +769,7 @@
 			$this->deleteTasks();
 			return $user_feedback;
 		}
+		
 		
 		/**
 		 *	edit
@@ -793,8 +794,7 @@
 			} else{
 				return parent::setById();
 			}
-			
-			
+						
 		}
 		
 		
@@ -830,7 +830,6 @@
 				$this->_id = $this->_properties['id'];
 				return true;
 			} else{ 
-			
 				// Query failed - database down or poorly formed query
 				$this->_exists = false;
 				return false;
@@ -1067,19 +1066,23 @@
 		 *	@return array $user_feedback
 		 */
 		protected function addTasks(){
-			$user_feedback = array();
-			
+		
+			$user_feedback = array();			
 			
 			$POST_storage = $_POST;
-
 			
 			if(!empty($_POST['task'])){
 				foreach($_POST['task'] as $task){
-					$objTask = new Task($this->_db, array(), false);
-					$_POST = $task;
-					$_POST['action'] = 'add';
-					$_POST['project'] = $this->_id;
-					$user_feedback = $objTask->add();				
+				
+					// Only add if the task has been checked to be deleted
+					if(empty($task['delete'])){
+						$objTask = new Task($this->_db, array(), false);
+						$_POST = $task;
+						$_POST['action'] = 'add';
+						$_POST['project'] = $this->_id;
+
+						$user_feedback = $objTask->add();
+					}				
 				}
 			}
 			
@@ -1112,8 +1115,7 @@
 			
 				if(!empty($task['id'])){
 					$objTask = new Task($this->_db, array(), $task['id']);
-					
-					
+									
 					if(!empty($task['delete'])){
 						$user_feedback = $objTask->delete();
 					} else{
@@ -1131,8 +1133,7 @@
 				}
 			
 			}
-			
-			
+						
 			$_POST = $POST_storage;
 			
 			return $user_feedback;
@@ -1141,6 +1142,7 @@
 		
 		/**
 		 *	completed
+		 *	Mark a project as 'completed'
 		 *	@return array
 		 */
 		public function completed(){

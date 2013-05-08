@@ -91,7 +91,6 @@
 		  		}
 		
 			})
-			.fail(function() { } )
 			.always(function() { 
 				
 				$('#Loading').remove();
@@ -158,7 +157,7 @@
 	}
 
 
-})(jQuery);
+}(jQuery));
 
 
 /**

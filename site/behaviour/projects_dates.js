@@ -43,7 +43,7 @@ function project_dates(){
 	 	}
 	 	
 	 	/* STAGE: Invoiced */
-	 	if(projectStage == 3){
+	 	if(projectStage === 3){
 	 		$('#payment_required_day').parent().show();
 	 	}
 	 	

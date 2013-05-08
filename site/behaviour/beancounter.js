@@ -169,6 +169,7 @@ function projectsVAT(){
 	}
 
 	$('#charge_vat').click(function(e){
+		e.preventDefualt();
 		if($(this).is(':checked')){
 			$vatRate.val($hiddenVatRate.val());
 		} else{

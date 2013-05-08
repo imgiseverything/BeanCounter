@@ -10,15 +10,14 @@
  
  /* showHideExtras */
  function showHideExtras(){
+ 
+ 	var link = '<p class="instructions"><a href="#" id="show_hide_extras_link">Add/edit extra details</a></p>'; //Create show/hide link after title input
 	
 	/* hide fields */
 	$('div.field').hide();
 	
 	/* show required fields */
-	$('label.required').parent('div.field').show();
- 
- 	/* Create show/hide link after title input */
- 	var link = '<p class="instructions"><a href="#" id="show_hide_extras_link">Add/edit extra details</a></p>';
+	$('label.required').parent('div.field').show(); 	
  	
  	$('#title').parent().append(link);
  	

@@ -61,7 +61,6 @@
 				$(this).html(ajaxData);
 		
 			})
-			.fail(function() { } )
 			.always(function() { 
 				
 				$('#Loading').remove();
@@ -72,8 +71,7 @@
 		
 		},
         
-        
-        
+
         preFilter: function(){
         
         	var self = this,
@@ -120,7 +118,7 @@
 	}
 
 
-})(jQuery);
+}(jQuery));
 
 
 /**
