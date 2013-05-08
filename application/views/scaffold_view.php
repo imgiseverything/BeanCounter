@@ -30,9 +30,11 @@
     	<?php echo $objMenu->getBreadcrumb(); ?>
     	<h1><?php echo $title; ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>
+        
+		<?php echo validateContent($description); ?>
 		<?php
 		// automatically show contents of individual object
-		echo $objViewSnippet->autoViewById($objScaffold);
+		//echo $objViewSnippet->autoViewById($objScaffold);
 		?>
 	</div>
     <?php include(APPLICATION_PATH . '/views/common/sidebar_metadata.php'); ?>

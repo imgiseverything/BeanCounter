@@ -70,7 +70,7 @@
 			// show item details by looping through all properties
 			foreach($properties as $property => $value){
 				
-				// value is an  rray
+				// value is an  array
 				if(is_array($value)){
 					$html .= validateContent('<strong>' . ucfirst(str_replace('_', ' ', $property)) . ':</strong> ');
 					$html .= '<ul>';

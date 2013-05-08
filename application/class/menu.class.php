@@ -115,7 +115,7 @@ class Menu{
 				$clean_crumb = str_replace('-', ' ', ucfirst($this->_url[$i]));
 				
 				// clean crumb is a month
-				if(strlen($clean_crumb) == 2 && is_numeric($clean_crumb) && $clean_crumb < 13 && strlen($this->_url[($i-1)]) == 4 && is_numeric($this->_url[($i-1)])){
+				if(strlen($clean_crumb) === 2 && is_numeric($clean_crumb) && $clean_crumb < 13 && strlen($this->_url[($i-1)]) === 4 && is_numeric($this->_url[($i-1)])){
 					$clean_crumb = date('F', strtotime(date('Y') . '-' . $clean_crumb . '-01 00:00:00'));	
 				}
 				
@@ -133,7 +133,6 @@ class Menu{
 			
 		}
 		
-		//$this->_breadcrumb .=  (!empty($action)) ? $this->_breadcrumbSeparator . ' ' . ucfirst($action) : '';
 		$this->_breadcrumb .= ($page_title) ? ' ' . $page_title : '';
 		
 
