@@ -847,13 +847,14 @@ class Form{
 				$current_{$field}[] = $foreign_key_data['title'];
 			}
 		}
+		/*
 		// create helpful instructions for user
 		if(empty($current_{$field})){
 			$current = 'None selected';
 		} else{
 			$current = join(', ', $current_{$field});
 		}
-		$field_element .= '<p class="instructions"><strong>Current:</strong> ' . $current . '</p>' . "\n";
+		$field_element .= '<p class="instructions"><strong>Current:</strong> ' . $current . '</p>' . "\n";*/
 		
 		// loop through and show all items
 		$fk_options = $this->setForeignKeyOptions($field);

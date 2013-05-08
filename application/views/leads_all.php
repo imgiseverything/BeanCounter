@@ -57,6 +57,10 @@
       });
    });
    ");
+   
+   
+	// Breadcrumb
+	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());
 
 	
 	// HTML header

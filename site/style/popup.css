@@ -8,14 +8,14 @@
  *	
  *	@since			06/2008
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	24/04/2013
+ *	@lastmodified	08/05/2013
  *	
  */
 
 
-div#Container, 
-div#Content, 
-div.content-primary{
+.site-container, 
+.site-content, 
+.content-primary{
 	margin: 0 auto;	
 	width: 640px;
 }
@@ -27,12 +27,25 @@ body.popup{
 }
 
 /* Hidden elements */
-div.breadcrumb,
-div.content-secondary{
+.breadcrumb,
+.content-secondary{
 	display: none !important;
 }
 
 
-input, textarea{
-	max-width: 585px;
+input, select, textarea{
+	max-width: 550px;
+}
+
+body.popup h1{
+	display: none;
+}
+
+body.popup form{
+	margin-top: 10px;
+}
+
+body.popup fieldset{
+	padding-left: 15px !important;
+	padding-right: 15px !important;
 }

@@ -56,8 +56,6 @@
 				endswitch; // end switch
 			?>
 			<?php endif; // end if error variable exists  ?>
-			<div class="buttons clearfix">
-				<a href="/">Go to Dashboard</a>
-			</div>
+			<p><a href="/">Go to Dashboard</a></p>
 	</div>
 <?php include($objTemplate->getFooterHTML()); ?>

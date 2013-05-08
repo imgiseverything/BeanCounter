@@ -88,7 +88,7 @@
 	<div id="PrimaryContent" class="content-primary">
     	<?php echo $objMenu->getBreadcrumb(); ?>
     	<?php if($action != 'download'): ?>
-    	<a href="<?php echo $objScaffold->getFolder(); ?>download/" class="button-add button-download"><span></span>Download these transactions</a>
+    	<a href="<?php echo $objScaffold->getFolder(); ?>download/" class="button-add button-download" download><span></span>Download these transactions</a>
     	<?php endif; ?>
     	<h1><?php echo $accounts_title; ?></h1>
 			<div id="VisualData" style="clear:both;">

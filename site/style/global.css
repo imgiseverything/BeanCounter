@@ -8,7 +8,7 @@
  *	
  *	@since			12/2007
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	04/05/2013
+ *	@lastmodified	08/05/2013
  *	
  *	
  *	Contents
@@ -665,8 +665,8 @@ ul.options{
 	ul.options li{
 		border-left: 1px solid #BBB;
 		display: inline;
-		padding-left: 10px;
 		margin-left: 7px;
+		padding-left: 10px;
 	}
 	
 	ul.options li:first-child{
@@ -677,22 +677,22 @@ ul.options{
 	
 	
 /* Tags */
-.tags{
+ul.tags{
 	margin: 0;
 	padding: 0;
 }
 
-	.tags li{
+	ul.tags li{
 		display: inline;
 		margin: 0;
 		padding: 0;
 	}
 	
-	.tags li:after{
+	ul.tags li:after{
 		content: ", ";
 	}
 	
-	.tags li:last-child:after{
+	ul.tags li:last-child:after{
 		content: "";
 	}
 						
@@ -1060,10 +1060,6 @@ span.secondary-info{
 					max-width: 263px;
 				}
 				
-				.filter-form select{
-					padding: 5px 2px;
-				}
-				
 				
 				.filter-form span.help{
 					clear: both;
@@ -1109,6 +1105,21 @@ span.secondary-info{
 								display: block;
 								padding: 10px;
 								text-align: center;
+							}
+							
+							
+							.filter-form fieldset.date{
+								margin: 0;
+								padding: 0.5em 0 .5em 20px;
+							}
+							
+							.filter-form fieldset.date legend{
+								margin-top: 40px;
+							}
+							
+							.filter-form fieldset.date a.button{
+								margin-left: 0;
+								padding-top: 7px;
 							}
 			
 			/* Options */

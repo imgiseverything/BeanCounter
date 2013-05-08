@@ -7,13 +7,16 @@
 
 	// Page details
 	$objTemplate->setTitle($objScaffold->getPageTitle());
-	$objTemplate->setDescription($objScaffold->getPageDescription());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'colorbox'));
+	$objTemplate->setStyle(array('forms', 'datepicker', 'colorbox'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter',  'colorbox', /*'tiny_mce/tiny_mce', 'tiny_mce/init.default',*/ 'jquery.date', 'jquery.datepicker', 'datepicker', 'jquery.form', 'hide_time', 'ajax_form_submit'));
+	$objTemplate->setBehaviour(array('jquery', 'beancounter',  'colorbox', 'jquery.date', 'jquery.datepicker', 'datepicker', 'jquery.form', 'hide_time', 'ajax_form_submit'));
+	
+	// Breadcrumb
+	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());
+	
 	// HTML header
 	include($objTemplate->getHeaderHTML());
 ?>

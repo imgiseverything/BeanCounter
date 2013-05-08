@@ -9,10 +9,6 @@
 	
 	// Style / Appearance (CSS)
 	$objTemplate->setStyle(array('forms', 'projects', 'tables', 'calendar'));
-	// On page CSS
-	$objTemplate->setExtraStyle('
-	
-	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination'));

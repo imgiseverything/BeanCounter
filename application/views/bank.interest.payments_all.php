@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 *	Interest view
+	 *	Bank Interest view
 	 *  View all items
 	 */
 
@@ -11,13 +11,15 @@
 
 	// Page details
 	$objTemplate->setTitle($objScaffold->getPageTitle());
-	$objTemplate->setDescription($objScaffold->getPageDescription());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'colorbox'));
+	$objTemplate->setStyle(array('forms', 'tables'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination', 'colorbox'));
+	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination'));
+	
+	// Breadcrumb
+	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());
 	
 	// HTML header
 	include($objTemplate->getHeaderHTML());
