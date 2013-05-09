@@ -24,6 +24,7 @@ if(isset($objAuthorise)):
 	    <li id="bookings-link"<?php echo isURLSelected('/bookings'); ?>><a href="/bookings/">Bookings</a>
 	    	<ul>
 	    		<li><a href="/bookings/add/">Add a new booking</a>
+	    		<li><a href="/bookings/types/">Booking types</a>
 	    	</ul>
 	    </li>
 	    <li id="leads-link"<?php echo isURLSelected('/leads'); ?>><a href="/leads/">Leads</a>
