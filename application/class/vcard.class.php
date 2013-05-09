@@ -133,7 +133,7 @@ class Vcard{
 		
 		$this->address1 = (!empty($address)) ?  trim(read($address, 'address1', '')) : trim(read($this->_site->config, 'Address line 1', ''));
 		
-		$this->address2 = (!empty($address)) ?  trim(read($address, 'address2', '')) : trim(read($this->_site->config, 'Address line 2', '')).' '.trim(read($this->_site->config,'Address line 3', ''));
+		$this->address2 = (!empty($address)) ?  trim(read($address, 'address2', '')) : trim(read($this->_site->config, 'Address line 2', '')) . ' ' . trim(read($this->_site->config, 'Address line 3', ''));
 		
 		$this->address3 = (!empty($address)) ?  trim(read($address, 'address3', '')) : trim(read($this->_site->config, 'City/Town', ''));
 		
