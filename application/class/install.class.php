@@ -18,7 +18,7 @@
  *	@author			philthompson.co.uk
  *	@since			16/06/2008
  *	
- *	@lastmodified	30/04/2013
+ *	@lastmodified	09/05/2013
  *	
  *	=========================================================================
  *	
@@ -40,8 +40,6 @@
  *	=========================================================================
  *
  */
-
-define('APPLICATION_PRICE', 15.00);
 
 class Install{
 
@@ -188,9 +186,9 @@ class Install{
 		 Content for `access_level`
 		*/
 		$query = "INSERT INTO `access_level` (`id`, `title`, `description`, `status`, `date_added`, `date_edited`) VALUES
-		(1, 'Superuser', 'The owner of this site.', 1, '2008-05-03 00:00:00', NULL),
-		(3, 'Accountant', 'Can log into system and see accounts and outgoings', 1, '2008-05-03 15:25:28', NULL),
-		(2, 'Basic', 'A basic user is usally a client but could be a supplier', 1, '2008-05-03 15:26:06', NULL);
+		(1, 'Superuser', 'The owner of this site.', 1, Now(), NULL),
+		(3, 'Accountant', 'Can log into system and see accounts and outgoings', 1, Now(), NULL),
+		(2, 'Basic', 'A basic user is usually a client but could be a supplier', 1, Now(), NULL);
 		";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
@@ -242,12 +240,12 @@ class Install{
 		  Content for table `booking_type`
 		*/
 		$query = "INSERT INTO `booking_type` (`id`, `title`, `description`, `status`, `date_added`, `date_edited`) VALUES
-		(1, 'Meeting', 'A meeting whether in person or on the phone. Not necessarily paid for.', 1, '2010-08-10 09:34:45', NULL),
-		(2, 'Job', 'A working paying job.', 1, '2010-08-10 09:34:45', NULL),
-		(3, 'Personal', 'Non work related', 1, '2010-08-10 09:34:45', NULL),
-		(4, 'Holiday', 'Time booked as holiday', 1, '2010-08-10 09:34:45', NULL),
-		(5, 'Training', 'Time spent learning or at a conference.', 1, '2010-08-10 09:34:45', NULL),
-		(6, 'Administration', 'Time spent doing admin eg accounts, marketing, CRM etc.', 1, '2010-08-10 09:34:45', NULL);";
+		(1, 'Meeting', 'A meeting whether in person or on the phone. Not necessarily paid for.', 1, Now(), NULL),
+		(2, 'Job', 'A working paying job.', 1, Now(), NULL),
+		(3, 'Personal', 'Non work related', 1, Now(), NULL),
+		(4, 'Holiday', 'Time booked as holiday', 1, Now(), NULL),
+		(5, 'Training', 'Time spent learning or at a conference.', 1, Now(), NULL),
+		(6, 'Administration', 'Time spent doing admin eg accounts, marketing, CRM etc.', 1, Now(), NULL);";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -283,7 +281,7 @@ class Install{
 		  `address3` varchar(255) default NULL,
 		  `address4` varchar(255) default NULL,
 		  `postal_code` varchar(15) NOT NULL,
-		  `country` varchar(255) NOT NULL,
+		  `country` int(11) NOT NULL,
 		  `email` varchar(255) NOT NULL,
 		  `telephone` varchar(25) default NULL,
 		  `status` int(11) default '0' COMMENT 'FK on status table',
@@ -297,6 +295,12 @@ class Install{
 		@$this->_db->query($prepared_query);
 		
 		
+		/*
+		  Content for table `client
+		*/
+		$query = "INSERT INTO `client` (`id`, `title`, `main_contact`, `address1`, `email`, `postal_code`, `country`, `status`, `date_added`) VALUES
+		(1, 'Example', 'John Smith', '123 Example Street', 'hello@example.com', 'AB1 2DE', 232,  1, Now());";
+			
 		/*
 		 Table structure for table `config`
 		*/			
@@ -313,6 +317,283 @@ class Install{
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
+		
+		
+		/*
+		 Table structure for table `country`
+		*/			
+		$query = "
+		CREATE TABLE `country` (
+		`id` int(11) NOT NULL auto_increment,
+		`title` varchar(200) NOT NULL,
+		`ccode` varchar(2) NOT NULL default '',
+		`status` int(11) default '0' COMMENT 'FK on status table',
+		`date_added` datetime NOT NULL,
+		`date_edited` datetime default NULL,
+		PRIMARY KEY  (`id`)
+		) ENGINE=MyISAM DEFAULT CHARSET=utf8;":
+		// Run query
+		$prepared_query = @$this->_db->prepare($query);
+		@$this->_db->query($prepared_query);
+		
+		
+		/*
+		 Content for table `country`
+		*/			
+		$query = "
+		INSERT INTO `country` (`id`, `title`, `ccode`, `status`, `date_added`, `date_edited`) VALUES
+		(1, 'Afghanistan', 'AF', 1, Now(), NULL),
+		(2, 'Åland Islands', 'AX', 1, Now(), NULL),
+		(3, 'Albania', 'AL', 1, Now(), NULL),
+		(4, 'Algeria', 'DZ', 1, Now(), NULL),
+		(5, 'American Samoa', 'AS', 1, Now(), NULL),
+		(6, 'Andorra', 'AD', 1, Now(), NULL),
+		(7, 'Angola', 'AO', 1, Now(), NULL),
+		(8, 'Anguilla', 'AI', 1, Now(), NULL),
+		(9, 'Antarctica', 'AQ', 1, Now(), NULL),
+		(10, 'Antigua and Barbuda', 'AG', 1, Now(), NULL),
+		(11, 'Argentina', 'AR', 1, Now(), NULL),
+		(12, 'Armenia', 'AM', 1, Now(), NULL),
+		(13, 'Aruba', 'AW', 1, Now(), NULL),
+		(14, 'Australia', 'AU', 1, Now(), NULL),
+		(15, 'Austria', 'AT', 1, Now(), NULL),
+		(16, 'Azerbaijan', 'AZ', 1, Now(), NULL),
+		(17, 'Bahamas', 'BS', 1, Now(), NULL),
+		(18, 'Bahrain', 'BH', 1, Now(), NULL),
+		(19, 'Bangladesh', 'BD', 1, Now(), NULL),
+		(20, 'Barbados', 'BB', 1, Now(), NULL),
+		(21, 'Belarus', 'BY', 1, Now(), NULL),
+		(22, 'Belgium', 'BE', 1, Now(), NULL),
+		(23, 'Belize', 'BZ', 1, Now(), NULL),
+		(24, 'Benin', 'BJ', 1, Now(), NULL),
+		(25, 'Bermuda', 'BM', 1, Now(), NULL),
+		(26, 'Bhutan', 'BT', 1, Now(), NULL),
+		(27, 'Bolivia', 'BO', 1, Now(), NULL),
+		(28, 'Bosnia and Herzegovina', 'BA', 1, Now(), NULL),
+		(29, 'Botswana', 'BW', 1, Now(), NULL),
+		(30, 'Bouvet Island', 'BV', 1, Now(), NULL),
+		(31, 'Brazil', 'BR', 1, Now(), NULL),
+		(32, 'British Indian Ocean Territory', 'IO', 1, Now(), NULL),
+		(33, 'Brunei Darussalam', 'BN', 1, Now(), NULL),
+		(34, 'Bulgaria', 'BG', 1, Now(), NULL),
+		(35, 'Burkina Faso', 'BF', 1, Now(), NULL),
+		(36, 'Burundi', 'BI', 1, Now(), NULL),
+		(37, 'Cambodia', 'KH', 1, Now(), NULL),
+		(38, 'Cameroon', 'CM', 1, Now(), NULL),
+		(39, 'Canada', 'CA', 1, Now(), NULL),
+		(40, 'Cape Verde', 'CV', 1, Now(), NULL),
+		(41, 'Cayman Islands', 'KY', 1, Now(), NULL),
+		(42, 'Central African Republic', 'CF', 1, Now(), NULL),
+		(43, 'Chad', 'TD', 1, Now(), NULL),
+		(44, 'Chile', 'CL', 1, Now(), NULL),
+		(45, 'China', 'CN', 1, Now(), NULL),
+		(46, 'Christmas Island', 'CX', 1, Now(), NULL),
+		(47, 'Cocos (Keeling) Islands', 'CC', 1, Now(), NULL),
+		(48, 'Colombia', 'CO', 1, Now(), NULL),
+		(49, 'Comoros', 'KM', 1, Now(), NULL),
+		(50, 'Congo', 'CG', 1, Now(), NULL),
+		(51, 'Congo, The Democratic Republic of the', 'CD', 1, Now(), NULL),
+		(52, 'Cook Islands', 'CK', 1, Now(), NULL),
+		(53, 'Costa Rica', 'CR', 1, Now(), NULL),
+		(54, 'Côte D''Ivoire', 'CI', 1, Now(), NULL),
+		(55, 'Croatia', 'HR', 1, Now(), NULL),
+		(56, 'Cuba', 'CU', 1, Now(), NULL),
+		(57, 'Cyprus', 'CY', 1, Now(), NULL),
+		(58, 'Czech Republic', 'CZ', 1, Now(), NULL),
+		(59, 'Denmark', 'DK', 1, Now(), NULL),
+		(60, 'Djibouti', 'DJ', 1, Now(), NULL),
+		(61, 'Dominica', 'DM', 1, Now(), NULL),
+		(62, 'Dominican Republic', 'DO', 1, Now(), NULL),
+		(63, 'Ecuador', 'EC', 1, Now(), NULL),
+		(64, 'Egypt', 'EG', 1, Now(), NULL),
+		(65, 'El Salvador', 'SV', 1, Now(), NULL),
+		(66, 'Equatorial Guinea', 'GQ', 1, Now(), NULL),
+		(67, 'Eritrea', 'ER', 1, Now(), NULL),
+		(68, 'Estonia', 'EE', 1, Now(), NULL),
+		(69, 'Ethiopia', 'ET', 1, Now(), NULL),
+		(70, 'Falkland Islands (Malvinas)', 'FK', 1, Now(), NULL),
+		(71, 'Faroe Islands', 'FO', 1, Now(), NULL),
+		(72, 'Fiji', 'FJ', 1, Now(), NULL),
+		(73, 'Finland', 'FI', 1, Now(), NULL),
+		(74, 'France', 'FR', 1, Now(), NULL),
+		(75, 'French Guiana', 'GF', 1, Now(), NULL),
+		(76, 'French Polynesia', 'PF', 1, Now(), NULL),
+		(77, 'French Southern Territories', 'TF', 1, Now(), NULL),
+		(78, 'Gabon', 'GA', 1, Now(), NULL),
+		(79, 'Gambia', 'GM', 1, Now(), NULL),
+		(80, 'Georgia', 'GE', 1, Now(), NULL),
+		(81, 'Germany', 'DE', 1, Now(), NULL),
+		(82, 'Ghana', 'GH', 1, Now(), NULL),
+		(83, 'Gibraltar', 'GI', 1, Now(), NULL),
+		(84, 'Greece', 'GR', 1, Now(), NULL),
+		(85, 'Greenland', 'GL', 1, Now(), NULL),
+		(86, 'Grenada', 'GD', 1, Now(), NULL),
+		(87, 'Guadeloupe', 'GP', 1, Now(), NULL),
+		(88, 'Guam', 'GU', 1, Now(), NULL),
+		(89, 'Guatemala', 'GT', 1, Now(), NULL),
+		(90, 'Guernsey', 'GG', 1, Now(), NULL),
+		(91, 'Guinea', 'GN', 1, Now(), NULL),
+		(92, 'Guinea-Bissau', 'GW', 1, Now(), NULL),
+		(93, 'Guyana', 'GY', 1, Now(), NULL),
+		(94, 'Haiti', 'HT', 1, Now(), NULL),
+		(95, 'Heard Island and McDonald Islands', 'HM', 1, Now(), NULL),
+		(96, 'Holy See (Vatican City State)', 'VA', 1, Now(), NULL),
+		(97, 'Honduras', 'HN', 1, Now(), NULL),
+		(98, 'Hong Kong', 'HK', 1, Now(), NULL),
+		(99, 'Hungary', 'HU', 1, Now(), NULL),
+		(100, 'Iceland', 'IS', 1, Now(), NULL),
+		(101, 'India', 'IN', 1, Now(), NULL),
+		(102, 'Indonesia', 'ID', 1, Now(), NULL),
+		(103, 'Iran, Islamic Republic of', 'IR', 1, Now(), NULL),
+		(104, 'Iraq', 'IQ', 1, Now(), NULL),
+		(105, 'Ireland', 'IE', 1, Now(), NULL),
+		(106, 'Isle of Man', 'IM', 1, Now(), NULL),
+		(107, 'Israel', 'IL', 1, Now(), NULL),
+		(108, 'Italy', 'IT', 1, Now(), NULL),
+		(109, 'Jamaica', 'JM', 1, Now(), NULL),
+		(110, 'Japan', 'JP', 1, Now(), NULL),
+		(111, 'Jersey', 'JE', 1, Now(), NULL),
+		(112, 'Jordan', 'JO', 1, Now(), NULL),
+		(113, 'Kazakhstan', 'KZ', 1, Now(), NULL),
+		(114, 'Kenya', 'KE', 1, Now(), NULL),
+		(115, 'Kiribati', 'KI', 1, Now(), NULL),
+		(116, 'Korea, Democratic People''s Republic of', 'KP', 1, Now(), NULL),
+		(117, 'Korea, Republic of', 'KR', 1, Now(), NULL),
+		(118, 'Kuwait', 'KW', 1, Now(), NULL),
+		(119, 'Kyrgyzstan', 'KG', 1, Now(), NULL),
+		(120, 'Lao People''s Democratic Republic', 'LA', 1, Now(), NULL),
+		(121, 'Latvia', 'LV', 1, Now(), NULL),
+		(122, 'Lebanon', 'LB', 1, Now(), NULL),
+		(123, 'Lesotho', 'LS', 1, Now(), NULL),
+		(124, 'Liberia', 'LR', 1, Now(), NULL),
+		(125, 'Libyan Arab Jamahiriya', 'LY', 1, Now(), NULL),
+		(126, 'Liechtenstein', 'LI', 1, Now(), NULL),
+		(127, 'Lithuania', 'LT', 1, Now(), NULL),
+		(128, 'Luxembourg', 'LU', 1, Now(), NULL),
+		(129, 'Macao', 'MO', 1, Now(), NULL),
+		(130, 'Macedonia, The Former Yugoslav Republic of', 'MK', 1, Now(), NULL),
+		(131, 'Madagascar', 'MG', 1, Now(), NULL),
+		(132, 'Malawi', 'MW', 1, Now(), NULL),
+		(133, 'Malaysia', 'MY', 1, Now(), NULL),
+		(134, 'Maldives', 'MV', 1, Now(), NULL),
+		(135, 'Mali', 'ML', 1, Now(), NULL),
+		(136, 'Malta', 'MT', 1, Now(), NULL),
+		(137, 'Marshall Islands', 'MH', 1, Now(), NULL),
+		(138, 'Martinique', 'MQ', 1, Now(), NULL),
+		(139, 'Mauritania', 'MR', 1, Now(), NULL),
+		(140, 'Mauritius', 'MU', 1, Now(), NULL),
+		(141, 'Mayotte', 'YT', 1, Now(), NULL),
+		(142, 'Mexico', 'MX', 1, Now(), NULL),
+		(143, 'Micronesia, Federated States of', 'FM', 1, Now(), NULL),
+		(144, 'Moldova, Republic of', 'MD', 1, Now(), NULL),
+		(145, 'Monaco', 'MC', 1, Now(), NULL),
+		(146, 'Mongolia', 'MN', 1, Now(), NULL),
+		(147, 'Montenegro', 'ME', 1, Now(), NULL),
+		(148, 'Montserrat', 'MS', 1, Now(), NULL),
+		(149, 'Morocco', 'MA', 1, Now(), NULL),
+		(150, 'Mozambique', 'MZ', 1, Now(), NULL),
+		(151, 'Myanmar', 'MM', 1, Now(), NULL),
+		(152, 'Namibia', 'NA', 1, Now(), NULL),
+		(153, 'Nauru', 'NR', 1, Now(), NULL),
+		(154, 'Nepal', 'NP', 1, Now(), NULL),
+		(155, 'Netherlands', 'NL', 1, Now(), NULL),
+		(156, 'Netherlands Antilles', 'AN', 1, Now(), NULL),
+		(157, 'New Caledonia', 'NC', 1, Now(), NULL),
+		(158, 'New Zealand', 'NZ', 1, Now(), NULL),
+		(159, 'Nicaragua', 'NI', 1, Now(), NULL),
+		(160, 'Niger', 'NE', 1, Now(), NULL),
+		(161, 'Nigeria', 'NG', 1, Now(), NULL),
+		(162, 'Niue', 'NU', 1, Now(), NULL),
+		(163, 'Norfolk Island', 'NF', 1, Now(), NULL),
+		(164, 'Northern Mariana Islands', 'MP', 1, Now(), NULL),
+		(165, 'Norway', 'NO', 1, Now(), NULL),
+		(166, 'Oman', 'OM', 1, Now(), NULL),
+		(167, 'Pakistan', 'PK', 1, Now(), NULL),
+		(168, 'Palau', 'PW', 1, Now(), NULL),
+		(169, 'Palestinian Territory, Occupied', 'PS', 1, Now(), NULL),
+		(170, 'Panama', 'PA', 1, Now(), NULL),
+		(171, 'Papua New Guinea', 'PG', 1, Now(), NULL),
+		(172, 'Paraguay', 'PY', 1, Now(), NULL),
+		(173, 'Peru', 'PE', 1, Now(), NULL),
+		(174, 'Philippines', 'PH', 1, Now(), NULL),
+		(175, 'Pitcairn', 'PN', 1, Now(), NULL),
+		(176, 'Poland', 'PL', 1, Now(), NULL),
+		(177, 'Portugal', 'PT', 1, Now(), NULL),
+		(178, 'Puerto Rico', 'PR', 1, Now(), NULL),
+		(179, 'Qatar', 'QA', 1, Now(), NULL),
+		(180, 'Reunion', 'RE', 1, Now(), NULL),
+		(181, 'Romania', 'RO', 1, Now(), NULL),
+		(182, 'Russian Federation', 'RU', 1, Now(), NULL),
+		(183, 'Rwanda', 'RW', 1, Now(), NULL),
+		(184, 'Saint Barthélemy', 'BL', 1, Now(), NULL),
+		(185, 'Saint Helena', 'SH', 1, Now(), NULL),
+		(186, 'Saint Kitts and Nevis', 'KN', 1, Now(), NULL),
+		(187, 'Saint Lucia', 'LC', 1, Now(), NULL),
+		(188, 'Saint Martin', 'MF', 1, Now(), NULL),
+		(189, 'Saint Pierre and Miquelon', 'PM', 1, Now(), NULL),
+		(190, 'Saint Vincent and the Grenadines', 'VC', 1, Now(), NULL),
+		(191, 'Samoa', 'WS', 1, Now(), NULL),
+		(192, 'San Marino', 'SM', 1, Now(), NULL),
+		(193, 'Sao Tome and Principe', 'ST', 1, Now(), NULL),
+		(194, 'Saudi Arabia', 'SA', 1, Now(), NULL),
+		(195, 'Senegal', 'SN', 1, Now(), NULL),
+		(196, 'Serbia', 'RS', 1, Now(), NULL),
+		(197, 'Seychelles', 'SC', 1, Now(), NULL),
+		(198, 'Sierra Leone', 'SL', 1, Now(), NULL),
+		(199, 'Singapore', 'SG', 1, Now(), NULL),
+		(200, 'Slovakia', 'SK', 1, Now(), NULL),
+		(201, 'Slovenia', 'SI', 1, Now(), NULL),
+		(202, 'Solomon Islands', 'SB', 1, Now(), NULL),
+		(203, 'Somalia', 'SO', 1, Now(), NULL),
+		(204, 'South Africa', 'ZA', 1, Now(), NULL),
+		(205, 'South Georgia and the South Sandwich Islands', 'GS', 1, Now(), NULL),
+		(206, 'Spain', 'ES', 1, Now(), NULL),
+		(207, 'Sri Lanka', 'LK', 1, Now(), NULL),
+		(208, 'Sudan', 'SD', 1, Now(), NULL),
+		(209, 'Suriname', 'SR', 1, Now(), NULL),
+		(210, 'Svalbard and Jan Mayen', 'SJ', 1, Now(), NULL),
+		(211, 'Swaziland', 'SZ', 1, Now(), NULL),
+		(212, 'Sweden', 'SE', 1, Now(), NULL),
+		(213, 'Switzerland', 'CH', 1, Now(), NULL),
+		(214, 'Syrian Arab Republic', 'SY', 1, Now(), NULL),
+		(215, 'Taiwan, Province Of China', 'TW', 1, Now(), NULL),
+		(216, 'Tajikistan', 'TJ', 1, Now(), NULL),
+		(217, 'Tanzania, United Republic of', 'TZ', 1, Now(), NULL),
+		(218, 'Thailand', 'TH', 1, Now(), NULL),
+		(219, 'Timor-Leste', 'TL', 1, Now(), NULL),
+		(220, 'Togo', 'TG', 1, Now(), NULL),
+		(221, 'Tokelau', 'TK', 1, Now(), NULL),
+		(222, 'Tonga', 'TO', 1, Now(), NULL),
+		(223, 'Trinidad and Tobago', 'TT', 1, Now(), NULL),
+		(224, 'Tunisia', 'TN', 1, Now(), NULL),
+		(225, 'Turkey', 'TR', 1, Now(), NULL),
+		(226, 'Turkmenistan', 'TM', 1, Now(), NULL),
+		(227, 'Turks and Caicos Islands', 'TC', 1, Now(), NULL),
+		(228, 'Tuvalu', 'TV', 1, Now(), NULL),
+		(229, 'Uganda', 'UG', 1, Now(), NULL),
+		(230, 'Ukraine', 'UA', 1, Now(), NULL),
+		(231, 'United Arab Emirates', 'AE', 1, Now(), NULL),
+		(232, 'United Kingdom', 'GB', 1, Now(), NULL),
+		(233, 'United States', 'US', 1, Now(), NULL),
+		(234, 'United States Minor Outlying Islands', 'UM', 1, Now(), NULL),
+		(235, 'Uruguay', 'UY', 1, Now(), NULL),
+		(236, 'Uzbekistan', 'UZ', 1, Now(), NULL),
+		(237, 'Vanuatu', 'VU', 1, Now(), NULL),
+		(238, 'Venezuela', 'VE', 1, Now(), NULL),
+		(239, 'Viet Nam', 'VN', 1, Now(), NULL),
+		(240, 'Virgin Islands, British', 'VG', 1, Now(), NULL),
+		(241, 'Virgin Islands, U.S.', 'VI', 1, Now(), NULL),
+		(242, 'Wallis And Futuna', 'WF', 1, Now(), NULL),
+		(243, 'Western Sahara', 'EH', 1, Now(), NULL),
+		(244, 'Yemen', 'YE', 1, Now(), NULL),
+		(245, 'Zambia', 'ZM', 1, Now(), NULL),
+		(246, 'Zimbabwe', 'ZW', 1, Now(), NULL);";
+		// Run query
+		$prepared_query = @$this->_db->prepare($query);
+		@$this->_db->query($prepared_query);
+		niceError($query);
+
+
 		
 
 		/*
@@ -337,17 +618,17 @@ class Install{
 		 Content for currency table
 		*/
 		$query = "INSERT INTO `currency` VALUES
-		(1, '&#163;', 'GBP', 1, '2010-03-06 18:09:22', NULL),
-		(2, '&#8364;', 'EUR', 1, '2010-03-06 18:09:22', NULL),
-		(3, '&#165;', 'YEN', 1, '2010-03-06 18:09:22', NULL),
-		(4, '$', 'USD', 1, '2010-03-06 18:09:22', NULL),
-		(5, '$', 'AUD', 1, '0000-00-00 00:00:00', NULL),
-		(6, '$', 'CAD', 1, '0000-00-00 00:00:00', NULL),
-		(7, '$', 'HKD', 1, '0000-00-00 00:00:00', NULL),
-		(8, '&#164;', 'SEK', 1, '0000-00-00 00:00:00', NULL),
-		(9, '&#164;', 'NOK', 1, '0000-00-00 00:00:00', NULL),
-		(10, '$', 'NZD', 1, '0000-00-00 00:00:00', NULL),
-		(11, '&#165;', 'CNY', 1, '0000-00-00 00:00:00', NULL);";
+		(1, '&#163;', 'GBP', 1, Now(), NULL),
+		(2, '&#8364;', 'EUR', 1, Now(), NULL),
+		(3, '&#165;', 'YEN', 1, Now(), NULL),
+		(4, '$', 'USD', 1, Now(), NULL),
+		(5, '$', 'AUD', 1, Now(), NULL),
+		(6, '$', 'CAD', 1, Now(), NULL),
+		(7, '$', 'HKD', 1, Now(), NULL),
+		(8, '&#164;', 'SEK', 1, Now(), NULL),
+		(9, '&#164;', 'NOK', 1, Now(), NULL),
+		(10, '$', 'NZD', 1, Now(), NULL),
+		(11, '&#165;', 'CNY', 1, Now(), NULL);";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -497,9 +778,9 @@ class Install{
 			Content for table `lead_type`
 		 */
 		$query = "INSERT INTO `lead_type` (`id`, `title`, `description`, `status`, `date_added`, `date_edited`) VALUES
-		(1, 'Cold call/email', 'Job came out of nowhere', 1, '2011-10-04 00:00:00', NULL),
-		(2, 'Referral', 'Job was referred from a client/competitor', 1, '2011-10-04 00:00:00', NULL),
-		(3, 'Existing client', 'Job is from a client you have worked with before.', 1, '2011-10-04 00:00:00', NULL);";
+		(1, 'Cold call/email', 'Job came out of nowhere', 1, Now(), NULL),
+		(2, 'Referral', 'Job was referred from a client/competitor', 1, Now(), NULL),
+		(3, 'Existing client', 'Job is from a client you have worked with before.', 1, Now(), NULL);";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -512,7 +793,7 @@ class Install{
 		  `id` int(11) NOT NULL auto_increment,
 		  `outgoing_supplier` int(11) NOT NULL COMMENT 'FK on outgoing_supplier table',
 		  `outgoing_category` int(11) NOT NULL COMMENT 'FK on outgoing_category table',
-		  `outgoing_payment` int(11) NOT NULL COMMENT 'FK on outgoing_payment table',
+		  `payment_method` int(11) NOT NULL COMMENT 'FK on payment_method table',
 		  `title` varchar(100) NOT NULL,
 		  `description` mediumtext,
 		  `status` int(11) default '0' COMMENT 'FK on status table',
@@ -526,7 +807,7 @@ class Install{
 		  PRIMARY KEY  (`id`),
 		  KEY `outgoing_supplier` (`outgoing_supplier`),
 		  KEY `outgoing_category` (`outgoing_category`),
-		  KEY `outgoing_payment` (`outgoing_payment`),
+		  KEY `payment_method` (`payment_method`),
 		  KEY `status` (`status`)
 		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Record all business expenses';";
 		// Run query
@@ -579,56 +860,25 @@ class Install{
 		 Content for `outgoing_category`
 		*/
 		$query = "INSERT INTO `outgoing_category` (`id`, `title`, `description`, `status`, `date_added`, `date_edited`) VALUES
-		(1, 'Goods used (bought for resale)', 'Cost of goods bought for resale or goods used', 1, '0000-00-00 00:00:00', '2008-05-04 18:05:06'),
-		(2, 'Office costs', 'Telephone, fax, stationery and other office costs', 1, '0000-00-00 00:00:00', '2008-05-04 18:02:35'),
-		(3, 'Subcontractor', 'Part of a job was completed by another supplier', 1, '0000-00-00 00:00:00', NULL),
-		(4, 'Advertising and business entertainment costs', NULL, 1, '0000-00-00 00:00:00', '2008-05-04 18:06:10'),
-		(6, 'Car, van and travel expenses', NULL, 1, '0000-00-00 00:00:00', '2008-05-04 18:01:54'),
-		(8, 'Wages, salaries and other staff costs', '', 1, '2008-05-04 17:53:40', NULL),
-		(9, 'Interest on bank and other loans', '', 1, '2008-05-04 18:02:52', NULL),
-		(10, 'Bank, credit card and other financial charges', '', 1, '2008-05-04 18:03:11', NULL),
-		(11, 'Irrecoverable debts written off', '', 1, '2008-05-04 18:03:28', NULL),
-		(12, 'Accountancy, legal, and other professional fees', '', 1, '2008-05-04 18:03:52', NULL),
-		(13, 'Depreciation and loss/profit on sale of assetss', '', 1, '2008-05-04 18:04:12', NULL),
-		(14, 'Other business expenses', '', 1, '2008-05-04 18:04:19', NULL),
-		(15, 'Construction industry - payments to subcontractors', '', 1, '2008-05-04 18:05:21', NULL),
-		(16, 'Rents, rates, power and insurance costs  ', '', 1, '2008-05-04 18:05:37', '2008-06-16 13:38:17'),
-		(17, 'Repairs and renewals of property and equipment', '', 1, '2008-05-04 18:06:30', NULL);";
+		(1, 'Goods used (bought for resale)', 'Cost of goods bought for resale or goods used', 1, Now(), NULL),
+		(2, 'Office costs', 'Telephone, fax, stationery and other office costs', 1, Now(), NULL),
+		(3, 'Subcontractor', 'Part of a job was completed by another supplier', 1, Now(), NULL),
+		(4, 'Advertising and business entertainment costs', NULL, 1, Now(), NULL),
+		(6, 'Car, van and travel expenses', NULL, 1, Now(), NULL),
+		(8, 'Wages, salaries and other staff costs', '', 1, Now(), NULL),
+		(9, 'Interest on bank and other loans', '', 1, Now(), NULL),
+		(10, 'Bank, credit card and other financial charges', '', 1, Now(), NULL),
+		(11, 'Irrecoverable debts written off', '', 1, Now(), NULL),
+		(12, 'Accountancy, legal, and other professional fees', '', 1, Now(), NULL),
+		(13, 'Depreciation and loss/profit on sale of assets', '', 1, Now(), NULL),
+		(14, 'Other business expenses', '', 1, Now(), NULL),
+		(15, 'Construction industry - payments to subcontractors', '', 1, Now(), NULL),
+		(16, 'Rents, rates, power and insurance costs  ', '', 1, Now(), NULL),
+		(17, 'Repairs and renewals of property and equipment', '', 1, Now(), NULL);";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
 		
-		/*
-			Table structure for table `outgoing_payment`
-		*/
-		$query = "CREATE TABLE `outgoing_payment` (
-		  `id` int(11) NOT NULL auto_increment,
-		  `title` varchar(100) NOT NULL,
-		  `description` mediumtext,
-		  `status` int(11) default '0' COMMENT 'FK on status table',
-		  `date_added` datetime NOT NULL,
-		  `date_edited` datetime default NULL,
-		  PRIMARY KEY  (`id`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8;";
-		// Run query
-		$prepared_query = @$this->_db->prepare($query);
-		@$this->_db->query($prepared_query);
-		
-
-		/*
-		 Content for `outgoing_payment`
-		*/
-		$query = "INSERT INTO `outgoing_payment` (`id`, `title`, `description`, `status`, `date_added`, `date_edited`) VALUES
-		(1, 'Paypal', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(2, 'Bank transfer', 'Electronic payment from one bank account to another e.g. BACS, CHAPS or Faster Payments', 1, '0000-00-00 00:00:00', NULL),
-		(3, 'Direct debit', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(4, 'Credit card', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(5, 'Debit card', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(6, 'Cash', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(7, 'Standing order', NULL, 1, '0000-00-00 00:00:00', NULL);";
-		// Run query
-		$prepared_query = @$this->_db->prepare($query);
-		@$this->_db->query($prepared_query);
 		
 		/*
 			Table structure for table `outgoing_supplier`
@@ -643,15 +893,25 @@ class Install{
 		  `address3` varchar(255) default NULL,
 		  `address4` varchar(255) default NULL,
 		  `postal_code` varchar(15) default NULL,
-		  `country` varchar(255) default NULL,
+		  `country` int(11) default NULL COMMENT 'FK on country table',
 		  `email` varchar(255) default NULL,
 		  `telephone` varchar(25) default NULL,
 		  `status` int(11) default '0' COMMENT 'FK on status table',
 		  `date_added` datetime NOT NULL,
 		  `date_edited` datetime default NULL,
 		  PRIMARY KEY  (`id`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Suppliers - people who you have bought from';
+		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Suppliers - organisations who you have bought from';
 		";
+		// Run query
+		$prepared_query = @$this->_db->prepare($query);
+		@$this->_db->query($prepared_query);
+		
+		
+		/*
+		 Content for `outgoing_supplier`
+		*/
+		$query = "INSERT INTO `outgoing_supplier` (`id`, `title`, `description`, `status`, `date_added`, `date_edited`) VALUES
+		(1, 'Mileage', 'Generic supplier used to quickly add mileage for travel by car/bike/foot', 1, Now(), NULL)";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -680,13 +940,13 @@ class Install{
 		*/
 		$query = "
 		INSERT INTO `payment_method` (`id`, `title`, `description`, `status`, `date_added`, `date_edited`) VALUES
-		(1, 'Paypal', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(2, 'Bank transfer', 'Electronic payment from one bank account to another e.g. BACS, CHAPS or Faster Payments', 1, '0000-00-00 00:00:00', NULL),
-		(3, 'Direct debit', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(4, 'Credit card', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(5, 'Debit card', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(6, 'Cash', NULL, 1, '0000-00-00 00:00:00', NULL),
-		(7, 'Standing order', NULL, 1, '0000-00-00 00:00:00', NULL);";
+		(1, 'Paypal', NULL, 1, Now(), NULL),
+		(2, 'Bank transfer', 'Electronic payment from one bank account to another e.g. BACS, CHAPS or Faster Payments', 1, Now(), NULL),
+		(3, 'Direct debit', NULL, 1, Now(), NULL),
+		(4, 'Credit card', NULL, 1, Now(), NULL),
+		(5, 'Debit card', NULL, 1, Now(), NULL),
+		(6, 'Cash', NULL, 1, Now(), NULL),
+		(7, 'Standing order', NULL, 1, Now(), NULL);";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
@@ -708,8 +968,8 @@ class Install{
 		  `charge_vat` enum('Y','N') DEFAULT 'N' COMMENT 'Does this invoice include VAT?',
 		  `vat_rate` decimal(5,2) NOT NULL COMMENT 'The VAT rate at the time of invoicing',
 		  `status` int(11) DEFAULT '0' COMMENT 'FK on status table',
-		  `payment_required` datetime DEFAULT NULL COMMENT 'Date when payment due?',
-		  `payment_expected` date DEFAULT NULL COMMENT 'When do you expect to be paid',
+		  `payment_required` datetime DEFAULT NULL COMMENT 'Date when payment is due',
+		  `payment_expected` date DEFAULT NULL COMMENT 'Date when you realistically expect to be paid',
 		  `transaction_date` datetime DEFAULT NULL COMMENT 'Date when payment was made',
 		  `invoice_date` date NOT NULL COMMENT 'Date the invoice was sent',
 		  `date_added` datetime NOT NULL,
@@ -1155,5 +1415,3 @@ class Install{
 	}
 	
 }
-	
-?>

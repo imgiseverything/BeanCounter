@@ -21,12 +21,12 @@
  *	@modified	 
  *	
  *	edited by:	Phil Thompson
- *  @modified	13/03/2009
+ *  @modified	09/05/2013
  *
  *	-------------------------------------------------------------------------
  *
  *	@author Phil Thompson http://philthompson.co.uk
- *	@copyright 2009 Phil Thompson
+ *	@copyright 2009-2013 Phil Thompson
  *	
  *	=========================================================================
  *	
@@ -141,7 +141,7 @@ class Vcard{
 		
 		$this->_postalCode = (!empty($address)) ?  trim(read($address, 'postal_code', '')) : trim(read($this->_site->config, 'Postal code', ''));
 		
-		$this->_countryName = (!empty($address)) ?  read($address, 'country', '') : read($this->_site->config, 'Country', '');
+		$this->_countryName = (!empty($address)) ?  read($address, 'country_title', read($address, 'country', '')) : read($this->_site->config, 'Country', '');
 		
 		$this->_telephoneNumber = ($address) ?  read($address, 'telephone', '') : read($this->_site->config, 'Main telephone number', '');
 		
