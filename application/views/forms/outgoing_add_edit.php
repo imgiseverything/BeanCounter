@@ -3,6 +3,10 @@
 	/**
 	 *	Outgoing add/edit form
 	 */	
+
+// Make some minor search/replaces on the auto-generated form fields called in $objForm->getAllFieldElements() later on
+$outgoings_form_search = array('<a href="/outgoing_', '<a href="/outgoing_categories', '<a href="/outgoing_payment', 'Add new outgoing_');	
+$outgoings_form_replace = array('<a href="/outgoings/', '<a href="/outgoings/', '<a href="/', 'Add new '); 
 	
 // only show form if it hasn't been completed successfully: 
 // to save repeated inserts/edits
@@ -14,7 +18,9 @@ if(form_success($user_feedback) !== true):
        <legend><?php echo ($action == 'add') ? 'Add a new ' . $objScaffold->getName() : 'Edit the ' . $objScaffold->getName() . ', <em>' . stripslashes($properties['title']) . '</em>'; ?></legend>
         <p class="instructions"><?php echo ($action == 'add') ? 'Add a new ' . $objScaffold->getName() : 'Edit the ' . $objScaffold->getName() . ', <em>' . stripslashes($properties['title']) . '</em>'; ?> by filling in the form details below. <br />
         <strong>Note:</strong> Items marked with a star are required fields.</p>
-        <?php echo str_replace(array('<a href="/outgoing_', 'Add new outgoing_', 'categorys'), array('<a href="/', 'Add new ', 'outgoings/categories'), $objForm->getAllFieldElements()); ?>
+        <?php echo str_replace($outgoings_form_search, $outgoings_form_replace, $objForm->getAllFieldElements()); ?>
+        
+        <?php echo $objForm->getAllFieldElements(); ?>
         <?php if($action == 'edit'): ?>
         <input type="hidden" name="id" value="<?php echo $id; ?>" />
         <?php endif; ?>
