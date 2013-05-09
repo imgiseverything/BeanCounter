@@ -19,7 +19,7 @@
  *	@since		23/01/2008
  *	
  *	edited by:  Phil Thompson
- *	@modified	22/11/2009
+ *	@modified	09/05/2013
  *	
  *	=========================================================================
  *	
@@ -28,11 +28,7 @@
  *
  *	variables
  *	
- *	construct
- *	
- *	methods
- *		setDirectory	
- *		upload			
+ *	construct		
  *	
  *	=========================================================================
  */
@@ -57,18 +53,8 @@
 
 		}
 		
-		/**
-		 *	setDirectory()
-		 *	where the files will go
-		 */
-		protected function setDirectory(){
-			$this->_directory = SITE_PATH . 'uploads/';
-			$this->checkDirectory();
-		}	
 			
 			
 		
 		
 	}
-	
-?>

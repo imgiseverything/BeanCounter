@@ -155,6 +155,12 @@
 		 */
 		protected $_status;
 		
+		
+		/**
+		 *	@var string
+		 */
+		protected $_fileNamePrefix;
+		
 		/**
 		 *	@var int
 		 *	number of days
@@ -187,7 +193,7 @@
 			$this->setExtensions();
 			
 			$this->setMaxSize(2);
-			
+
 			
 			
 			// Object Population Filters
@@ -197,6 +203,9 @@
 			$this->_search = read($filter, 'search', ''); // is someone searching the object for specific keywords?
 			$this->_timeframe = read($filter, 'timeframe', '');
 			$this->_timeframeCustom = read($filter, 'timeframe_custom', '');
+			
+			
+			$this->_fileNamePrefix = read($filter, 'file_name_prefix', '');
 			
 			
 			
@@ -321,7 +330,7 @@
 								  $user_feedback['content'][] = "There was an error uploading the file" . $this->_filename;
 								  $error++;
 							} else{
-								$user_feedback['content'][] = '<a href="' . str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->_filename) . '" download>Download new file</a>';
+								$user_feedback['content'][] = '<a href="' . str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->_filename) . '" download class="button-add butotn-download"><span></span>Download new file</a>';
 								// check dimensions
 								$user_feedback['content'][] = 'File has uploaded and copied to the correct location';
 								
@@ -641,8 +650,14 @@
 				$filename = str_replace('.' . $extension, '', $filename);
 			}
 			
-			// return my-clean-file-name
-			return cleanString($filename);
+			
+			cleanString($filename);
+			
+			if(!empty($this->_fileNamePrefix)){
+				$filename = $this->_fileNamePrefix . '-' . $filename;
+			}
+			
+			return $filename;
 		}
 		
 		

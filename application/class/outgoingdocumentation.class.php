@@ -21,7 +21,7 @@
  *	@since		20/11/2009
  *	
  *	edited by:  Phil Thompson
- *	@modified	20/11/2009
+ *	@modified	09/05/2013
  *	
  *  =========================================================================
  *	
@@ -52,8 +52,8 @@
 		 *	@param (id|bool) $id
 		 */
 		public function __construct($db, $filter = array(), $id = false){
-			
-			$this->_file = new File($this->_filter, $this->_id); 
+		
+			$filter['file_name_prefix'] = read($_POST, 'outgoing', NULL);
 			
 			parent::__construct($db, $filter, $id);
 			
@@ -96,4 +96,3 @@
 	
 	
 	}
-?>

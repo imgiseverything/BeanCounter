@@ -59,7 +59,7 @@
 		 */
 		public function __construct($db, $filter = array(), $id = false){
 			
-			$this->_file = new File($this->_filter, $this->_id); 
+			$this->_file = new File($db, $filter, $this->_id); 
 			
 			parent::__construct($db, $filter, $id);
 			
