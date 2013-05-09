@@ -5,12 +5,9 @@
 	 *  View one piece of outgoings documentation e.g. a PDF receipt for an expense
 	 */
 
-
-	
 	
 	// Page details
 	$objTemplate->setTitle($objScaffold->getPageTitle());
-	$objTemplate->setDescription($objScaffold->getPageDescription());
 	
 	// Style / Appearance (CSS)
 	$objTemplate->setStyle();
