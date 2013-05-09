@@ -946,7 +946,8 @@ class Install{
 		(4, 'Credit card', NULL, 1, Now(), NULL),
 		(5, 'Debit card', NULL, 1, Now(), NULL),
 		(6, 'Cash', NULL, 1, Now(), NULL),
-		(7, 'Standing order', NULL, 1, Now(), NULL);";
+		(7, 'Standing order', NULL, 1, Now(), NULL),
+		(8, 'Cheque', NULL, 1, Now(), NULL);";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
