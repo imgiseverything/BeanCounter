@@ -18,40 +18,7 @@
  *	@author			philthompson.co.uk
  *	@since			10/01/2008
  *	
- *	@lastmodified	08/05/2013
- *	
- *	=========================================================================
- *	
- *	Table of Contents
- *	-------------------------------------------------------------------------
- *
- *	variables
- *	
- *	construct
- *		
- *	Project specific methods
- *		customQueryFilters
- *		getFirst
- *		setTasks
- *		setDiscounts
- *		setPayments
- *		generateTotal
- *		invoice
- *		quote
- *		add
- *		edit
- *		delete
- *		addTasks
- *		editTasks
- *		deleteTasks
- *		completed
- *		setBalance
- *		setOutstandingInvoices
- *		invoiceClean
- *		referenceNumber
- *		get...
- *		
- *	=========================================================================
+ *	@lastmodified	09/05/2013
  *
  */
 	
@@ -84,11 +51,6 @@
 		 *	@var int
 		 */
 		protected $_category;
-		
-		/**
-		 *	@var int
-		 */
-		protected $_supplier;
 		
 		/**
 		 *	@var int
@@ -202,13 +164,14 @@
 		
 		/**
 		 *	customQueryFilters
+		 *	Extend the CRUD class generic SQL query to get all or one record
 		 */
 		public function customQueryFilters(){
 			
 			$this->_queryFilter['custom'] = '';
 			$this->_queryFilter['client'] = '';
 			
-			// filter by client
+			// filter projects by client
 			if($this->_client){
 				$this->_queryFilter['client'] .= " AND `t`.`client` = '{$this->_db->escape($this->_filter['client'])}' ";
 				$this->_queryFilter['custom'] .= $this->_queryFilter['client'];
@@ -227,11 +190,11 @@
 		
 		/**
 		 *	setFirstYear
-		 *	grab the first ever project and use that as the 
+		 *	Select the first ever project and use that as the 
 		 *	(glorious) first trading date
 		 */
 		public function setFirstYear(){
-			// 
+			 
 			$query = "SELECT `transaction_date` FROM `project_payment` t WHERE 1 {$this->_queryFilter['client']} ORDER BY `transaction_date` ASC LIMIT 1;";
 					
 			niceError($query); // Debugging echo SQL
@@ -379,7 +342,8 @@
 		
 		/**
 		 *	setPayments
-		 * 	Get all the payment for a project to see how much is paid and owed
+		 * 	Get all the payments for a project so we can later on see how much is paid and owed
+		 *	Payments (`project_payment`) to Projects is a one to many relationship
 		 */	
 		public function setPayments(){
 			
@@ -438,7 +402,7 @@
 		
 		/**
 		 *	setGrandTotal
-		 *	set prices of projects with itemised tasks, discounts and VAT
+		 *	Set prices of projects with itemised tasks, discounts and VAT (sales tax)
 		 *	all added up. Also create a grand total for all projects when relevant
 		 */
 		public function setGrandTotal(){
@@ -521,6 +485,9 @@
 		
 		/**
 		 *	setBalance
+		 *	Calculate how many payments have been made to this project and work out
+		 *	how much money is outstanding
+		 *	@return	void
 		 */
 		protected function setBalance(){
 			
@@ -603,7 +570,7 @@
 		
 			$error = 0;
 			
-			// Cache settings
+			// Cache settings (for the HTML version of the invoice)
 			$cache_filename = 'download-' . $this->_id . '.html';
 			$file_path = SITE_PATH . 'cache/' . $this->_name . '/';			
 			$objCache = new Cache($cache_filename, 1, $this->_name);
@@ -618,7 +585,7 @@
 			
 			
 			
-			// email subject
+			// Start building email headers/variables
 			$subject = read($_POST, 'subject', '');
 			$message = read($_POST, 'message', '');
 			
@@ -626,9 +593,8 @@
 			$all_data_present  = false;
 			if(
 				$subject 
-				&& 
-				$message && 
-				strtolower($this->_properties['project_stage']) != 'completed'
+				&& $message 
+				&& strtolower($this->_properties['project_stage']) != 'completed'
 			){
 				$all_data_present = true;
 			}
@@ -640,7 +606,7 @@
 				// get client details from client object
 				$objClient = new Client($this->_db, array(), $this->_properties['client']);		
 				$clientProperties = $objClient->getProperties();	
-			
+			Ï
 				$content = $objDownload->getFileHeader() . $objDownload->getFileBody() . $objDownload->getFileFooter();
 
 				if(CACHE === true){
@@ -689,15 +655,14 @@
 							$_POST['project_stage'] = 3;
 						}
 						
-						// if the invoice date has not been set - set it
+						// if the invoice date for this project has not been set - set it so we know when the invoice was sent to the client
 						$_POST['invoice_date'] = date('Y-m-d');
 						$_POST['invoice_date_day'] = date('d');
 						$_POST['invoice_date_month'] = date('m');
 						$_POST['invoice_date_year'] = date('Y');
+
 						
-						//print_x($_POST);
-						
-						// edit the object
+						// Update the project
 						$this->edit();
 					}
 					
@@ -710,20 +675,20 @@
 				// tell user why
 				$user_feedback['content'][] = ucwords($type) . ' not sent because:';
 				
-				// download file is missing
+				// Error: download file is missing
 				if($objCache->getCacheExists() !== true){
 					$error++;
 					$user_feedback['content'][] = 'Downloadable ' . $type . ' file does not exist';
 				}
-				// no subject
+				// Error: no email subject
 				if(!$subject){
 					$error++;
-					$user_feedback['content'][] = 'You have not entered a subject';
+					$user_feedback['content'][] = 'You have not entered a subject for this email';
 				}
-				// no message
+				// Error: no message/email body
 				if(!$message){
 					$error++;
-					$user_feedback['content'][] = 'You have not entered a message';
+					$user_feedback['content'][] = 'You have not entered a message for this email';
 				}
 				// project has already been completed
 				if(strtolower($this->_properties['completed']) == true){
@@ -750,6 +715,7 @@
 		
 		/**
 		 *	add
+		 *	Use CRUD's add method but extend it to add a project's related tasks when a project is added
 		 *	@return array $user_feedback
 		 */
 		protected function add(){
@@ -761,7 +727,7 @@
 		
 		/**
 		 *	delete
-		 *	
+		 *	Use CRUD's delete method but extend it to delete a project's related tasks when a project is deleted
 		 *	@return array $user_feedback
 		 */
 		protected function delete(){
@@ -773,6 +739,7 @@
 		
 		/**
 		 *	edit
+		 *	Use CRUD's edit method but extend it to update a project's related tasks when a project is updated
 		 *	@return array $user_feedback
 		 */
 		protected function edit(){
