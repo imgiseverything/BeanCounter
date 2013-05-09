@@ -606,7 +606,7 @@
 				// get client details from client object
 				$objClient = new Client($this->_db, array(), $this->_properties['client']);		
 				$clientProperties = $objClient->getProperties();	
-			Ï
+			
 				$content = $objDownload->getFileHeader() . $objDownload->getFileBody() . $objDownload->getFileFooter();
 
 				if(CACHE === true){
