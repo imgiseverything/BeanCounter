@@ -89,9 +89,9 @@ class Menu{
 		
 		$id = $this->_application->getParameter('id');
 		
-		$this->_breadcrumb = '<div class="group breadcrumb">' . "\n\t";
+		$this->_breadcrumb = '<div class="group breadcrumb">';
 		$this->_breadcrumb .= 'You are here: ';
-		$this->_breadcrumb .= ($this->_template->getHomepage() !== true) ? '<span><a href="/">' . SITE_NAME . '</a></span> ' . "\n" : '<span>' . SITE_NAME . ' home</span>';
+		//$this->_breadcrumb .= ($this->_template->getHomepage() !== true) ? '<span><a href="/">Dashboard</a></span> ' . "\n" : '<span>' . SITE_NAME . ' home</span>';
 		
 		// rewrite class isn't initialised so create it
 		if(!isset($objRewrite) && $this->_template->getMode() != 'popup'){
@@ -113,22 +113,14 @@ class Menu{
 			for($i = 0; $i < $trailSize; $i++){
 				// remove dashes and make the first character uppercase
 				$clean_crumb = str_replace('-', ' ', ucfirst($this->_url[$i]));
-				
-				// clean crumb is a month
-				if(strlen($clean_crumb) === 2 && is_numeric($clean_crumb) && $clean_crumb < 13 && strlen($this->_url[($i-1)]) === 4 && is_numeric($this->_url[($i-1)])){
-					$clean_crumb = date('F', strtotime(date('Y') . '-' . $clean_crumb . '-01 00:00:00'));	
-				}
-				
+	
 				// build up link
 				$link .= $this->_url[$i] . '/';
-				
-				$this->_breadcrumb .= "\t";
 
-				if($clean_crumb != $id && !in_array(strtolower($clean_crumb), $this->_rewrite->getActions())){					
-					$this->_breadcrumb .= ($i != sizeof($this->_url)) ? ' <span><a href="' . $link . '">' . ucfirst($clean_crumb) . '</a></span> ' . "\n" : ucfirst($clean_crumb) . "\n";
+				if($clean_crumb != $id && !in_array(strtolower($clean_crumb), $this->_rewrite->getActions()) && is_numeric($clean_crumb) !== true){					
+					$this->_breadcrumb .= ($i != sizeof($this->_url)) ? ' <span><a href="' . $link . '">' . ucfirst($clean_crumb) . '</a></span> ' : ucfirst($clean_crumb);
 				}
-				
-				
+			
 			}
 			
 		}
@@ -137,7 +129,7 @@ class Menu{
 		
 
 		// end breadcrumb trail
-		$this->_breadcrumb .= "\t" . '</div>' . "\n";
+		$this->_breadcrumb .= '</div>';
 	}
 	
 	/**
