@@ -19,8 +19,6 @@ if(form_success($user_feedback) !== true):
         <p class="instructions"><?php echo ($action == 'add') ? 'Add a new ' . $objScaffold->getName() : 'Edit the ' . $objScaffold->getName() . ', <em>' . stripslashes($properties['title']) . '</em>'; ?> by filling in the form details below. <br />
         <strong>Note:</strong> Items marked with a star are required fields.</p>
         <?php echo str_replace($outgoings_form_search, $outgoings_form_replace, $objForm->getAllFieldElements()); ?>
-        
-        <?php echo $objForm->getAllFieldElements(); ?>
         <?php if($action == 'edit'): ?>
         <input type="hidden" name="id" value="<?php echo $id; ?>" />
         <?php endif; ?>
