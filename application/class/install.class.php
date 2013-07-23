@@ -125,11 +125,11 @@ class Install{
 		// work out whether to prevent an installation
 		if($this->_databaseWorks === true){
 			$this->void();
-		} // end if
+		}
 		
 		if(!empty($this->_authorise->name)){
 			$this->_authorise->Logout();
-		} // end if
+		}
 	
 	}
 	
@@ -164,7 +164,7 @@ class Install{
 			$user_feedback['type'] = 'error';
 			$user_feedback['content'] = 'All your database tables are already set-up; running this install might break your site.';
 			return $user_feedback;
-		} // end if
+		}
 				
 		/*
 		 Table structure for table `access_level`
@@ -977,7 +977,6 @@ class Install{
 		  `date_edited` datetime DEFAULT NULL,
 		  PRIMARY KEY (`id`),
 		  KEY `client` (`client`),
-		  KEY `requires_deposit` (`requires_deposit`),
 		  KEY `project_stage` (`project_stage`),
 		  KEY `status` (`status`)
 		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Projects are invoices or proposals. They contain tasks (line items) and/or discounts.';
@@ -1306,7 +1305,7 @@ class Install{
 				 `postal_code`, `country`, `email`, `telephone`, `status`, `date_added`) 
 				VALUES 
 				(%s, 'Me', %s, '1 Example Road', NULL, 'Example town', 
-				'Example city', 'EX1 1AA', 'United Kingdom', %s, '01234567890', 1, Now())";
+				'Example city', 'EX1 1AA', 232, %s, '01234567890', 1, Now())";
 				niceError($query);
 				
 				// Run query

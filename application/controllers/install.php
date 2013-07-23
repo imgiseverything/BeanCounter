@@ -35,7 +35,7 @@
 					
 					// No business name
 					if(!$business_name) {
-						$user_feedback['content'][] = 'Business name';
+						$user_feedback['content'][] = 'Your business name';
 					}
 					
 					// No firstname
