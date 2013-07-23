@@ -331,7 +331,7 @@ class Install{
 		`date_added` datetime NOT NULL,
 		`date_edited` datetime default NULL,
 		PRIMARY KEY  (`id`)
-		) ENGINE=MyISAM DEFAULT CHARSET=utf8;":
+		) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 		// Run query
 		$prepared_query = @$this->_db->prepare($query);
 		@$this->_db->query($prepared_query);
