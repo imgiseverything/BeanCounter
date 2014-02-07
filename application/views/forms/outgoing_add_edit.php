@@ -5,8 +5,8 @@
 	 */	
 
 // Make some minor search/replaces on the auto-generated form fields called in $objForm->getAllFieldElements() later on
-$outgoings_form_search = array('<a href="/outgoing_', '<a href="/outgoing_categories', '<a href="/outgoing_payment', 'Add new outgoing_');	
-$outgoings_form_replace = array('<a href="/outgoings/', '<a href="/outgoings/', '<a href="/', 'Add new '); 
+$outgoings_form_search = array('<a href="/outgoing_', '<a href="/outgoing_categories', '<a href="/outgoing_payment', '<a href="/outgoings/suppliers','Add new outgoing_');	
+$outgoings_form_replace = array('<a href="/outgoings/', '<a href="/outgoings/', '<a href="/', '<a href="/suppliers', 'Add new '); 
 	
 // only show form if it hasn't been completed successfully: 
 // to save repeated inserts/edits
