@@ -9,7 +9,7 @@
 	$objTemplate->setTitle(ucfirst($objScaffold->getNamePlural()));
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables'));
+	$objTemplate->setStyle(array('forms', 'tables', 'chartist'));
 	$objTemplate->setExtraStyle('
 	ul#yearly_figures_options li.selected{font-weight: bold;}
 	th.positive, td.positive{
@@ -29,14 +29,20 @@
 		text-align: center;
 	}
 	
-	#VisualData{
+	.ct-chart{
+		height: 300px;
 		margin-top: 60px;
 	}
+	
+	.ct-chart .ct-series.ct-series-a .ct-point,
+	.ct-chart .ct-series.ct-series-a .ct-line{ stroke: #66cc33; }
+	.ct-chart .ct-series.ct-series-b .ct-point,
+	.ct-chart .ct-series.ct-series-b .ct-line{ stroke: #ff3333; }
 	
 	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination', 'ajax_filter', 'highcharts')); // must be an array
+	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_filter', 'chartist')); // must be an array
 	$profit = $loss = $chart_months = array();
 	foreach($months as $key => $value){
    		$profit[] = ceil($objScaffold->getMonthlyProfit($key));
@@ -44,36 +50,19 @@
    		$chart_months[] = date('M Y', strtotime(trim($key . '-01 00:00:00')));
 	}
 
-	$objTemplate->setExtraBehaviour("
-	var chart1; 
-	$(document).ready(function() {
-      chart1 = new Highcharts.Chart({
-         chart: {
-            renderTo: 'VisualData',
-            defaultSeriesType: 'line'
-         },
-         colors: ['#66CC33', '#FF3333'],
+   $objTemplate->setExtraBehaviour("
+	var data = {
+		labels: ['" . join("','", array_reverse($chart_months)) . "'],
+		series: [
+			[" . join(',', array_reverse($profit)) . "],
+			[" . join(',', array_reverse($loss)) . "]
+		]
+	};
 	
-         title: {
-            text: '" . end($chart_months) . " - " . read($chart_months, 0, '') . "'
-         },
-         xAxis: {
-            categories: ['" . join("','", array_reverse($chart_months)) . "']
-         },
-         yAxis: {
-            title: {
-               text: 'Money'
-            }
-         },
-         series: [{
-            name: 'Revenue',
-            data: [" . join(',', array_reverse($profit)) . "]
-         }, {
-            name: 'Expenses',
-            data: [" . join(',', array_reverse($loss)) . "]
-         }]
-      });
-   });
+	var options = {};
+	var responsiveOptions = {};
+	
+	Chartist.Line('.ct-chart', data, options, responsiveOptions);  
    ");
    
    
@@ -91,7 +80,7 @@
     	<a href="<?php echo $objScaffold->getFolder(); ?>download/" class="button-add button-download" download><span></span>Download these transactions</a>
     	<?php endif; ?>
     	<h1><?php echo $accounts_title; ?></h1>
-			<div id="VisualData" style="clear:both;">
+			<div id="VisualData" class="ct-chart" style="clear:both;">
 				&nbsp;
 			</div>
 			<div class="data">
@@ -145,4 +134,39 @@
                 </table>
             </div>
 	</div>
+<?php if($objTemplate->getMode() == 'normal'): ?>
+    <div class="filter-form">
+    	<form id="filterForm" method="get" action="<?php echo $objScaffold->getFolder(); ?>" class="hidden">
+            <fieldset>
+                <fieldset class="fieldset-row">  
+                	
+            		<div class="field">
+            			<label>Show <?php echo $objScaffold->getNamePlural(); ?> by trading year</label>
+            			<?php include(APPLICATION_PATH . '/views/common/tax_year_links.php'); ?>
+            		</div>       
+                     <div class="field">
+                    	<label>Or choose a custom timeframe</label>
+                    	<fieldset class="date">
+                        	<legend>Start date</legend>
+                            <?php echo FormDate::getDay('start', read($_GET, 'start_day', $tax_start_day)); ?>
+							<?php echo FormDate::getMonth('start', read($_GET, 'start_month', $tax_start_month),'text',true); ?>
+                            <?php echo FormDate::getYear('start', read($_GET, 'start_year', $tax_start_year), 2, 'past', NULL, true); ?>
+                        </fieldset>
+                        <fieldset class="date">
+                        	<legend>End date</legend>
+                        	<?php
+                        		// timeframe
+                        		$timeframeCustom = $objScaffold->getTimeframeCustom();
+                        	?>
+                            <?php echo FormDate::getDay('end', read($_GET, 'end_day', read($timeframeCustom, 'end', $tax_end_day))); ?>
+							<?php echo FormDate::getMonth('end', read($_GET, 'end_month', read($timeframeCustom, 'end', $tax_end_month)), 'text', true); ?>
+                            <?php echo FormDate::getYear('end', read($_GET, 'end_year', read($timeframeCustom, 'end', $tax_end_year)), 2, 'future', NULL, true); ?>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            	<button type="submit">Filter <?php echo $objScaffold->getNamePlural(); ?></button>
+            </fieldset>
+        </form>
+    </div>
+    <?php endif; ?>
 <?php include($objTemplate->getFooterHTML()); ?>

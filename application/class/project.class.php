@@ -390,6 +390,7 @@
 							//Run query and put result into properties array
 							$this->_properties[$i]['project_payment'] = $this->_db->get_results($query, "ARRAY_A");
 							$objCache->createCache($this->_properties[$i]['project_payment']);
+							
 						}
 						// End cache
 						

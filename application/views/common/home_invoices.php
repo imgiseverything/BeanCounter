@@ -78,10 +78,14 @@
 					</div>
 				</td>
 				<td><?php echo stripslashes($client_title); ?></td>
-				<td><?php echo currency($total + $total_vat); ?></td>
+				<td><?php echo currency($outstanding + $total_vat); ?>
+				<?php if($total > $outstanding): ?>
+				<br> (<?php echo currency(($total - $outstanding)); ?> Paid)
+				<?php endif; ?>
+				</td>
 				<?php else: ?>
 				<td><?php echo stripslashes($title); ?></td>
-				<td><?php echo currency($total); ?></td>
+				<td><?php echo currency($outstanding); ?></td>
 				<?php endif; ?>
 			</tr>
 		<?php
