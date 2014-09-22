@@ -80,7 +80,7 @@
 				<td><?php echo stripslashes($client_title); ?></td>
 				<td><?php echo currency($outstanding); ?>
 				<?php if($total > $outstanding): ?>
-				<br> (<?php echo currency(($total - $outstanding)); ?> Paid)
+				<br> (<?php echo currency($paid); ?> Paid)
 				<?php endif; ?>
 				</td>
 				<?php else: ?>

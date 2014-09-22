@@ -28,7 +28,6 @@
 		
 		// Initialise Object
 		$objInvoicedProjects = new Project($db, $objApplication->getFilters(), '');
-
 		
 		
 		// Started projects - work currently ongoing

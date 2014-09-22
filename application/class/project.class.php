@@ -524,17 +524,21 @@
 					
 					if(!empty($this->_properties[$i]['project_payment'])){
 						foreach($this->_properties[$i]['project_payment'] as $payment){
-							$price = (float)number_format($payment['price'], 2, '.', '');
-							$this->_properties[$i]['paid'] += $price;
-							$this->_properties[$i]['outstanding'] = ($this->_properties[$i]['outstanding'] - $price);	
+							$paid = (float)number_format($payment['price'], 2, '.', '');
+
+							$this->_properties[$i]['paid'] += $paid;
+							$this->_properties[$i]['outstanding'] = (float)number_format(($this->_properties[$i]['outstanding'] - $paid), 2, '.', '');			
+							
 						}
-		
+						
+						
+	
 						
 						// mark as complete if it's all paid up
-						if((float)$this->_properties[$i]['paid'] >= $grand_total_formatted){
+						if($this->_properties[$i]['outstanding'] == 0){
 							$this->_properties[$i]['completed'] = true;
-							$this->_properties[$i]['project_stage_title'] = 'Completed';
-						} 
+							$this->_properties[$i]['project_stage_title'] = 'Completed';	
+						}
 						
 					}
 					
