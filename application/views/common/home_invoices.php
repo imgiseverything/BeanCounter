@@ -42,7 +42,7 @@
 		<tbody>
 		<?php
 		
-		// Create table rows by looping through obejct data
+		// Create table rows by looping through object data
 		for($i = 0; $i < $invoice_size; $i++):
 			// create easy to use variable names
 			extract($invoices[$i]);
@@ -78,7 +78,7 @@
 					</div>
 				</td>
 				<td><?php echo stripslashes($client_title); ?></td>
-				<td><?php echo currency($outstanding + $total_vat); ?>
+				<td><?php echo currency($outstanding); ?>
 				<?php if($total > $outstanding): ?>
 				<br> (<?php echo currency(($total - $outstanding)); ?> Paid)
 				<?php endif; ?>
