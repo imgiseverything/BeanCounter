@@ -15,7 +15,7 @@
 	$objTemplate->setStyle(array('forms', 'tables', 'colorbox'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'jquery.columns', 'jquery.form', 'ajax_pagination', 'ajax_filter', 'colorbox'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'jquery.columns', 'plugins/jquery.form', 'ajax_pagination', 'ajax_filter', 'colorbox'));
 	
 	// Breadcrumb
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

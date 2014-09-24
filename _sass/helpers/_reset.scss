@@ -1,0 +1,178 @@
+/* Box sizing - reset to a nicer understanding of the box model */
+html{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after{
+	-moz-box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+ 	box-sizing: inherit;
+}
+
+/**
+ *	1 Resets/normalise
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym,  cite, code, em, img, q, 
+small,  strong, sub, sup, 
+b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, .site-footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers: HTML5 shim (CDN) script tag is in header.php for older browsers */
+article, aside, details, figcaption, figure, 
+.site-footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root{
+	min-height: 100%;
+	overflow-y: scroll;
+}
+
+strong, b{
+	font-weight: bold;
+}
+
+em, i{
+	font-style: italic;
+}
+
+html, body{
+	height: 100%;
+}
+
+
+body{
+	background: $c-white;
+	color: $c-black;
+	margin: 0 auto;
+	width: 87.5%;	
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	
+	@media screen and (min-width: $s+1+px) {
+		width: 93.75%;
+	}
+	
+	@media screen and (min-width: $l+px) {
+		width: 100%;
+	}
+}
+
+
+/* Links */
+
+a{
+	color: #777;
+	text-decoration: underline;
+}
+
+	a img{
+		border: none;
+	}
+
+a:visited{
+	color: #555;
+}
+
+a:hover{
+	@media screen and (min-width: $l+1+px) {
+		color: #03F;
+		text-decoration: none;
+	}
+}
+
+a:active{
+	color: #03F;
+	text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6{
+	color: #444;
+	font: normal 20px/24px sans-serif;
+	padding: .5em 0 .25em;
+}
+
+h2{
+	font-size: 18px;
+}
+
+h3{
+	font-size: 16px;
+}
+
+h4, h5, h6{
+	font-size: 15px;
+}
+
+p{
+	padding: 0 0 1em;
+}
+
+/* Lists */
+
+ul, ol, dl{
+	padding: 1em 0;
+}
+
+	li{
+		margin: 0 0 0 20px;
+	}
+	
+		ul li ul{
+			padding: 0;
+		}
+	
+dt{
+	font-weight: bold;
+}
+
+dd{
+	margin-left: 20px;
+}
+
+
+hr{
+	background: #DFDFDF;
+	border: none;
+	clear: both;
+	height: 1px;
+	margin: .5em 0;
+}
+
+small{
+	color: #666;
+	font-size: 95%;
+}

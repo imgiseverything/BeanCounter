@@ -16,7 +16,7 @@
 	$objTemplate->setStyle(array('forms', 'tables'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'ajax_pagination'));
 	
 	// Breadcrumb
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

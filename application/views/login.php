@@ -8,16 +8,10 @@
 	
 	// Page details
 	$objTemplate->setTitle('Log in');
-	$objTemplate->setDescription();
 	$objTemplate->setBodyClass('login');
 	
 	// Style / Appearance (CSS)
 	$objTemplate->setStyle(array('forms', 'login')); // must be an array
-	$objTemplate->setExtraStyle();
-	
-	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery')); // must be an array
-	$objTemplate->setExtraBehaviour();
 	
 	// HTML header
 	include($objTemplate->getHeaderHTML());

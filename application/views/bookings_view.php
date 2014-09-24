@@ -13,7 +13,7 @@
 	$objTemplate->setExtraStyle('');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery'));
+	$objTemplate->setBehaviour(array('vendor/jquery'));
 	
 	// Menus
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

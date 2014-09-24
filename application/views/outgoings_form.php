@@ -18,7 +18,7 @@
 	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter',  'colorbox', /*'tiny_mce/tiny_mce', 'tiny_mce/init.default',*/ 'jquery.date', 'jquery.datepicker', 'datepicker', 'jquery.form', 'hide_time', 'ajax_form_submit'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter',  'colorbox', /*'tiny_mce/tiny_mce', 'tiny_mce/init.default',*/ 'plugins/jquery.date', 'plugins/jquery.datepicker', 'datepicker', 'plugins/jquery.form', 'hide_time', 'ajax_form_submit'));
 	
 	$objTemplate->setExtraBehaviour('
 	

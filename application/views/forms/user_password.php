@@ -5,7 +5,7 @@
 	 */	
 
 	// View JavaScript
-	$objTemplate->setBehaviour(array('jquery', 'jquery.form', 'ajax_submit_form')); // must be an array
+	$objTemplate->setBehaviour(array('vendor/jquery', 'plugins/jquery.form', 'ajax_submit_form')); // must be an array
 	
 	// only show form if it hasn't been completed successfully: to save repeated inserts/edits
 	if(form_success($user_feedback) !== true):

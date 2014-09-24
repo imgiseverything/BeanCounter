@@ -18,7 +18,7 @@
 	$objTemplate->setExtraStyle('');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'jquery.form', 'ajax_form_submit')); // must be an array
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'plugins/jquery.form', 'ajax_form_submit')); // must be an array
 	$objTemplate->setExtraBehaviour();
 	
 	// Menus

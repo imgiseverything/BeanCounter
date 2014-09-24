@@ -13,7 +13,7 @@
 	$objTemplate->setStyle(array('forms', 'tables', 'projects', 'colorbox'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'colorbox'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'colorbox'));
 	
 	// Menus
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

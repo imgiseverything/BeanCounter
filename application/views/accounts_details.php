@@ -39,7 +39,7 @@
 	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination', 'jquery.date', 'jquery.datepicker', 'datepicker', 'jquery.form', 'ajax_filter'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'ajax_pagination', 'plugins/jquery.date', 'plugins/jquery.datepicker', 'datepicker', 'plugins/jquery.form', 'ajax_filter'));
 	
 	// HTML header
 	include($objTemplate->getHeaderHTML());

@@ -1,0 +1,118 @@
+
+table.jCalendar {
+	border: none;
+	background: #fff;
+    border-collapse: collapse;
+	margin: 0;
+	width: 100%;
+}
+table.jCalendar th {
+	background: #666;
+	color: #fff;
+	font-weight: bold;
+	padding: 10px 5px; 
+	text-align: center;
+}
+table.jCalendar td {
+	background: #ccc;
+	color: #333;
+	padding: 7px 5px;
+	text-align: center;
+}
+table.jCalendar td.other-month {
+	background: #ddd;
+	color: #aaa;
+}
+table.jCalendar td.today {
+	background: #666;
+	color: #fff;
+}
+table.jCalendar td.selected {
+	background: #f66;
+	color: #fff;
+}
+table.jCalendar td.selected:hover {
+	background: #f33;
+}
+table.jCalendar td:hover, 
+table.jCalendar td.dp-hover {
+	background: #f5f5f5;
+	color: #000;
+}
+table.jCalendar td.disabled, 
+table.jCalendar td.disabled:hover {
+	background: #bbb;
+	color: #888;
+}
+
+/* For the popup */
+
+div.dp-popup {
+	position: relative;
+	background: #ccc;
+	font: 11px sans-serif;
+	padding: 10px;
+	width: 300px;
+	line-height: 1.2em;
+}
+div#dp-popup {
+	position: absolute;
+	z-index: 199;
+}
+div.dp-popup h2 {
+	font-size: 14px;
+	text-align: center;
+	margin: 2px 0;
+	padding: 0;
+}
+a#dp-close {
+	font-size: 11px;
+	padding: 4px 0;
+	text-align: center;
+	display: block;
+}
+a#dp-close:hover {
+	text-decoration: underline;
+}
+div.dp-popup a {
+	color: #000;
+	font-family: 'SSStandard';
+	padding: 3px 2px 0;
+	text-decoration: none;
+}
+div.dp-popup div.dp-nav-prev,
+div.dp-popup div.dp-nav-next {
+	position: absolute;
+	top: 13px;
+	left: 15px;
+	width: 100px;
+}
+div.dp-popup div.dp-nav-prev a {
+	float: left;
+}
+/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a {
+	cursor: pointer;
+}
+div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled {
+	cursor: default;
+}
+div.dp-popup div.dp-nav-next {
+	left: auto;
+	right: 15px;
+}
+div.dp-popup div.dp-nav-next a {
+	float: right;
+}
+div.dp-popup a.disabled {
+	cursor: default;
+	color: #aaa;
+}
+
+div.dp-popup td {
+	cursor: pointer;
+}
+
+div.dp-popup td.disabled {
+	cursor: default;
+}

@@ -12,7 +12,7 @@
 	$objTemplate->setStyle(array('forms', 'colorbox'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter',  'colorbox',/*'tiny_mce/tiny_mce', 'tiny_mce/init.default',*/ 'jquery.form', 'ajax_form_submit', 'vat'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter',  'colorbox',/*'tiny_mce/tiny_mce', 'tiny_mce/init.default',*/ 'plugins/jquery.form', 'ajax_form_submit', 'vat'));
 	
 	$objTemplate->setExtraBehaviour('');
 	

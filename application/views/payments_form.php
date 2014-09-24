@@ -14,7 +14,7 @@
 	$objTemplate->setStyle(array('forms', 'datepicker', 'colorbox'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'jquery.date', 'jquery.datepicker', 'datepicker', 'jquery.form', 'ajax_form_submit', 'colorbox'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'plugins/jquery.date', 'plugins/jquery.datepicker', 'datepicker', 'plugins/jquery.form', 'ajax_form_submit', 'colorbox'));
 	
 	// HTML header
 	include($objTemplate->getHeaderHTML());

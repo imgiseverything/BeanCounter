@@ -1,0 +1,23 @@
+/* Bean Counter branding */
+.product-branding{
+	background: #111;
+	float: left;
+	margin: -20px 0 0;
+	width: 100%;
+}
+
+	.product-branding .inner{
+		width: 1060px;
+	}
+
+	.product-branding .logo{
+		background: #111;
+		color: #fff;
+		display: block;
+		float: left;
+		font-size: 14px;
+		margin: 0 20px;
+		padding: 5px 0 2px;
+		position: relative;
+		text-decoration: none;
+	}

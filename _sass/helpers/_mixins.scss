@@ -1,0 +1,75 @@
+@function calc-percent($target, $container){
+  @return ($target / $container) * 100%;
+}
+
+
+@mixin transition($transition-property, $transition-time, $method){
+    -webkit-transition: $transition-property $transition-time $method;
+    	-ms-transition: $transition-property $transition-time $method;
+			transition: $transition-property $transition-time $method;
+}
+
+@mixin transition-transform($transition-property, $transition-time, $method){
+    -webkit-transition: -webkit-+$transition-property $transition-time $method;
+    	-ms-transition: -ms-+$transition-property $transition-time $method;
+			transition: $transition-property $transition-time $method;
+}
+
+@mixin transition-delay($time){
+    -webkit-transition-delay: $time;
+    	-ms-transition-delay: $time;
+    		transition-delay: $time;
+}
+
+
+@mixin transform($transform){
+    -webkit-transform: $transform;
+    	-ms-transform: $transform;
+    		transform: $transform;
+}
+
+@mixin animation($animation){
+	-webkit-animation: $animation;
+			animation: $animation;
+}
+
+
+%vertical-align{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+}
+
+
+/* Set different breakpoints */
+@mixin breakpoint($point){
+	@if $point == desktop{
+		@media (min-width: $l+1+px){ @content; }
+	}
+	@else if $point == xl{
+		@media (min-width: $xl+px){ @content; }
+	}
+	@else if $point == ipad-landscape{
+		@media (min-width: $l+px){ @content; }
+	}
+	@else if $point == ipad-portrait{
+		@media (min-width: $m+px){ @content; }
+	}
+	@else if $point == tablet{
+		@media (min-width: $ms+px) { @content; }
+	}
+	@else if $point == mobile-landscape{
+		@media (min-width: $s+px) { @content; }
+	}
+	@else if $point == mobile-portrait{
+		@media (min-width: $xs+px) { @content; }
+	}
+	@else if $point == tablet-portrait-max{ /* Everything less than iPad in landscape mode */
+		@media (max-width: $l-1+px) { @content; }
+	}
+	@else if $point == mobile-only{ /* Everything less than tablet */
+		@media (max-width: $m-1+px) { @content; }
+	}
+}

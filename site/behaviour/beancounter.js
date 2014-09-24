@@ -491,6 +491,27 @@ function toggleProjectTasks(){
 
 
 
+// Allow a menu to be shown/hidden with the click of a button
+function mobileMenu(){
+	
+	var $nav = $('.site-nav'),
+		$button = $('.site-nav-button');
+		
+	if($nav.length === 0 || $button.length === 0){
+		return;
+	}	
+		
+	$button.click(function(e){
+		e.preventDefault();
+		// Note: we're just gonna toggle classes with JS and we'll use CSS to display/animate stuff
+		$(this).toggleClass('active');
+		$nav.toggleClass('active');
+	});
+	
+}
+
+
+
  
  
 /**
@@ -524,6 +545,9 @@ function beancounterInit(){
 	closePopup();
 	
 	beancounterSettings();
+	
+	
+	mobileMenu();
 	
 }
 

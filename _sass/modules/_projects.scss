@@ -1,0 +1,122 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			projects
+ *	@media			all
+ *	@browsers		all
+ *	
+ *	@author			@philthompson.co.uk
+ *	@since			01/02/2008
+ *	@lastmodified	24/09/2104
+ *	
+ */
+ 
+fieldset#project_stage br{
+	clear: both;
+}
+
+div#Content form fieldset#project_stage input.checkbox{
+	clear: none;
+}
+
+div#Content form fieldset#project_stage label{
+	width: 130px;
+}
+
+
+	ul#projects_list{
+		float: left;
+		width: 600px;
+	}
+	
+		ul#projects_list li{
+			border: 1px solid #DDD;
+			float: left;
+			list-style: none;
+			margin: 0 20px 20px 0;
+			padding: 10px;
+			width: 100%;
+		}
+		
+			ul#projects_list li a.show_hide_link{
+				color: #111;
+				float: right;
+			}
+			
+			ul#projects_list li a.show_hide_link.button{
+				background-position: center center;
+				margin: 0 !important;
+				padding: 5px !important;
+				text-indent: -9999px;
+				width: 17px;
+			}
+		
+			ul#projects_list li h2{
+				padding: 0 0 .5em;
+			}
+			
+			ul#projects_list li .type{
+				font-size: 80%;
+				line-height: 1;
+				text-transform: uppercase;
+			}
+	
+		ul#projects_list li.invoice{
+			background: #EEE;
+			border: 1px solid #DDD;
+		}
+		
+		ul#projects_list li.completed{
+			background: #E6EFC2;
+			border-color: #C6D880;
+		}
+		
+		/* Project stages */
+		
+		p.stage{
+			background: #F5F5F5;
+			font-size: 18px;
+			line-height: 1;
+			margin: 0 0 20px;
+			padding: 10px;
+		}
+		
+		/* Invoiced - yellow */
+		p.stage.invoiced{
+			background: #FFB;
+		}
+		
+		/* Overdue - red */
+		p.stage.overdue{
+			background: #FDD;
+		}
+		
+		/* Complete - green */
+		p.stage.completed{
+			background: #C6D880;
+		}
+		
+		span.type{
+			background: #EEE;
+			display: inline-block;
+			font-size: 14px;
+			padding: 2px 5px;
+			position: relative;
+			text-transform: uppercase;
+			top: -4px;
+		}
+		
+		div#guarantee{
+			background: #FEFEFE;
+			border: 1px solid #DEDEDE;
+			margin: 10px;
+		}
+
+		
+		div#appendix div.details{
+			clear: both;
+			max-height: 10em;
+			overflow: auto;
+			padding: 5px 0 5px;
+		}

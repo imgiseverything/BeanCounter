@@ -15,7 +15,7 @@
 	$objTemplate->setStyle(array('forms', 'tables', 'colorbox')); // must be an array
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'colorbox')); // must be an array
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'colorbox')); // must be an array
 	$objTemplate->setExtraBehaviour();
 	
 	// Menus

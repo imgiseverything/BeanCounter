@@ -1,0 +1,91 @@
+/* Main menu */
+.site-nav{
+	background: #ccc; 
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+.site-nav ul{
+	clear: both;
+	display: none;
+	padding: 0;
+}
+
+.site-nav.active ul{
+	display: block;
+}
+
+.site-nav li{
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}	
+
+	.site-nav a{
+		color: #fff !important;
+		display: block;
+		float: left;
+		font-size: 16px;
+		padding: 20px 10px;
+		text-decoration: none;
+		vertical-align: text-bottom;
+	}	
+	
+	.site-nav a:hover{
+		background: #d9d9d9;
+	}	
+	
+	/* active links*/
+	.site-nav .selected a,
+	body.home #home-link a{
+		background: #bbb;
+	}	
+
+/* Sub menu */	
+
+.site-nav li ul{
+	background: #ccc;
+	clear: both;
+	display: none;
+	left: 0;
+	margin: 0;
+	min-width: 200px;
+	padding: 0;
+	position: absolute;
+	top: 57px;
+	z-index: 999;
+}
+
+	.site-nav li:hover ul{
+		display: block;
+	}
+
+	.site-nav li li{
+		display: block;
+		float: none;
+		width: 100%;
+	}	
+
+	.site-nav li li a{
+		color: #fff;
+		display: block;
+		float: none;
+		font-size: 14px;
+		padding: 10px 10px 7px;
+		text-decoration: none;
+		vertical-align: text-bottom;
+	}	
+	
+	.site-nav li li a:hover{
+		background: #d9d9d9;
+		color: #333;
+	}	
+	
+	/* active links*/
+	.site-nav li li.selected a{
+		color: #eee;
+		text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+	}	

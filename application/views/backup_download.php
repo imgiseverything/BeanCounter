@@ -11,7 +11,7 @@
 	$objTemplate->setStyle(array());
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_pagination', 'ajax_filter'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'ajax_pagination', 'ajax_filter'));
 	
 	// HTML header
 	include($objTemplate->getHeaderHTML());

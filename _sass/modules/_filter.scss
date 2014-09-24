@@ -1,0 +1,177 @@
+/* Secondary content */
+		.content-secondary,
+		.filter-form{
+			background: #DFDFDF;
+			clear: both;
+			float: left;
+			left: 0;
+			margin: 45px 0 0;
+			position: relative;
+			top: 0;
+			width: 100%;
+		}
+		
+			.content-secondary{
+				padding: 30px;
+			}
+			
+			
+			/* Show/hide sidebar options*/
+			div.SecondaryContent-hidden *{
+				display: none;
+			}
+			
+			#FilterButton, a#ShowHideFilterLink{
+				display: block;		
+			}
+			
+			#FilterButton{
+				left: 0;
+				position: absolute;
+				top: -45px;
+			}
+			
+			a#ShowHideFilterLink{
+				background: #DFDFDF;
+				color: inherit;
+				padding: 15px 30px;
+				text-decoration: none;
+				width: auto;
+			}	
+			
+				a#ShowHideFilterLink:hover{
+					text-decoration: underline;
+				}
+			
+			.content-secondary h2,
+			.content-secondary p,
+			.content-secondary h3,
+			.filter-form h2{
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+				
+				.filter-form form{
+					background: transparent;
+				}
+				
+				.filter-form fieldset fieldset{
+					border: 1px solid #eee;
+				}
+				
+				.filter-form  input,
+				.filter-form select{
+					padding: 5px;
+					max-width: 263px;
+				}
+				
+				
+				.filter-form span.help{
+					clear: both;
+					display: block;
+					margin: 0;
+					padding: 0;
+				}
+				
+				
+				fieldset.fieldset-row{
+					clear: both;
+				}
+				
+					fieldset.fieldset-row .field{
+						clear: none;
+						float: left;
+						width: 33%;
+					}
+					
+					fieldset.fieldset-row .year-list{
+						margin: 0 10px 0 0;
+						padding: 0;
+					}
+					
+						fieldset.fieldset-row .year-list li{
+							clear: both;
+							float: left;
+							list-style: none;
+							margin: 0 0 10px;
+							width: 48%;
+						}
+						
+							fieldset.fieldset-row .year-list li:nth-child(even){
+								clear: none;
+								float: right;
+							}
+						
+							fieldset.fieldset-row .year-list li a{
+								background: #f5f5f5;
+								border: 1px solid #ddd;
+								border-radius: 3px;
+								color: #000;
+								display: block;
+								padding: 10px;
+								text-align: center;
+							}
+							
+							
+							.filter-form fieldset.date{
+								margin: 0;
+								padding: 0.5em 0 .5em 20px;
+							}
+							
+							.filter-form fieldset.date legend{
+								margin-top: 40px;
+							}
+							
+							.filter-form fieldset.date a.button{
+								margin-left: 0;
+								padding-top: 7px;
+							}
+			
+			/* Options */
+			#Options{
+			
+			}
+			
+				#Options ul{
+					padding: 0;
+				}
+				
+					#Options li{
+						border-bottom: 1px solid #BBB;
+						list-style: none;
+						margin: 0;
+						padding: 0;
+					}
+					
+						#Options a{
+							border-bottom: 1px solid #E5E5E5;
+							color: #666;
+							display: block;
+							padding: .5em 0;
+						  -webkit-transition: all .5s ease-in-out;
+						  -moz-transition: all .5s ease-in-out;
+						  -o-transition: all .5s ease-in-out;
+						  transition: all .5s ease-in-out;
+						}
+						
+						#Options a:hover{
+							background: rgba(255, 255, 255, 0.1);
+							color: #333;
+							padding: .5em 10px;
+						}
+			
+			/* Legend */
+			#legend{
+				background: rgba(255, 255, 255, 0.4);
+				margin: 0 0 10px;
+				padding: 30px;
+			}
+						
+				#legend li{
+					list-style: none;
+					margin: 0 0 5px;
+				}
+
+
+

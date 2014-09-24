@@ -1,0 +1,30 @@
+/* Welcome note */
+.logged-in-status{
+	color: #fff;
+	float: left;
+	font-size: 90%;
+	padding-bottom: 3px;
+	position: absolute;
+	text-align: right;
+	top: 0;
+	width: 100%;
+}
+
+	.logged-in-status .inner{
+		width: 1060px;
+	}
+
+	.logged-in-status p{
+		float: right;
+		text-align: right;
+		padding: 5px 20px 0;
+	}
+	
+		.logged-in-status a{
+			color: inherit;
+			padding: 0 .25em;
+		}
+			
+			.logged-in-status a:last-of-type{
+				padding-right: 0;
+			}

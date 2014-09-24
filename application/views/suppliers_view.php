@@ -29,7 +29,7 @@
 	');
 	
 	// Interaction / Behaviour
-	$objTemplate->setBehaviour(array('jquery', 'ajax_pagination'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'ajax_pagination'));
 	
 	// Menus
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

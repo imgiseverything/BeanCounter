@@ -13,7 +13,7 @@
 	$objTemplate->setExtraStyle();
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter')); // must be an array
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter')); // must be an array
 	$objTemplate->setExtraBehaviour();
 	
 	// HTML header

@@ -15,7 +15,7 @@
 	$objTemplate->setStyle(array('forms'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'jquery.form', 'ajax_form_submit'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'plugins/jquery.form', 'ajax_form_submit'));
 	
 	// Menus
 	$objMenu->setBreadcrumb('Edit settings');

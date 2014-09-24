@@ -1,0 +1,72 @@
+	/* Content holder */
+	.site-content{
+		background: #fff;
+		clear: both;
+		float: left;
+		padding: 0;
+		width: 100%;
+	}
+	
+
+		/* Primary content */
+		.content-primary{
+			background: #fff;
+			float: left;
+			padding: 20px 0;
+			width: 100%;
+		}
+		
+			
+			
+			.content-primary h1{
+				font-size: 28px;
+			}
+			
+			.content-primary h1 a{
+				font-size: 14px;
+			}
+			
+			.content-primary .buttons{
+				float: right;
+				margin: 16px 3px 10px 10px;
+			}
+			
+			.content-primary h1 + div.buttons {
+				margin: -83px 0 10px 10px;
+			}
+			
+				.content-primary h1 + div.buttons a.add{
+					margin-right: 0;
+				}
+			
+			
+			/* Loading (AJAX holder) */
+			#Loading{
+				background: transparent url(/site/images/icons/ajax_loading.gif) center top no-repeat;
+				color: #666;
+				font-size: 115%;
+				margin: 40px 0;
+				padding-top: 1.25em;
+				text-align: center;
+			} 
+			
+			/* Data list */
+			.content-primary .data_list{
+			
+			}
+			
+				.content-primary .data_list li{
+					border-bottom: 1px solid #ccc;
+					list-style: none;
+					margin-left: 0;
+					padding: 10px 0;
+				}
+				
+					.content-primary .data_list li span.type{
+						font-size: 85%;
+						text-transform: uppercase;
+					}
+				
+					.content-primary .data_list li a{
+						display: block;
+					}

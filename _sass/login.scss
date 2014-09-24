@@ -1,0 +1,94 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	@pages			login
+ *	@media			all
+ *	@browsers		all
+ *	
+ *	@since			06/2008
+ *	@author			hello@philthompson.co.uk
+ *	@lastmodified	24/09/2104
+ *	
+ */
+ 
+ 
+*{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.site-nav,
+.logged-in-status, 
+.breadcrumb, 
+.content-secondary{
+	display: none;
+}
+
+
+
+.site-container .inner, 
+.site-header .inner, 
+#Branding, #Content .inner, 
+.content-primary, 
+.site-footer .inner{
+	width: 360px;
+}
+
+.product-branding .inner{
+	width: 460px;
+}
+
+.site-container{
+	margin-top: 20px;
+	width: 460px;
+}
+
+
+.content-primary{
+	margin: 0 auto;
+	float: none;
+}
+
+.site-header span#Logo{
+	padding: 40px 0 0;
+}
+
+
+fieldset{
+	margin: 0 auto;
+	width: 100%;
+}
+
+body.login input{
+	width: 100%;
+}
+
+body.login input[type="checkbox"]{
+	width: auto;
+}
+
+
+
+div.vcard{
+	width: 300px;
+}
+
+#Copyright{
+	float: none;
+	text-align: center;
+}
+
+body.login button{
+	width: 100%;
+}
+
+form a.button{
+	display: inline;
+	float: none;
+	margin: 0 0 0 5px;
+	padding: 1px 14px 2px 7px;
+	text-indent: 0;
+	width: auto;
+}

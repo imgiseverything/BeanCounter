@@ -20,7 +20,7 @@
  	$message = (empty($_POST['message'])) ? strip_tags($default_message) : $_POST['message'];
  	
  	// reset behaviours - no wysiwyg
- 	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'colorbox', 'jquery.form', 'ajax_form_submit'));
+ 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'colorbox', 'plugins/jquery.form', 'ajax_form_submit'));
 
 	// only show form if it hasn't been completed successfully
 	if(form_success($user_feedback) !== true):

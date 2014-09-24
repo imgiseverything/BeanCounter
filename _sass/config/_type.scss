@@ -1,0 +1,66 @@
+$t-mobile-body-copy: 14px;
+$t-tablet-body-copy: 16px;
+$t-desktop-body-copy: 18px;
+
+
+body{
+	font: $t-mobile-body-copy/1.6667 $font-family-body;
+}
+
+b, strong{
+	font-family: $font-family-body-bold;
+	font-weight: normal;
+}
+
+em, i{
+	font-family: $font-family-body-italic;
+	font-style: normal;
+}
+
+.h{
+	font-family: $font-family-body;
+	line-height: 1.1;
+	text-rendering: optimizeLegibility;
+}
+
+.h1{ 
+	font-size: 2.5715rem; 
+	line-height: 0.975;  
+}
+
+.h2{
+	font-size: 1.28rem;
+}
+
+.h3{
+	font-size: 1.1rem;
+}
+
+li{
+	font-size: .8rem;
+}
+
+
+p, ul, ol{
+	margin-top: 1rem;
+}
+
+.h{
+	margin-top: 2rem;
+}
+
+
+@include breakpoint(ipad-portrait){
+
+	body{ 
+		font-size: $t-tablet-body-copy;
+	}
+}
+
+@include breakpoint(ipad-landscape){
+
+	body{ 
+		font-size: $t-desktop-body-copy; 
+	}
+
+}

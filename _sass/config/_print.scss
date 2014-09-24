@@ -1,0 +1,25 @@
+/** 
+ *
+ *	Bean Counter CSS
+ *	
+ *	Print CSS
+ *	
+ */
+
+body, div{
+	background-color: #FFF !important;
+	color: #000;
+}
+
+/* Hidden elements */
+.logged-in-status, .site-nav, div.breadcrumb, div.content-secondary{
+	display: none;
+}
+
+.inner{
+	width: 100%;
+}
+
+table{
+	width: 98%;
+}

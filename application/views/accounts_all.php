@@ -42,7 +42,7 @@
 	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'ajax_filter', 'chartist')); // must be an array
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'ajax_filter', 'chartist')); // must be an array
 	$profit = $loss = $chart_months = array();
 	foreach($months as $key => $value){
    		$profit[] = ceil($objScaffold->getMonthlyProfit($key));

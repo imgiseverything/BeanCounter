@@ -21,7 +21,7 @@
  	$message = (empty($_POST['message'])) ? $default_message : $_POST['message'];
  	
  	// reset behaviours - no wysiwyg
- 	$objTemplate->setBehaviour(array('jquery', 'colorbox', 'jquery.date', 'jquery.datepicker', 'datepicker', 'hide_time', 'height', 'jquery.form', 'ajax_form_submit'));
+ 	$objTemplate->setBehaviour(array('vendor/jquery', 'colorbox', 'plugins/jquery.date', 'plugins/jquery.datepicker', 'datepicker', 'hide_time', 'height', 'plugins/jquery.form', 'ajax_form_submit'));
 
 
 	// only show form if it hasn't been completed successfully

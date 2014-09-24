@@ -12,7 +12,7 @@
 	// On page CSS
 	$objTemplate->setExtraStyle('');
 	
-	$objTemplate->setBehaviour(array('jquery', 'beancounter', 'colorbox', /*'tiny_mce/tiny_mce', 'tiny_mce/init.default',*/ 'jquery.date', 'jquery.datepicker', 'datepicker', 'jquery.form', 'ajax_form_submit'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'colorbox', /*'tiny_mce/tiny_mce', 'tiny_mce/init.default',*/ 'plugins/jquery.date', 'plugins/jquery.datepicker', 'datepicker', 'plugins/jquery.form', 'ajax_form_submit'));
 	
 	// Menus
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

@@ -16,7 +16,7 @@
 	$objTemplate->setExtraStyle();
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery')); // must be an array
+	$objTemplate->setBehaviour(array('vendor/jquery')); // must be an array
 	$objTemplate->setExtraBehaviour('');
 	
 	$required_label = '<span class="required"> *<span class="off-screen">Required</span></span>';

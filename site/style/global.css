@@ -822,6 +822,11 @@ span.secondary-info{
 		}
 		
 		/* Main menu */
+		.site-nav-button{
+			cursor: pointer;
+			padding: 10px;
+		}
+		
 		.site-nav{
 			background: #ccc; 
 			clear: both;
@@ -833,9 +838,24 @@ span.secondary-info{
 				clear: both;
 				padding: 0;
 			}
+			
+			.site-nav ul{
+				clear: both;
+				padding: 0;
+			}
+			
+			@media screen and (max-width: 767px){
+				.site-nav > ul{
+					display: none;
+				}
+		
+				.site-nav.active > ul{
+					display: block;
+				}
+			}
 		
 			.site-nav li{
-				float: left;
+				display: block;
 				list-style: none;
 				margin: 0;
 				padding: 0;
@@ -845,7 +865,6 @@ span.secondary-info{
 				.site-nav a{
 					color: #fff !important;
 					display: block;
-					float: left;
 					font-size: 16px;
 					padding: 20px 10px;
 					text-decoration: none;
@@ -861,6 +880,14 @@ span.secondary-info{
 				body.home #home-link a{
 					background: #bbb;
 				}	
+				
+			
+					
+			
+			@media screen and (min-width: 768px){
+				.site-nav-button { display: none; }
+				.site-nav li{ float: left; }
+			}
 			
 			/* Sub menu */	
 			
@@ -871,15 +898,23 @@ span.secondary-info{
 				left: 0;
 				margin: 0;
 				min-width: 200px;
-				padding: 0;
-				position: absolute;
+				padding: 10px 20px;
 				top: 57px;
 				z-index: 999;
 			}
 			
-				.site-nav li:hover ul{
-					display: block;
+			.site-nav li:hover ul{
+				display: block;
+			}
+			
+			@media screen and (min-width: 768px){
+				.site-nav li ul{
+					padding: 0;
+					position: absolute;
 				}
+			}
+			
+				
 			
 				.site-nav li li{
 					display: block;

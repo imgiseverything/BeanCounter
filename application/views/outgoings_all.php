@@ -13,7 +13,7 @@
 	$objTemplate->setStyle(array('forms', 'tables', 'colorbox', 'datepicker'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter',  'ajax_pagination', 'colorbox', 'jquery.date', 'jquery.datepicker', 'datepicker', 'jquery.form', 'ajax_filter'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter',  'ajax_pagination', 'colorbox', 'plugins/jquery.date', 'plugins/jquery.datepicker', 'datepicker', 'plugins/jquery.form', 'ajax_filter'));
 	
 	// Menus
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

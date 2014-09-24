@@ -37,7 +37,7 @@
 	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter'));
 	
 	// Breadcrumb
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

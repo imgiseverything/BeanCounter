@@ -18,7 +18,7 @@
 	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
-	$objTemplate->setBehaviour(array('jquery', 'beancounter'));
+	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter'));
 	$objTemplate->setExtraBehaviour();
 	
 	// Google analytics  (usability/error) tracking 

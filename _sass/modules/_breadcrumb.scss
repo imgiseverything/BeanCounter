@@ -1,0 +1,11 @@
+/* Breadcrumb */
+.breadcrumb{
+	border-bottom: 1px solid #eee;
+	font-size: 13px;
+	margin: 0 0 30px;
+	padding: 10px 0;
+}
+
+	.breadcrumb span:after{
+		content: ' > ';
+	}
