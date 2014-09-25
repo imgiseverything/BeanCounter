@@ -22,7 +22,19 @@ ehthumbs.db
 Thumbs.db
 
 
+# Copyrighted files #
+#####################
+site/fonts/ss-standard
+
+
 # Misc #
 ######################
 config.php
 site/cache/*
+site/downloads/*
+site/uploads/*
+.grunt/node_modules
+.grunt/node_modules/*
+.grunt/.sass-cache
+.grunt/.sass-cache/*
+*.log
