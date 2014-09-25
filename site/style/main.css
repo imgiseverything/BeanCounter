@@ -1771,7 +1771,10 @@ td span.minus {
 /* Holding div/frame */
 .site-container {
   margin: 0 auto 20px;
-  padding: 0 20px; }
+  padding: 0 10px; }
+  @media (min-width: 768px) {
+    .site-container {
+      padding: 0 20px; } }
   @media (min-width: 1024px) {
     .site-container {
       padding: 0; } }
