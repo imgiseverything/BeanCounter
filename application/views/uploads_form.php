@@ -10,12 +10,9 @@
 	 
 	// Page details
 	$objTemplate->setTitle($action. ' &lt; ' .$objFile->getNamePlural());
-	$objTemplate->setDescription();
-	$objTemplate->setBodyClass('home');
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables')); // must be an array
-	$objTemplate->setExtraStyle('');
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'plugins/jquery.form', 'ajax_form_submit')); // must be an array

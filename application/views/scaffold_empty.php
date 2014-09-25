@@ -9,10 +9,9 @@
 
 	// Page details
 	$objTemplate->setTitle($objScaffold->getPageTitle());
-	$objTemplate->setDescription('This is a scaffold page for ' . SITE_NAME);
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'colorbox'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'ajax_pagination', 'ajax_filter'));

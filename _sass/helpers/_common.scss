@@ -157,9 +157,15 @@ div.vcard{
 .data{
 	background: #f5f5f5;
 	float: left;
-	margin: 60px 0;
-	padding: 30px;
+	margin: 20px 0;
+	overflow: auto;
+	padding:  10px;
 	width: 100%;
+	
+	@include breakpoint(ipad-landscape){
+		margin: 60px 0;
+		padding: 30px;
+	}
 }
 
 	.data + .data{
@@ -180,15 +186,23 @@ div.vcard{
 ul.pagination{
 	background: #F5F5F5;
 	clear: both;
-	float: right;
-	padding: 20px 0 10px;
-	text-align: right;
+	padding: 0 0 10px;
+	text-align: center;
 	width: 100%;
+	
+	@include breakpoint(ipad-landscape){	
+		float: right;
+		padding-top: 20px;
+		text-align: right;
+	}
 }
 
 	ul.pagination:first-of-type{
-		max-width: 50%;
-		width: 480px;
+		
+		@include breakpoint(ipad-landscape){	
+			max-width: 50%;
+			width: 480px;
+		}
 	}
 
 	ul.pagination li{
@@ -199,23 +213,27 @@ ul.pagination{
 		padding-right: 5px;
 	}
 	
-		ul.pagination li a{
+		ul.pagination a{
 			color: inherit;
-			padding: 3px 0 1px;
+			padding: 3px .25em 1px;
+			
+			@include breakpoint(ipad-landscape){	
+				padding: 3px 0 1px;
+			}
 		}
 		
 		/* inactive links eg next link when on last page */
-		ul.pagination li.inactive a{
+		ul.pagination .inactive a{
 			color: #BBB;
 			text-decoration: none;
 		}
 		/* active page */
-		ul.pagination li.selected{
+		ul.pagination .selected{
 			border: none;
 			padding-right: 0;
 		}
 	
-			ul.pagination li.selected a{
+			ul.pagination .selected a{
 				background: #CCC;
 				color: inherit;
 				border: 1px solid #D1D3CF;
@@ -225,12 +243,12 @@ ul.pagination{
 			}
 			
 		/* next and previous, 1st and last links */
-		ul.pagination li.bookend{
+		ul.pagination .bookend{
 			border: none;
 			font-size: 90%;
 		}
 		
-		ul.pagination li.selected + li.bookend{
+		ul.pagination .selected + .bookend{
 			margin-left: 5px;
 		}
 		
@@ -485,25 +503,13 @@ span.secondary-info{
 .inner{
 	margin: 0 auto;
 	position: relative;
-	width: 1020px;
+	max-width: 1020px;
 }
 
 
 /**
  *	 3.	Layout 
  */
- 
-
-
-
-
-
-
-	
-		
-		
-			
-
 
 		
 		
@@ -516,30 +522,5 @@ span.secondary-info{
 	table{
 		max-width: 100% !important;
 	}
-}
-
-			
-			
-/* iPhone [portrait + landscape] */
-@media screen and (max-width: 640px) {
-	
-	
-	
-	.mobile-hidden{
-		display: none;
-	}
-	
-	
-	.site-nav a{
-		font-size: 14px;
-	}
-
-
-	.data{
-		margin: 20px 0;
-		padding: 10px;
-	}
-
-	
 }
 	

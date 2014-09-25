@@ -8,44 +8,34 @@
  *	
  *	@since			06/2008
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	08/05/2013
+ *	@lastmodified	24/09/2104
  *	
  */
+.site-container,
+.site-content,
+.content-primary {
+  margin: 0 auto;
+  width: 640px; }
 
-
-.site-container, 
-.site-content, 
-.content-primary{
-	margin: 0 auto;	
-	width: 640px;
-}
-
-body.popup{
-	background: #fff;
-	margin: 0;
-	width: 680px;
-}
+body.popup {
+  background: #fff;
+  margin: 0;
+  width: 680px; }
 
 /* Hidden elements */
 .breadcrumb,
-.content-secondary{
-	display: none !important;
-}
+.content-secondary {
+  display: none !important; }
 
+input, select, textarea {
+  max-width: 550px; }
 
-input, select, textarea{
-	max-width: 550px;
-}
+body.popup h1 {
+  display: none; }
 
-body.popup h1{
-	display: none;
-}
+body.popup form {
+  margin-top: 10px; }
 
-body.popup form{
-	margin-top: 10px;
-}
-
-body.popup fieldset{
-	padding-left: 15px !important;
-	padding-right: 15px !important;
-}
+body.popup fieldset {
+  padding-left: 15px !important;
+  padding-right: 15px !important; }

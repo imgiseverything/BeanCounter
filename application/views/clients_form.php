@@ -8,9 +8,7 @@
 	$objTemplate->setTitle($objScaffold->getPageTitle());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'projects', 'tables'));
-	// On page CSS
-	$objTemplate->setExtraStyle('');
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'plugins/jquery.form', 'ajax_form_submit'));

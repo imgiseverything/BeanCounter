@@ -12,8 +12,7 @@
 	$objTemplate->setBodyClass('login register');
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'login')); // must be an array
-	$objTemplate->setExtraStyle();
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery')); // must be an array

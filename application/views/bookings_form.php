@@ -8,9 +8,7 @@
 	$objTemplate->setTitle($objScaffold->getPageTitle());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'projects', 'tables', 'colorbox', 'datepicker'));
-	// On page CSS
-	$objTemplate->setExtraStyle('');
+	$objTemplate->setStyle(array('main.min'));
 	
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'colorbox', /*'tiny_mce/tiny_mce', 'tiny_mce/init.default',*/ 'plugins/jquery.date', 'plugins/jquery.datepicker', 'datepicker', 'plugins/jquery.form', 'ajax_form_submit'));
 	

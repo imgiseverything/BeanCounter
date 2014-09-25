@@ -11,10 +11,9 @@
 
 	// Page details
 	$objTemplate->setTitle($objScaffold->getPageTitle());
-	$objTemplate->setDescription($objScaffold->getPageDescription());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'colorbox'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'ajax_pagination', 'colorbox'));

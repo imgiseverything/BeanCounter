@@ -12,6 +12,10 @@
 		display: block;
 		float: right;
 		padding: 20px 0;
-		text-align: right;
-		width: 500px;
+		max-width: 500px;
+		text-align: center;
+		
+		@include breakpoint(ipad-landscape){
+			text-align: right;
+		}
 	}

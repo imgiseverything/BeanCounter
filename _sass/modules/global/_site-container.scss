@@ -1,4 +1,9 @@
 /* Holding div/frame */
 .site-container{
 	margin: 0 auto 20px;
+	padding: 0 20px;
+	
+	@include breakpoint(ipad-landscape){
+		padding: 0;
+	}
 }

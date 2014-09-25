@@ -209,15 +209,67 @@ function formIframeCheck(){
 
 
 
-/*!
-	jQuery Autosize v1.16.7
-	(c) 2013 Jack Moore - jacklmoore.com
-	updated: 2013-03-20
-	license: http://www.opensource.org/licenses/mit-license.php
-*/
-(function(e){var t,o,n={className:"autosizejs",append:"",callback:!1},i="hidden",s="border-box",a="lineHeight",l='<textarea tabindex="-1" style="position:absolute; top:-999px; left:0; right:auto; bottom:auto; border:0; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box; word-wrap:break-word; height:0 !important; min-height:0 !important; overflow:hidden;"/>',r=["fontFamily","fontSize","fontWeight","fontStyle","letterSpacing","textTransform","wordSpacing","textIndent"],c="oninput",h="onpropertychange",p=e(l).data("autosize",!0)[0];p.style.lineHeight="99px","99px"===e(p).css(a)&&r.push(a),p.style.lineHeight="",e.fn.autosize=function(a){return a=e.extend({},n,a||{}),p.parentNode!==document.body&&(e(document.body).append(p),p.value="\n\n\n",p.scrollTop=9e4,t=p.scrollHeight===p.scrollTop+p.clientHeight),this.each(function(){function n(){o=b,p.className=a.className,e.each(r,function(e,t){p.style[t]=f.css(t)})}function l(){var e,s,l;if(o!==b&&n(),!d){d=!0,p.value=b.value+a.append,p.style.overflowY=b.style.overflowY,l=parseInt(b.style.height,10),p.style.width=Math.max(f.width(),0)+"px",t?e=p.scrollHeight:(p.scrollTop=0,p.scrollTop=9e4,e=p.scrollTop);var r=parseInt(f.css("maxHeight"),10);r=r&&r>0?r:9e4,e>r?(e=r,s="scroll"):u>e&&(e=u),e+=x,b.style.overflowY=s||i,l!==e&&(b.style.height=e+"px",w&&a.callback.call(b)),setTimeout(function(){d=!1},1)}}var u,d,g,b=this,f=e(b),x=0,w=e.isFunction(a.callback);f.data("autosize")||((f.css("box-sizing")===s||f.css("-moz-box-sizing")===s||f.css("-webkit-box-sizing")===s)&&(x=f.outerHeight()-f.height()),u=Math.max(parseInt(f.css("minHeight"),10)-x,f.height()),g="none"===f.css("resize")||"vertical"===f.css("resize")?"none":"horizontal",f.css({overflow:i,overflowY:i,wordWrap:"break-word",resize:g}).data("autosize",!0),h in b?c in b?b[c]=b.onkeyup=l:b[h]=l:b[c]=l,e(window).on("resize",function(){d=!1,l()}),f.on("autosize",function(){d=!1,l()}),l())})}})(window.jQuery||window.Zepto);
- 
- 
+/*
+ * ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 42):
+ * <jevin9@gmail.com> wrote this file. As long as you retain this notice you
+ * can do whatever you want with this stuff. If we meet some day, and you think
+ * this stuff is worth it, you can buy me a beer in return. Jevin O. Sewaruth
+ * ----------------------------------------------------------------------------
+ *
+ * Autogrow Textarea Plugin Version v3.0
+ * http://www.technoreply.com/autogrow-textarea-plugin-3-0
+ * 
+ * THIS PLUGIN IS DELIVERD ON A PAY WHAT YOU WHANT BASIS. IF THE PLUGIN WAS USEFUL TO YOU, PLEASE CONSIDER BUYING THE PLUGIN HERE :
+ * https://sites.fastspring.com/technoreply/instant/autogrowtextareaplugin
+ *
+ * Date: October 15, 2012
+ */
+
+jQuery.fn.autoGrow = function() {
+	return this.each(function() {
+
+		var createMirror = function(textarea) {
+			jQuery(textarea).after('<div class="autogrow-textarea-mirror"></div>');
+			return jQuery(textarea).next('.autogrow-textarea-mirror')[0];
+		}
+
+		var sendContentToMirror = function (textarea) {
+			mirror.innerHTML = String(textarea.value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br />') + '.<br/>.';
+
+			if (jQuery(textarea).height() != jQuery(mirror).height())
+				jQuery(textarea).height(jQuery(mirror).height());
+		}
+
+		var growTextarea = function () {
+			sendContentToMirror(this);
+		}
+
+		// Create a mirror
+		var mirror = createMirror(this);
+		
+		// Style the mirror
+		mirror.style.display = 'none';
+		mirror.style.wordWrap = 'break-word';
+		mirror.style.whiteSpace = 'normal';
+		mirror.style.padding = jQuery(this).css('padding');
+		mirror.style.width = jQuery(this).css('width');
+		mirror.style.fontFamily = jQuery(this).css('font-family');
+		mirror.style.fontSize = jQuery(this).css('font-size');
+		mirror.style.lineHeight = jQuery(this).css('line-height');
+
+		// Style the textarea
+		this.style.overflow = "hidden";
+		this.style.minHeight = this.rows+"em";
+
+		// Bind the textarea's event
+		this.onkeyup = growTextarea;
+
+		// Fire the event for text already present
+		sendContentToMirror(this);
+
+	});
+}; 
  
  
 
@@ -494,8 +546,10 @@ function toggleProjectTasks(){
 // Allow a menu to be shown/hidden with the click of a button
 function mobileMenu(){
 	
-	var $nav = $('.site-nav'),
-		$button = $('.site-nav-button');
+	var navClass = 'site-nav',
+		activeClass = 'active',
+		$nav = $('.' + navClass),
+		$button = $('.' + navClass + '__button');
 		
 	if($nav.length === 0 || $button.length === 0){
 		return;
@@ -504,8 +558,7 @@ function mobileMenu(){
 	$button.click(function(e){
 		e.preventDefault();
 		// Note: we're just gonna toggle classes with JS and we'll use CSS to display/animate stuff
-		$(this).toggleClass('active');
-		$nav.toggleClass('active');
+		$nav.toggleClass(activeClass);
 	});
 	
 }
@@ -522,9 +575,6 @@ function beancounterInit(){
 	$('.hidden').hide().removeClass('hidden');
 	
 	toggleProjectDetails();
-		
-	// Textarea autogrow: run onload and whenever people type inside a textarea
-	$('textarea').autosize(); 
 	
 	toggleProjectTasks();
 	
@@ -545,8 +595,7 @@ function beancounterInit(){
 	closePopup();
 	
 	beancounterSettings();
-	
-	
+		
 	mobileMenu();
 	
 }

@@ -9,31 +9,12 @@
 
 	// Page details
 	$objTemplate->setTitle($objFile->getNamePlural());
-	$objTemplate->setDescription();
-	$objTemplate->setBodyClass('home');
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables')); // must be an array
-	$objTemplate->setExtraStyle('
-	
-	ul#files_list{
-		width: 100%;
-	}
-	
-		ul#files_list li{
-			border: 1px solid #DDD;
-			float: left;
-			list-style: none;
-			margin: 0 10px 10px;
-			padding: 10px;
-			text-align: center;
-			width: 130px;
-		}
-	');
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter')); // must be an array
-	$objTemplate->setExtraBehaviour();
 	
 	// Menus
 	$objMenu->setBreadcrumb($objFile->getBreadcrumbTitle());

@@ -10,7 +10,7 @@
 	$objTemplate->setBodyClass('home');
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables')); // must be an array
+	$objTemplate->setStyle(array('main.min'));
 	$objTemplate->setExtraStyle('
 	
 	ul#images_list{

@@ -186,14 +186,12 @@ table{
 	}
 
 tr .extra-options{
-  -webkit-transition: all 1.5s ease-in-out;
-  -moz-transition: all 1.5s ease-in-out;
-  -o-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out;
+  @include transition(all, 700ms, ease-in-out);
 }
 
 tr:hover .extra-options{
 	height: 50px;
+	@include transition-delay(300ms);
 }
 
 	

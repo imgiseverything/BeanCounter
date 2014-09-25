@@ -10,15 +10,12 @@
 	$objTemplate->setBodyClass('error e' . read($_GET, 'error', '404'));
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('login')); // must be an array
+	$objTemplate->setStyle(array('main.min'));
 	$objTemplate->setExtraStyle('ul#menu{width: 620px;} ul#menu li{ display: inline-block; }');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(); // must be an array
 	$objTemplate->setExtraBehaviour();
-	
-	// Google Analytics (Usability/Error) Tracking
-	$objTemplate->setStats('pageTracker._trackPageview("errors/' . read($_GET, 'error', '404') . $_SERVER['REQUEST_URI'] . '");');
 	
 	include($objTemplate->getHeaderHTML());
 ?>

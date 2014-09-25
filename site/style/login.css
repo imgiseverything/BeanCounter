@@ -8,87 +8,62 @@
  *	
  *	@since			06/2008
  *	@author			hello@philthompson.co.uk
- *	@lastmodified	29/04/2013
+ *	@lastmodified	24/09/2104
  *	
  */
- 
- 
-*{
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .site-nav,
-.logged-in-status, 
-.breadcrumb, 
-.content-secondary{
-	display: none;
-}
+.logged-in-status,
+.breadcrumb,
+.content-secondary {
+  display: none; }
 
+.site-container .inner,
+.site-header .inner,
+#Branding, #Content .inner,
+.content-primary,
+.site-footer .inner {
+  max-width: 360px; }
 
+.site-container {
+  margin-top: 20px;
+  max-width: 460px; }
 
-.site-container .inner, 
-.site-header .inner, 
-#Branding, #Content .inner, 
-.content-primary, 
-.site-footer .inner{
-	width: 360px;
-}
+.content-primary {
+  margin: 0 auto;
+  float: none; }
 
-.product-branding .inner{
-	width: 460px;
-}
+.site-header span#Logo {
+  padding: 40px 0 0; }
 
-.site-container{
-	margin-top: 20px;
-	width: 460px;
-}
+fieldset {
+  margin: 0 auto;
+  width: 100%; }
 
+body.login input {
+  width: 100%; }
 
-.content-primary{
-	margin: 0 auto;
-	float: none;
-}
+body.login input[type="checkbox"] {
+  width: auto; }
 
-.site-header span#Logo{
-	padding: 40px 0 0;
-}
+div.vcard {
+  max-width: 300px; }
 
+#Copyright {
+  float: none;
+  text-align: center; }
 
-fieldset{
-	margin: 0 auto;
-	width: 100%;
-}
+body.login button {
+  width: 100%; }
 
-body.login input{
-	width: 100%;
-}
-
-body.login input[type="checkbox"]{
-	width: auto;
-}
-
-
-
-div.vcard{
-	width: 300px;
-}
-
-#Copyright{
-	float: none;
-	text-align: center;
-}
-
-body.login button{
-	width: 100%;
-}
-
-form a.button{
-	display: inline;
-	float: none;
-	margin: 0 0 0 5px;
-	padding: 1px 14px 2px 7px;
-	text-indent: 0;
-	width: auto;
-}
+form a.button {
+  display: inline;
+  float: none;
+  margin: 0 0 0 5px;
+  padding: 1px 14px 2px 7px;
+  text-indent: 0;
+  width: auto; }

@@ -7,7 +7,7 @@
 }
 
 	.product-branding .inner{
-		width: 1060px;
+		max-width: 100%;
 	}
 
 	.product-branding .logo{
@@ -16,7 +16,7 @@
 		display: block;
 		float: left;
 		font-size: 14px;
-		margin: 0 20px;
+		margin: 0 10px;
 		padding: 5px 0 2px;
 		position: relative;
 		text-decoration: none;

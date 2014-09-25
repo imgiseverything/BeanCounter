@@ -10,7 +10,7 @@
 	$objTemplate->setDescription('Contact details for ' . SITE_NAME);
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms'));
+	$objTemplate->setStyle(array('main.min'));
 	$objTemplate->setExtraStyle('
 		textarea#message{
 			height: 300px;

@@ -15,6 +15,7 @@
 <title><?php echo $objTemplate->getTitle(); ?></title>
 <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<meta name="viewport" content="initial-scale=1.0,minimal-ui">
 <?php echo $objTemplate->getStyle(); ?>
 <?php echo $objTemplate->getRobots(); ?>
 </head>

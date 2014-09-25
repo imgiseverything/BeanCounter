@@ -12,7 +12,7 @@
 	$objTemplate->setTitle(ucwords($objFile->getNamePlural()));
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'colorbox')); // must be an array
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'colorbox')); // must be an array

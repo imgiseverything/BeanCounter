@@ -12,7 +12,7 @@
 	$objTemplate->setTitle($objScaffold->getPageTitle());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'colorbox'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'jquery.columns', 'plugins/jquery.form', 'ajax_pagination', 'ajax_filter', 'colorbox'));

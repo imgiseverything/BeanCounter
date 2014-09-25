@@ -1,10 +1,11 @@
 $t-mobile-body-copy: 14px;
 $t-tablet-body-copy: 16px;
-$t-desktop-body-copy: 18px;
+$t-desktop-body-copy: $t-tablet-body-copy;
 
 
 body{
-	font: $t-mobile-body-copy/1.6667 $font-family-body;
+	font: $t-mobile-body-copy $font-family-body;
+	line-height: 1.6667;
 }
 
 b, strong{
@@ -35,11 +36,6 @@ em, i{
 .h3{
 	font-size: 1.1rem;
 }
-
-li{
-	font-size: .8rem;
-}
-
 
 p, ul, ol{
 	margin-top: 1rem;

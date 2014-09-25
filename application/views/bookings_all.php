@@ -8,7 +8,7 @@
 	$objTemplate->setTitle($objScaffold->getPageTitle());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'projects', 'tables', 'calendar'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'ajax_pagination'));

@@ -21,7 +21,7 @@
  *	@since		10/01/2008
  *	
  *	edited by: 	Phil Thompson
- *	@modified	11/08/2011
+ *	@modified	24/09/2014
  *	
  *	=========================================================================
  * 
@@ -458,7 +458,7 @@
 			}
 			
 			// include default CSS that all pages must have			
-			array_unshift($value, 'global');
+			//array_unshift($value, 'main.min');
 			
 			// add mode (e.g. popup ) CSS
 			if($this->_mode != 'normal'){
@@ -670,7 +670,7 @@
 		 */
 		public function setCharset(){
 		
-			$charset_code = 'ISO-8859-1';
+			$charset_code = 'utf-8';
 			$this->charset = '<meta http-equiv="Content-Type" content="text/html; charset=' . $charset_code . '" />' . "\n";
 			
 		}

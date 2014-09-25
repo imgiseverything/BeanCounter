@@ -12,7 +12,7 @@
 	$objTemplate->setTitle($objScaffold->getPageTitle());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Menus
 	$objMenu->setBreadcrumb($objScaffold->getBreadcrumb());

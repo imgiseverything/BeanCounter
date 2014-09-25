@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 			
 			client: {
 				src: [
-					'../site/behaviour/main.js'
+					'../site/behaviour/<%= pkg.name %>.js'
 				],
 				directives: {
 					browser: true,
@@ -72,7 +72,9 @@ module.exports = function(grunt) {
 		sass: {   // Task
 	        dist: {   // Target
 	            files: { // Dictionary of files
-	                '../site/style/main.css': '../_sass/main.scss'     // 'destination': 'source'
+	                '../site/style/main.css': '../_sass/main.scss',     // 'destination': 'source',
+	                '../site/style/login.css': '../_sass/login.scss',     // 'destination': 'source'
+	                '../site/style/popup.css': '../_sass/popup.scss'     // 'destination': 'source'
 	            }
 	        }
 	    },
@@ -129,6 +131,8 @@ module.exports = function(grunt) {
 			files: [
 				'../_sass/*.scss', 
 				'../_sass/*/*.scss', 
+				'../_sass/*/*/*.scss',
+				'../_sass/*/*/*/*.scss',
 				'../site/behaviour/*.js', 
 				'!../site/behaviour/<%= pkg.name %>.js', 
 				'!../site/behaviour/<%= pkg.name %>.min.js'

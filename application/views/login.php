@@ -11,7 +11,9 @@
 	$objTemplate->setBodyClass('login');
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'login')); // must be an array
+	
+	// Style / Appearance (CSS)
+	$objTemplate->setStyle(array('main.min', 'login'));
 	
 	// HTML header
 	include($objTemplate->getHeaderHTML());

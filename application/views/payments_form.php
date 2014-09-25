@@ -8,10 +8,9 @@
 	// Page details
 	// Page details
 	$objTemplate->setTitle($objScaffold->getPageTitle());
-	$objTemplate->setDescription($objScaffold->getPageDescription());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'datepicker', 'colorbox'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'plugins/jquery.date', 'plugins/jquery.datepicker', 'datepicker', 'plugins/jquery.form', 'ajax_form_submit', 'colorbox'));

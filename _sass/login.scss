@@ -33,16 +33,12 @@
 #Branding, #Content .inner, 
 .content-primary, 
 .site-footer .inner{
-	width: 360px;
-}
-
-.product-branding .inner{
-	width: 460px;
+	max-width: 360px;
 }
 
 .site-container{
 	margin-top: 20px;
-	width: 460px;
+	max-width: 460px;
 }
 
 
@@ -72,7 +68,7 @@ body.login input[type="checkbox"]{
 
 
 div.vcard{
-	width: 300px;
+	max-width: 300px;
 }
 
 #Copyright{

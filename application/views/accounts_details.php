@@ -9,7 +9,7 @@
 	$objTemplate->setTitle(ucfirst($objScaffold->getNamePlural()));
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'datepicker'));
+	$objTemplate->setStyle(array('main.min'));
 	$objTemplate->setExtraStyle('
 	
 	#yearly_figures_options .selected{font-weight: bold;}

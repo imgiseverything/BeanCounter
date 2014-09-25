@@ -15,8 +15,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title><?php echo $objTemplate->getTitle(); ?></title>
 		<script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
-		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<meta name="viewport" content="width=device-width">
+		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta name="viewport" content="initial-scale=1.0,minimal-ui">
 		<?php echo $objTemplate->getStyle(); ?>
 		<link rel="stylesheet" media="print" href="/style/print.css" />
 		<link rel="home" title="Home" href="http://<?php echo $objApplication->getSiteUrl(); ?>/" />

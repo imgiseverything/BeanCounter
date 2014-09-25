@@ -3,6 +3,7 @@
 	background: #ccc; 
 	clear: both;
 	float: left;
+	font-size: 16px;
 	width: 100%;
 }
 
@@ -10,34 +11,46 @@
 	clear: both;
 	display: none;
 	padding: 0;
+	
+	@include breakpoint(ipad-landscape){
+		display: block;
+	}
 }
 
-.site-nav.active ul{
+.site-nav.active > ul{
 	display: block;
 }
 
-.site-nav li{
-	float: left;
+.site-nav li{	
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	position: relative;
+	width: 100%;
+	
+	@include breakpoint(ipad-landscape){
+		float: left;
+		width: auto;
+	}
 }	
+
+
 
 	.site-nav a{
 		color: #fff !important;
 		display: block;
-		float: left;
-		font-size: 16px;
+		font-size: 100%;
 		padding: 20px 10px;
 		text-decoration: none;
 		vertical-align: text-bottom;
+		
+		@include breakpoint(desktop){
+			&:hover{
+				background: #d9d9d9;
+			}	
+		}
 	}	
-	
-	.site-nav a:hover{
-		background: #d9d9d9;
-	}	
-	
+
 	/* active links*/
 	.site-nav .selected a,
 	body.home #home-link a{
@@ -46,20 +59,23 @@
 
 /* Sub menu */	
 
-.site-nav li ul{
+.site-nav li > ul{
 	background: #ccc;
 	clear: both;
 	display: none;
-	left: 0;
 	margin: 0;
 	min-width: 200px;
 	padding: 0;
-	position: absolute;
-	top: 57px;
-	z-index: 999;
+	
+	@include breakpoint(ipad-landscape){
+		left: 0;
+		position: absolute;
+		top: 57px;
+		z-index: 999;
+	}
 }
 
-	.site-nav li:hover ul{
+	.site-nav li:hover > ul{
 		display: block;
 	}
 
@@ -89,3 +105,18 @@
 		color: #eee;
 		text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 	}	
+	
+	
+/* Menu toggle icon */
+
+.site-nav__button{
+	color: #fff;
+	cursor: pointer;
+	padding: 10px;
+	
+	.ss-icon{
+		display: inline-block;
+		margin-right: .5em;
+		vertical-align: middle;
+	}
+}

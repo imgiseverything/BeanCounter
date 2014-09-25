@@ -6,10 +6,10 @@
 	 */	
 
 	// Page details
-	$objTemplate->setTitle($objScaffold->getPageTitle());;
+	$objTemplate->setTitle($objScaffold->getPageTitle());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms','tables'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	$objTemplate->setExtraStyle('
 		ul#suppliers_list{

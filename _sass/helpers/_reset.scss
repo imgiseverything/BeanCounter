@@ -77,17 +77,9 @@ body{
 	background: $c-white;
 	color: $c-black;
 	margin: 0 auto;
-	width: 87.5%;	
+	width: 100%;	
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	
-	@media screen and (min-width: $s+1+px) {
-		width: 93.75%;
-	}
-	
-	@media screen and (min-width: $l+px) {
-		width: 100%;
-	}
 }
 
 

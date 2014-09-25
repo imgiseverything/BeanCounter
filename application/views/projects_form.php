@@ -6,11 +6,9 @@
 	
 	// Page details
 	$objTemplate->setTitle($objScaffold->getPageTitle());
-	//$objTemplate->setDescription('This is a scaffold page for '.SITE_NAME);
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'projects', 'colorbox', 'datepicker'));
-	$objTemplate->setExtraStyle('');
+	$objTemplate->setStyle(array('main.min'));
 
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)

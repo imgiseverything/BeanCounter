@@ -10,7 +10,7 @@
 if(isset($objAuthorise)):
 ?>
 <nav class="site-nav">
-	<div class="mobile-only button site-nav-button" title="Show/hide menu">Menu <span class="ss-icon ss-menu"></span></div>
+	<div class="mobile-only button site-nav__button" title="Show/hide menu"><span class="ss-icon ss-rows"></span> Menu</div>
 	<ul class="inner">
 		<li id="home-link"><a href="/" accesskey="1">Dashboard</a></li>
 	    <?php if($objAuthorise->getStatus() && $objAuthorise->getStatus() == 'logged-in'): // show menu items if the user is logged in ?>

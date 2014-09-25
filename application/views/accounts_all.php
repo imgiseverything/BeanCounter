@@ -9,7 +9,8 @@
 	$objTemplate->setTitle(ucfirst($objScaffold->getNamePlural()));
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'chartist'));
+	$objTemplate->setStyle(array('main.min'));
+	
 	$objTemplate->setExtraStyle('
 	ul#yearly_figures_options li.selected{font-weight: bold;}
 	th.positive, td.positive{

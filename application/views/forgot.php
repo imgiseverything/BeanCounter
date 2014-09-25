@@ -8,12 +8,10 @@
 	
 	// Page details
 	$objTemplate->setTitle('Forgot password');
-	$objTemplate->setDescription();
 	$objTemplate->setBodyClass('login forgot');
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'login')); // must be an array
-	$objTemplate->setExtraStyle();
+	$objTemplate->setStyle(array('main.min', 'login'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(); // must be an array

@@ -1,23 +1,27 @@
 /* Welcome note */
 .logged-in-status{
+	background: #111;
 	color: #fff;
 	float: left;
-	font-size: 90%;
+	font-size: .85rem;
 	padding-bottom: 3px;
-	position: absolute;
-	text-align: right;
 	top: 0;
 	width: 100%;
+
+	@include breakpoint(ipad-landscape){
+		background: transparent;
+		position: absolute;
+		text-align: right;
+		top: -15px;
+	}
 }
 
 	.logged-in-status .inner{
-		width: 1060px;
+		max-width: 100%;
 	}
 
 	.logged-in-status p{
-		float: right;
-		text-align: right;
-		padding: 5px 20px 0;
+		padding: 5px 10px 0;
 	}
 	
 		.logged-in-status a{

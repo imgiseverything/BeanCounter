@@ -12,7 +12,7 @@
 	$objTemplate->setTitle('Edit settings');
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'plugins/jquery.form', 'ajax_form_submit'));

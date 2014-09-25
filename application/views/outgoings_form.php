@@ -9,7 +9,7 @@
 	$objTemplate->setTitle($objScaffold->getPageTitle());
 	
 	// Style / Appearance (CSS)
-	$objTemplate->setStyle(array('forms', 'tables', 'colorbox', 'datepicker'));
+	$objTemplate->setStyle(array('main.min'));
 	
 	$objTemplate->setExtraStyle('
 		div.content-primary form fieldset textarea#description{
