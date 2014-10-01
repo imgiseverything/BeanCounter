@@ -9,7 +9,7 @@ if($action != 'edit' && empty($_POST['vat_rate'])){
 	$_POST['vat_rate'] = 0;
 }
 
-$ignored = array('appendix');
+//$ignored = array('appendix');
 
 // only show form if it hasn't been completed successfully: to save repeated inserts/edits
 if(form_success($user_feedback) !== true):

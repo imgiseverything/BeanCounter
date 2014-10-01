@@ -906,7 +906,7 @@
 			if(!empty($this->_properties['description'])){
 				
 				$pdf->SetFont('Arial', 'B', 14);
-				$pdf->Cell(40, 10, 'Project details');
+				$pdf->Cell(40, 10, 'Invoice Description');
 				$pdf->Ln();
 				
 				$pdf->SetFont('Arial', '', 12);
@@ -923,11 +923,10 @@
 			
 			if(!empty($this->_properties['project_task'])){
 			
-			
 				// header
 				$pdf->SetFont('Arial', 'B', 12);
 				$pdf->Cell(140, 10, 'Item');
-				$pdf->Cell(40, 10, html_entity_decode(CURRENCY, ENT_NOQUOTES, 'ISO-8859-1'));
+				$pdf->Cell(40, 10, iconv('UTF-8', 'ISO-8859-1', html_entity_decode(CURRENCY)));
 				$pdf->Ln(10);
 				$pdf->Cell(180, 1, '', 0, 1, 'L', true);
 				$pdf->SetFont('Arial', '', 11);
@@ -942,7 +941,7 @@
 					
 					$pdf->SetFont('Arial', 'B', 11);
 					$pdf->Cell(140, 10, $title, 0);
-					$pdf->Cell(40, 10, html_entity_decode(currency($task['price']), ENT_NOQUOTES, 'ISO-8859-1'), 0);
+					$pdf->Cell(40, 10, iconv('UTF-8', 'ISO-8859-1', html_entity_decode(currency($task['price']))), 0);
 					$pdf->Ln();
 					
 					
@@ -958,12 +957,12 @@
 				// VAT
 				if($this->getVATTotal()){
 					$pdf->Cell(140, 10, 'Subtotal', 1);
-					$pdf->Cell(40, 10, html_entity_decode(currency($this->getSubtotal()), ENT_NOQUOTES, 'ISO-8859-1'));
+					$pdf->Cell(40, 10, iconv('UTF-8', 'ISO-8859-1', html_entity_decode(currency($this->getSubtotal()))));
 					$pdf->Ln(10);
 					$pdf->Cell(180, 1, '', 0, 1, 'L', true);
 					
 					$pdf->Cell(140, 10, 'VAT');
-					$pdf->Cell(40, 10, html_entity_decode(currency($this->getVATTotal()), ENT_NOQUOTES, 'ISO-8859-1'));
+					$pdf->Cell(40, 10, iconv('UTF-8', 'ISO-8859-1', html_entity_decode(currency($this->getVATTotal()))));
 					$pdf->Ln(10);
 					$pdf->Cell(180, 1, '', 0, 1, 'L', true);
 				}
@@ -972,7 +971,7 @@
 				
 				$pdf->SetFillColor(102);
 				$pdf->Cell(140, 10, 'Total');
-				$pdf->Cell(40, 10, html_entity_decode(currency($this->getGrandTotal()), ENT_NOQUOTES, 'ISO-8859-1'));
+				$pdf->Cell(40, 10, iconv('UTF-8', 'ISO-8859-1', html_entity_decode(currency($this->getGrandTotal()))));
 				$pdf->Ln(10);
 				$pdf->Cell(180, 1, '', 0, 1, 'L', true);
 				$pdf->Ln();
@@ -1018,7 +1017,7 @@
 						$pdf->Ln();
 					}
 				}
-		}
+			}
 			
 			// Powered by
 			$pdf->Ln();
