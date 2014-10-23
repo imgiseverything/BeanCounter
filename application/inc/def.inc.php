@@ -33,6 +33,7 @@
 	define('INCOME_TAX', read($objSite->config, 'Income tax rate', ''));
 	define('NI_TAX', read($objSite->config, 'National insurance', ''));
 	define('VAT', read($objSite->config, 'VAT rate', ''));	
+	define('VAT_FLAT_RATE_PERCENTAGE', read($objSite->config, 'VAT flat rate scheme percentage', ''));	
 	
 	define('TAX_YEAR_START', read($objSite->config, 'Start of financial year', '0604'));
 	

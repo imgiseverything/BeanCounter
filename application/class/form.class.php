@@ -745,11 +745,11 @@ class Form{
 			
 			// Floats are most likely money so
 			// add a currency symbol in front :)
-			if($field_type == 'decimal' && $field != 'vat_rate'){
+			if($field_type == 'decimal' && ($field != 'vat_rate' && $field != 'vat_flat_rate_percentage')){
 				$input = '<span class="pre-input">' . CURRENCY . '</span>' . $input;
 			}
 			
-			if($field_type == 'decimal' && $field == 'vat_rate'){
+			if($field_type == 'decimal' && ($field == 'vat_rate' || $field == 'vat_flat_rate_percentage')){
 				$input .= ' <span class="post-input">%</span>';
 			}
 			

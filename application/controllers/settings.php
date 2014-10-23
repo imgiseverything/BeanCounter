@@ -30,7 +30,6 @@
 	$properties = $objScaffold->getProperties();
 	$properties_size = sizeof($properties);
 	
-	
 	// Work out which 'view' to show
 	// Controller object
 	$objController = new Controller($db, $objApplication, $objTemplate, $objMenu, $objVcard, $objAuthorise, $objScaffold);	
@@ -68,7 +67,9 @@
         		'Bank sort code',
         		'IBAN',
         		'Start of financial year',
-        		'Invoice appendix'
+        		'Invoice appendix',
+        		'VAT flat rate scheme percentage',
+        		'VAT flat rate scheme registration date'
 			);
 		}
     

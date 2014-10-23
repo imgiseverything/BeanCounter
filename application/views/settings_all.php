@@ -74,7 +74,7 @@
 				<tbody>
 				<?php
 				// Loop through all properties show we can show basic details and links for each one
-				for($i = 10; $i < min(20, $properties_size); $i++):
+				for($i = 10; $i < min(100, $properties_size); $i++):
 					extract($properties[$i]);
 					if($title != 'currency_value'):
 				?>

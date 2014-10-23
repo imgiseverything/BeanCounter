@@ -49,6 +49,7 @@
  *	_file_get_contents() - cURL replacement for Dreamhost
  *	print_x() - print_r with <pre> tags
  *	calculateVAT
+ *	calculateVATFlatRate
  *	array_unshift_associative	
  *	===================================================================================		
  */
@@ -823,6 +824,21 @@
 	 function calculateVAT($total_paid, $vat_rate){
 	 	$minus_vat = (( 100 / ( 100 + $vat_rate )) * $total_paid);
 		$vat_paid = ($total_paid - $minus_vat);
+		return $vat_paid;
+	 }
+	 
+	 
+	 /**
+	  *	calculateVATFlatRate
+	  *	Work out how much VAT was paid from grand total
+	  *	@param	float	grand total e.g 100
+	  *	@param	float	VAT rate e.g. 17.5 or 20
+	  *	@param	float	VAT rate e.g. 14.5 or 9
+	  *	@return	float	
+	  */
+	 function calculateVATFlatRate($total_paid, $vat_rate, $vat_flat_rate){
+		$total_minus_flat_rate_vat = $total_paid-($total_paid*($vat_flat_rate/100));
+		$vat_paid = ($total_paid - $total_minus_flat_rate_vat);
 		return $vat_paid;
 	 }
 	 

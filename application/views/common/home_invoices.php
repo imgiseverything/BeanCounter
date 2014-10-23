@@ -70,7 +70,7 @@
 						<?php if($project_stage == 2): ?>
 						<li><a href="<?php echo $invoice->getFolder() . 'invoice/' . $id; ?>/">Invoice</a></li>
 						<?php endif; ?>
-						<li><a href="/payments/add/?project=<?php echo $id; ?>&amp;price=<?php echo $total; ?>&amp;title=<?php echo $title; ?>">Record payment</a></li>
+						<li><a href="/payments/add/?project=<?php echo $id; ?>&amp;price=<?php echo $outstanding; ?>&amp;title=<?php echo $title; ?>">Record payment</a></li>
 						<?php else: ?>
 						<li><a href="/projects/download/<?php echo $id; ?>/">Print</a></li>
 						<?php endif; ?>

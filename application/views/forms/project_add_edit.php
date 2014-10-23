@@ -111,6 +111,7 @@ if(form_success($user_feedback) !== true):
         <?php endif; ?>
         <input type="hidden" name="action" id="action" value="<?php echo $action; ?>" />
         <input type="hidden" name="hidden_vat_rate" id="hidden_vat_rate" value="<?php echo VAT; ?>" />
+        <input type="hidden" name="hidden_vat_flat_rate_percentage" id="hidden_vat_flat_rate_percentage" value="<?php echo VAT_FLAT_RATE_PERCENTAGE; ?>" />
        <button type="submit" class="submit">Submit<?php if($action == 'edit'): echo ' changes'; endif;?></button>
     </fieldset>
 </form>

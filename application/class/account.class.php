@@ -303,6 +303,7 @@
 			
 			// get subtotal profit- loss
 			$this->_subtotal = ($this->_projectsTotal + $this->_outgoingsTotal);
+			//$this->_subtotal = ($this->_subtotal - (float)$this->_VATDue);
 			
 			// subtract taxes
 						
@@ -370,10 +371,22 @@
 				if(!empty($payments)){
 					foreach($payments as $payment){
 						$this->_projects[$i] = $payment;
-						// work out how much of the payemnt received was VAT
+						
+						// work out how much of the payment received was VAT
 						if(isset($this->_projects[$i]['project_vat_rate']) && $this->_projects[$i]['project_vat_rate'] > 0){
-							$this->_projects[$i]['vat'] = calculateVAT($payment['price'], $this->_projects[$i]['project_vat_rate']);
+
+							// Flat rate has been chosen and flat rate has been set
+							if(isset($this->_projects[$i]['project_vat_flat_rate_percentage']) && $this->_projects[$i]['project_vat_flat_rate_percentage'] > 0){
+								$this->_projects[$i]['vat'] += ($this->_projects[$i]['price']*($this->_projects[$i]['project_vat_flat_rate_percentage']/100));
+							} else{
+								// Flat rate has not been chosen
+								$this->_projects[$i]['vat'] = calculateVAT($payment['price'], $this->_projects[$i]['project_vat_rate']);
+								$this->_VATDue += $this->_projects[$i]['vat'];
+							}
+							
 							$this->_VATDue += $this->_projects[$i]['vat'];
+				
+							
 						}
 						
 						$this->_projects[$i]['grand_total'] = $payment['price'];
@@ -422,6 +435,8 @@
 					if(empty($this->_projects[$i]['transaction_date'])){
 						//unset($this->_projects[$i]);
 					} else{
+						
+						
 					
 						// item has been paid for, so set a timestamp - which we'll use to order the accounts by date
 						$this->_properties[$i]['timestamp'] = strtotime($this->_projects[$i]['transaction_date']);
@@ -432,9 +447,40 @@
 						$this->_properties[$i]['payee_name'] = $this->_projects[$i]['client_title'];
 						$this->_properties[$i]['category'] = 'invoice';
 						$this->_properties[$i]['title'] = 'Invoice #' . Project::referenceNumber($this->_projects[$i]['id'], $this->_projects[$i]['date_added']);
-						$this->_properties[$i]['price'] = $this->_projects[$i]['grand_total'];
 						$this->_properties[$i]['type'] = 'positive';
+						
+						
+						$vat_rate = $this->_projects[$i]['project_vat_rate'];
+						$vat_flat_rate_percentage = $this->_projects[$i]['project_vat_flat_rate_percentage'];
+						$this->_properties[$i]['vat_rate'] = $vat_rate;
+						$this->_properties[$i]['vat_flat_rate_percentage'] = $vat_flat_rate_percentage;
+						
+						
+						/*
+							Set Project total = if on VAT Flat Rate scheme the price paid won't be the same as the paid show in accounts as Flat rate means you pay n% of the total:
+							- so on a £100 invoice you charge 20 VAT and receive £120 from the client
+							- but you pay HRMC only 13.5% of that grand total which would be
+							- 120 - (120 * 0.135) which is 16.20 
+							- and you get 103.8 from the 120 total
+							
+							Wow an extra £3.80 per £100
+						
+						*/
+						if(
+							isset($vat_rate) && $vat_rate > 0
+							&& 
+							isset($vat_flat_rate_percentage) && $vat_flat_rate_percentage > 0
+						){
+							echo $vat_rate . ':' . $this->_projects[$i]['grand_total'] .';';
+							$this->_properties[$i]['price'] = ($this->_projects[$i]['grand_total'] - ($this->_projects[$i]['grand_total'] * ($this->_properties[$i]['vat_flat_rate_percentage']/100)));
+								
+						} else{
+							$this->_properties[$i]['price'] = $this->_projects[$i]['grand_total'];
+						}
+						
 						$this->_projectsTotal += $this->_properties[$i]['price'];
+						
+						
 					}
 					$i++; // increment counter
 				}
@@ -499,7 +545,7 @@
 		 *	setProfit
 		 */
 		public function setProfit(){
-			$this->_profit = ($this->_subtotal - (float)$this->_incomeTax - (float)$this->_NI - (float)$this->_VATDue);
+			$this->_profit = ($this->_subtotal - (float)$this->_incomeTax - (float)$this->_NI);
 		}
 		
 		

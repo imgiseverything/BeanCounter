@@ -18,7 +18,7 @@
  *	@author			philthompson.co.uk
  *	@since			16/06/2008
  *	
- *	@lastmodified	09/05/2013
+ *	@lastmodified	22/10/2014
  *	
  *	=========================================================================
  *	
@@ -968,6 +968,7 @@ class Install{
 		  `project_stage` int(11) DEFAULT NULL COMMENT 'FK on project_stage table',
 		  `charge_vat` enum('Y','N') DEFAULT 'N' COMMENT 'Does this invoice include VAT?',
 		  `vat_rate` decimal(5,2) NOT NULL COMMENT 'The VAT rate at the time of invoicing',
+		  `vat_flat_rate_percentage` decimal(5,2) NOT NULL COMMENT 'The VAT flat rate percentage at the time of invoicing',
 		  `status` int(11) DEFAULT '0' COMMENT 'FK on status table',
 		  `payment_required` datetime DEFAULT NULL COMMENT 'Date when payment is due',
 		  `payment_expected` date DEFAULT NULL COMMENT 'Date when you realistically expect to be paid',
@@ -1278,7 +1279,9 @@ class Install{
 			('National insurance', 'Percentage of each incoming fee that goes towards your UK national insurance payment.', '50', '0'),
 			('VAT rate', 'Value added tax. Percentage of each incoming fee that is VAT. Leave blank if you do not pay VAT.', '50', '0'),
 			('Start of financial year', 'Upon which date (DD/MM) does your financial year start?', '4', '0604'),
-			('Invoice appendix', 'Default details about payment which appear at the bottom of invoices/proposals.', 20000, ' ')
+			('Invoice appendix', 'Default details about payment which appear at the bottom of invoices/proposals.', 20000, ' '),
+			('VAT flat rate scheme percentage', 'If enrolled in the VAT Flat Rate Scheme then enter the percentage.', '50', '0'),
+			('VAT flat rate scheme registration date', 'If enrolled in the VAT Flat Rate Scheme then enter the date you started (because first year is 1% less).', '50', '0')
 			;";
 			niceError($query);
 			

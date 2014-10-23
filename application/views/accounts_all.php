@@ -36,9 +36,12 @@
 	}
 	
 	.ct-chart .ct-series.ct-series-a .ct-point,
-	.ct-chart .ct-series.ct-series-a .ct-line{ stroke: #66cc33; }
+	.ct-chart .ct-series.ct-series-a .ct-line{ stroke: #0082ff; }
+	
 	.ct-chart .ct-series.ct-series-b .ct-point,
-	.ct-chart .ct-series.ct-series-b .ct-line{ stroke: #ff3333; }
+	.ct-chart .ct-series.ct-series-b .ct-line{ stroke: #66cc33; }
+	.ct-chart .ct-series.ct-series-c .ct-point,
+	.ct-chart .ct-series.ct-series-c .ct-line{ stroke: #ff3333; }
 	
 	');
 	
@@ -48,6 +51,7 @@
 	foreach($months as $key => $value){
    		$profit[] = ceil($objScaffold->getMonthlyProfit($key));
    		$loss[] = ceil(str_replace('-', '', $objScaffold->getMonthlyLoss($key)));
+   		$subtotals[] = ceil($objScaffold->getMonthlySubtotal($key));
    		$chart_months[] = date('M Y', strtotime(trim($key . '-01 00:00:00')));
 	}
 
@@ -55,6 +59,7 @@
 	var data = {
 		labels: ['" . join("','", array_reverse($chart_months)) . "'],
 		series: [
+			[" . join(',', array_reverse($subtotals)) . "],
 			[" . join(',', array_reverse($profit)) . "],
 			[" . join(',', array_reverse($loss)) . "]
 		]
