@@ -471,7 +471,7 @@
 							&& 
 							isset($vat_flat_rate_percentage) && $vat_flat_rate_percentage > 0
 						){
-							echo $vat_rate . ':' . $this->_projects[$i]['grand_total'] .';';
+							
 							$this->_properties[$i]['price'] = ($this->_projects[$i]['grand_total'] - ($this->_projects[$i]['grand_total'] * ($this->_properties[$i]['vat_flat_rate_percentage']/100)));
 								
 						} else{

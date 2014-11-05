@@ -31,28 +31,43 @@
 	}
 	
 	.ct-chart{
-		height: 300px;
+		height: 600px;
 		margin-top: 60px;
 	}
 	
+	@media screen and (max-width: 767px){
+		.ct-chart{
+			height: 300px;
+			margin-top: 30px;
+		}
+	}
+	
+	.ct-point, .ct-line{
+		opacity: 0.25;
+	}
+	
 	.ct-chart .ct-series.ct-series-a .ct-point,
-	.ct-chart .ct-series.ct-series-a .ct-line{ stroke: #0082ff; }
+	.ct-chart .ct-series.ct-series-a .ct-line{ stroke: #0082ff; opacity: 1; }
 	
 	.ct-chart .ct-series.ct-series-b .ct-point,
-	.ct-chart .ct-series.ct-series-b .ct-line{ stroke: #66cc33; }
+	.ct-chart .ct-series.ct-series-b .ct-line{ stroke: #66cc33;  }
 	.ct-chart .ct-series.ct-series-c .ct-point,
 	.ct-chart .ct-series.ct-series-c .ct-line{ stroke: #ff3333; }
+	
+	.ct-chart .ct-series.ct-series-d .ct-point,
+	.ct-chart .ct-series.ct-series-d .ct-line{ stroke: #666; }
 	
 	');
 	
 	// Behaviour / Interaction (Unobtrusive JavaScript files)
 	$objTemplate->setBehaviour(array('vendor/jquery', 'beancounter', 'ajax_filter', 'chartist')); // must be an array
-	$profit = $loss = $chart_months = array();
+	$profit = $loss = $chart_months = $average = array();
 	foreach($months as $key => $value){
    		$profit[] = ceil($objScaffold->getMonthlyProfit($key));
    		$loss[] = ceil(str_replace('-', '', $objScaffold->getMonthlyLoss($key)));
    		$subtotals[] = ceil($objScaffold->getMonthlySubtotal($key));
    		$chart_months[] = date('M Y', strtotime(trim($key . '-01 00:00:00')));
+   		$average[] = ceil($objScaffold->getProjectsTotal() / $months_size);
 	}
 
    $objTemplate->setExtraBehaviour("
@@ -61,7 +76,8 @@
 		series: [
 			[" . join(',', array_reverse($subtotals)) . "],
 			[" . join(',', array_reverse($profit)) . "],
-			[" . join(',', array_reverse($loss)) . "]
+			[" . join(',', array_reverse($loss)) . "],
+			[" . join(',', $average) . "]
 		]
 	};
 	
