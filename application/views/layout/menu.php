@@ -19,6 +19,7 @@ if(isset($objAuthorise)):
 	    	<ul>
 				<li<?php echo isURLSelected('/accounts/incomings'); ?>><a href="/accounts/incomings/">Revenue</a></li>
 				<li<?php echo isURLSelected('/accounts/outgoings'); ?>><a href="/accounts/outgoings/">Expenses</a></li>
+				<li<?php echo isURLSelected('/accounts/vat'); ?>><a href="/accounts/vat/">VAT accounts</a></li>
 				<li<?php echo isURLSelected('/accounts/details'); ?>><a href="/accounts/details/<?php echo (!empty($_SERVER['QUERY_STRING'])) ? '?' . $_SERVER['QUERY_STRING'] : ''; ?>">Detailed view</a></li>
 	    	</ul>
 	    </li>

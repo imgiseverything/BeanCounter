@@ -24,12 +24,12 @@
  *	
  *	@copyright 	2008-2009 (c)	Phil Thompson	http://philthompson.co.uk
  *	@license
- *	@version	1.0	
- *	@author		philthompson.co.uk
- *	@since		25/01/2008
+ *	@version		1.0	
+ *	@author			philthompson.co.uk
+ *	@since			25/01/2008
  *	
  *	edited by:  Phil Thompson
- *	@modified	15/02/2011
+ *	@modified		04/11/2015
  *		
  *	=========================================================================
  *		
@@ -143,7 +143,7 @@
 			$this->_actions = array(
 				'add', 'approve', 'checkout', 'confirm', 'completed', 'delete', 'dispatch', 
 				'download', 'duplicate', 'edit', 'ical', 'images', 'invoice', 'mark', 
-				'password', 'pdf', 'quote', 'remittance'
+				'password', 'pdf', 'quote', 'remittance', 'vat'
 			);
 		}
 		
@@ -258,7 +258,7 @@
 						$this->_includeFile = 'controllers/news.php';
 					}
 					elseif($this->_url[0] == 'accounts' && !in_array($this->_url[1], $this->_actions) && $this->_url[1] != 'details'){	
-						$_GET['type'] = $this->_url[1];			
+						$_GET['type'] = $this->_url[1];		
 						$this->_includeFile = 'controllers/accounts.php';
 					}
 					// folder.page.php exists

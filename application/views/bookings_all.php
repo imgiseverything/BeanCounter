@@ -65,6 +65,8 @@
 	       				// Actual day
 	       				$actual_day = $days_i-($objCalendar->getStartWeekDay() - 1);
 	       				
+	       				$mobile_date = date('S F', strtotime($objCalendar->getYear() . '/'. $objCalendar->getMonth() . '/' . $actual_day . ' 00:00:00'));
+	       				
 	       				// is date empty?
 	       				$empty = (($days_i < $objCalendar->getStartWeekDay() || $actual_day > $objCalendar->getDays())) ? true : false;
 	       				$td_class = ($empty === true) ? 'empty' : 'date';
@@ -81,7 +83,7 @@
 			       					<input type="hidden" name="date_ended_day" value="<?php echo $actual_day?>" />
 			       					<input type="hidden" name="date_ended_month" value="<?php echo $objCalendar->getMonth(); ?>" />
 			       					<input type="hidden" name="date_ended_year" value="<?php echo $objCalendar->getYear(); ?>" />
-			       					<button type="submit" title="Add new booking for <?php echo $actual_day . '/' . $objCalendar->getMonth() . '/'. $objCalendar->getYear(); ?>"><?php echo $actual_day; ?></button>
+			       					<button type="submit" title="Add new booking for <?php echo $actual_day . '/' . $objCalendar->getMonth() . '/'. $objCalendar->getYear(); ?>"><?php echo $actual_day; ?><span class="mobile-only"><?php echo $mobile_date; ?></span></button>
 			       				</fieldset>
 		       				</form>
 	       				</div>
