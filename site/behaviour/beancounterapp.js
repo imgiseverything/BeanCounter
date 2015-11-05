@@ -3507,7 +3507,9 @@ function expensesVAT(){
 function projectsVAT(){
 
 	var	$vatRate = $('#vat_rate'),
-		$hiddenVatRate = $('#hidden_vat_rate');
+		$hiddenVatRate = $('#hidden_vat_rate'),
+		$vatFlatRatePercentage = $('#vat_flat_rate_percentage'),
+		$hiddenVatFlatRatePercentage = $('#hidden_vat_flat_rate_percentage');
 
 	if($vatRate.length === 0 || $hiddenVatRate.length === 0){
 		return;
@@ -3518,15 +3520,19 @@ function projectsVAT(){
 	}
 
 	$('#charge_vat').click(function(e){
-		e.preventDefualt();
+		//e.preventDefault();
 		if($(this).is(':checked')){
 			$vatRate.val($hiddenVatRate.val());
+			if($hiddenVatFlatRatePercentage.length > 0){
+				$vatFlatRatePercentage.val($hiddenVatFlatRatePercentage.val());
+			}
 		} else{
 			$vatRate.val('0');
+			if($hiddenVatFlatRatePercentage.length > 0){
+				$vatFlatRatePercentage.val('0');
+			}
 		}
 	});
-	
-
 
 }
 

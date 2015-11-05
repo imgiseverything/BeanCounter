@@ -9,26 +9,50 @@
  
  
 .calendar th{
+	display: none;
  	text-align: left;
+ 	
+ 	@media screen and (min-width: 1019px) {
+		display: table-cell;	
+	}
  }
  
 .calendar td{
- 	border: none;
+ 	display: block;
  	padding: 10px 0 0;
  	vertical-align: top;
-  	width: 120px;
+  	width: 100%;
+  	
+  	@media screen and (min-width: 1019px) {
+	  	border: none;
+	  	display: table-cell;
+		width: 120px;
+	}
+	
+	@media screen and (max-width: 1018px) {
+		border: none;	
+	}
+	
  }
  
  .calendar .empty,
  .calendar td:empty{
  	background: #d9d9d9;
+ 	display: none;
+ 	@media screen and (min-width: 1019px) {
+	  	display: table-cell;
+	}
  }
  
  .calendar .day{
  	color: #dfdfdf !important;
  	font-size: 85%;
- 	margin: 0 10px;
- 	text-align: right;
+ 	text-align: left;
+ 	
+ 	@media screen and (min-width: 1019px) {
+ 		margin: 0 10px;
+ 		text-align: right;
+	}
  }
  
  	 .calendar .no-bookings .day{
@@ -47,11 +71,15 @@
  		font-size: 100%;
  		font-weight: normal;
  		margin: 0;
-  		max-width: 120px;
  		min-width: 1px;
  		padding: 0;
- 		text-align: right;
+ 		text-align: left;
  		width: 100%;
+ 		
+ 		@media screen and (min-width: 1019px) {
+  			max-width: 120px;
+  			text-align: right;
+	 	}
  	}
 	 	
  	.calendar button{
@@ -87,68 +115,87 @@
   		padding: 2px 5px;
   		text-decoration: none;
   		width: 100%;
+
+	 	@media screen and (max-width: 1018px) {
+		 	border-bottom: 5px solid white;
+	 		height: auto !important;
+		}
+  		
+  		
   	}
   	
   		.calendar .bookings a:hover{
   			background: #f5f5f5;
   		}
+  		
+  	
 		
 		
 /* Mini Calendar */
+.calendar-mini caption{
+	padding-left: 10px;	
+}
+
+@media screen and (max-width: 1018px) {
+	.no-bookings{
+		display: none !important;	
+	}
+}
+
 @media screen and (min-width: 1019px) {
 
-.calendar-mini{
-	width: 260px;
-}
-
-.calendar-mini th{
-	padding: 2px;
-	text-align: center;
-}
-
-.calendar-mini td{
-	padding: 2px 0 0;
-	width: auto;
-}
-
-.calendar-mini .day{
-	float: right;
-	margin: 0;
-}
-
-	.calendar-mini .no-bookings .day{
-		min-height: 35px;
+	.calendar-mini{
+		width: 260px;
 	}
-
-.calendar-mini caption{
-	background: transparent;
-	margin-top: 20px;
-	padding: 0 0 10px;
-}
-
-.calendar-mini .bookings{
-	float: left;
-	clear: both;
-	padding: 0;
-	width: 100%;
-}
-
-.calendar-mini .bookings li{
-	clear: both;
-	float: left;
-	margin: 0;
-	width: 100%;
-}
-
-.calendar-mini .bookings a {
-	margin: 0 auto;
-	padding: 3px 0;
-}
-
-.calendar-mini button{
-	background: transparent;
-	border: none;
-	padding: 0;
-}
+	
+	.calendar-mini th{
+		padding: 2px;
+		text-align: center;
+	}
+	
+	.calendar-mini td{
+		padding: 2px 0 0;
+		width: auto;
+	}
+	
+	.calendar-mini .day{
+		float: right;
+		margin: 0;
+	}
+	
+		.calendar-mini .no-bookings .day{
+			min-height: 35px;
+		}
+	
+	.calendar-mini caption{
+		background: transparent;
+		margin-top: 20px;
+		padding: 0 0 10px;
+	}
+	
+	.calendar-mini .bookings{
+		float: left;
+		clear: both;
+		padding: 0;
+		width: 100%;
+	}
+	
+	.calendar-mini .bookings li{
+		clear: both;
+		float: left;
+		margin: 0;
+		width: 100%;
+	}
+	
+	.calendar-mini .bookings a {
+		margin: 0 auto;
+		padding: 3px 0;
+	}
+	
+	.calendar-mini button{
+		background: transparent;
+		border: none;
+		padding: 0;
+	}
 
 }

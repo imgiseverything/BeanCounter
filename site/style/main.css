@@ -633,8 +633,8 @@ html, body {
   height: 100%; }
 
 body {
-  background: white;
-  color: black;
+  background: #fff;
+  color: #000;
   margin: 0 auto;
   width: 100%;
   -webkit-font-smoothing: antialiased;
@@ -1362,7 +1362,7 @@ input.disabled {
 input:focus,
 textarea:focus
 select:focus {
-  color:   #333333; }
+  color:   #333; }
 
 span.pre-input + input {
   padding-left: 15px;
@@ -1996,23 +1996,43 @@ body.home #home-link a {
  *	
  */
 .calendar th {
+  display: none;
   text-align: left; }
+  @media screen and (min-width: 1019px) {
+    .calendar th {
+      display: table-cell; } }
 
 .calendar td {
-  border: none;
+  display: block;
   padding: 10px 0 0;
   vertical-align: top;
-  width: 120px; }
+  width: 100%; }
+  @media screen and (min-width: 1019px) {
+    .calendar td {
+      border: none;
+      display: table-cell;
+      width: 120px; } }
+  @media screen and (max-width: 1018px) {
+    .calendar td {
+      border: none; } }
 
 .calendar .empty,
 .calendar td:empty {
-  background: #d9d9d9; }
+  background: #d9d9d9;
+  display: none; }
+  @media screen and (min-width: 1019px) {
+    .calendar .empty,
+    .calendar td:empty {
+      display: table-cell; } }
 
 .calendar .day {
   color: #dfdfdf !important;
   font-size: 85%;
-  margin: 0 10px;
-  text-align: right; }
+  text-align: left; }
+  @media screen and (min-width: 1019px) {
+    .calendar .day {
+      margin: 0 10px;
+      text-align: right; } }
 
 .calendar .no-bookings .day {
   min-height: 105px; }
@@ -2029,11 +2049,16 @@ body.home #home-link a {
   font-size: 100%;
   font-weight: normal;
   margin: 0;
-  max-width: 120px;
   min-width: 1px;
   padding: 0;
-  text-align: right;
+  text-align: left;
   width: 100%; }
+  @media screen and (min-width: 1019px) {
+    .calendar .day form,
+    .calendar .day fieldset,
+    .calendar .day button {
+      max-width: 120px;
+      text-align: right; } }
 
 .calendar button {
   color: #999;
@@ -2064,11 +2089,21 @@ body.home #home-link a {
   padding: 2px 5px;
   text-decoration: none;
   width: 100%; }
+  @media screen and (max-width: 1018px) {
+    .calendar .bookings a {
+      border-bottom: 5px solid white;
+      height: auto !important; } }
 
 .calendar .bookings a:hover {
   background: #f5f5f5; }
 
 /* Mini Calendar */
+.calendar-mini caption {
+  padding-left: 10px; }
+
+@media screen and (max-width: 1018px) {
+  .no-bookings {
+    display: none !important; } }
 @media screen and (min-width: 1019px) {
   .calendar-mini {
     width: 260px; }
@@ -2884,3 +2919,5 @@ fieldset.fieldset-row .year-list li a {
   .mobile-only,
   .tablet-only {
     display: none !important; } }
+
+/*# sourceMappingURL=main.css.map */
