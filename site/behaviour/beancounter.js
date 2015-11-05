@@ -101,6 +101,27 @@ function calculateVAT(total_paid, vat_rate){
 }
 
 
+/**
+ *	vatZeroPercentageError
+ *	If the user selects to charge VAT but sets the VAT % as 0 then
+ *	pop-up an error
+ */
+function vatZeroPercentageError(){
+	var $vatRate = $('#vat_rate'),
+			$chargeVAT = $('#charge_vat');
+			
+	if($vatRate.length === 0 || $chargeVAT.length === 0){
+		return;
+	}
+	
+	$('#add_form').submit(function(e){
+		if($chargeVAT.prop('checked') === true && parseInt($vatRate.val(), 10) < 1){
+			alert('You have entered zero for the VAT Rate!');
+			return false;
+		}
+	});
+}
+
 
 /**
  *	closePopup
@@ -603,6 +624,8 @@ function beancounterInit(){
 	beancounterSettings();
 		
 	mobileMenu();
+	
+	vatZeroPercentageError();
 	
 }
 
