@@ -7,8 +7,8 @@
  *	@copyright 		2010 (c)	Phil Thompson	http://philthompson.co.uk
  *	@author			philthompson.co.uk
  *	@since			20/02/2012
- *	@lastmodified	27/02/2012
- *	@version		1	
+ *	@lastmodified	03/02/2016
+ *	@version		1
  *	
  *	Table of Contents
  *	-------------------------------------------------------------------------
@@ -30,7 +30,7 @@ class Timing extends Scaffold{
 	/** 
 	 *	@var int
 	 */
-	 protected $_totalHours = 0;
+	 protected $_totalHours = false;
 	 
 	 /** 
 	  *	@var int
@@ -58,7 +58,11 @@ class Timing extends Scaffold{
 		// Run parent's constructor
 		parent::__construct($db, $filter, $id);
 
-		$this->setTotalHours();	
+		$this->setTotalHours();
+
+		if(!empty($this->_project)){
+			$this->setTotalProjectHours();
+		}
 		
 	}
 	
@@ -108,6 +112,21 @@ class Timing extends Scaffold{
 		
 	}
 	
+	/**
+	 *	setProjectTotal
+	 *	Add up all the hours in a data set to get the cumulative total
+	 */
+	public function setTotalProjectHours(){
+
+		$value = $this->_db->escape($this->_project);
+		$query = "SELECT SUM(`duration`) AS total_hours FROM `{$this->_sql['main_table']}` WHERE `project` = '{$value}';";
+
+		$result = $this->_db->get_row($query);
+
+		$this->_totalProjectHours = $result->total_hours;
+		
+	}
+	
 	
 	/**
 	 *	getTotalHours()
@@ -115,6 +134,15 @@ class Timing extends Scaffold{
 	 */
 	public function getTotalHours(){
 		return $this->_totalHours;
+	}
+	
+	
+	/**
+	 *	getTotalProjectHours()
+	 *	@return int
+	 */
+	public function getTotalProjectHours(){
+		return $this->_totalProjectHours;
 	}
 	
 	

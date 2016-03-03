@@ -30,6 +30,9 @@
 		<a href="<?php echo $objScaffold->getFolder(); ?>add/" class="button-add"><span></span>Add new <?php echo $objScaffold->getName(); ?></a>
     	<h1><?php echo ucfirst($objScaffold->getNamePlural()); ?></h1>
         <?php echo $objFeedback->getFeedback(); ?>
+        <?php if($objScaffold->getTotalProjectHours() != false): ?>
+        <p style="">Total hours for this project: <?php echo $objScaffold->getTotalProjectHours(); ?> hours</p>
+        <?php endif; ?>
         <div class="data">
 		<?php		
 			// Pagination

@@ -19,7 +19,7 @@
 	// Filter items by the start_date field when looking through timeframes
 	$objApplication->setFilter('date_order_field', 'start_date');
 	
-	$objApplication->setFilter('per_page', 50);
+	$objApplication->setFilter('per_page', 20);
 	
 	// Filter items by the first_contact_date field when looking through timeframes
 	//$objApplication->setFilter('date_order_field', 'first_contact_date');
