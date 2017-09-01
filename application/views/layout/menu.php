@@ -6,7 +6,7 @@
  * Used on every page - user acccess level determines
  * which elements the user can see
  */
- 
+
 if(isset($objAuthorise)):
 ?>
 <nav class="site-nav">
@@ -21,6 +21,7 @@ if(isset($objAuthorise)):
 				<li<?php echo isURLSelected('/accounts/outgoings'); ?>><a href="/accounts/outgoings/">Expenses</a></li>
 				<li<?php echo isURLSelected('/accounts/vat'); ?>><a href="/accounts/vat/">VAT accounts</a></li>
 				<li<?php echo isURLSelected('/accounts/details'); ?>><a href="/accounts/details/<?php echo (!empty($_SERVER['QUERY_STRING'])) ? '?' . $_SERVER['QUERY_STRING'] : ''; ?>">Detailed view</a></li>
+				<li<?php echo isURLSelected('/dividends'); ?>><a href="/dividends/">Dividends</a></li>
 	    	</ul>
 	    </li>
 	    <li id="bookings-link"<?php echo isURLSelected('/bookings'); ?>><a href="/bookings/">Bookings</a>
@@ -58,7 +59,8 @@ if(isset($objAuthorise)):
 	    		<li><a href="/outgoings/add/">Add a new outgoing</a>
 	    		<li><a href="/mileage/add/">Add some mileage</a>
 				<li<?php echo isURLSelected('outgoings/categories'); ?>><a href="/outgoings/categories/">Expense categories</a></li>
-				<li<?php echo isURLSelected('donations'); ?>><a href="/donations/">Donations</a></li>   
+				<li<?php echo isURLSelected('donations'); ?>><a href="/donations/">Donations</a></li>
+				<li<?php echo isURLSelected('pensions'); ?>><a href="/pensions/">Pension payments</a></li>
 			</ul>
 	    </li>
 	    <?php if($objAuthorise->getStatus() && $objAuthorise->getLevel() == 'Superuser'): // show the following options to superusers  ?>

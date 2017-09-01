@@ -588,8 +588,6 @@
 			
 			$cached_file = SITE_PATH . 'cache/' . $this->_name . '/download-' . md5(SECRET_PHRASE . $this->_id) . '.html';
 			
-			
-			
 			// Start building email headers/variables
 			$subject = read($_POST, 'subject', '');
 			$message = read($_POST, 'message', '');

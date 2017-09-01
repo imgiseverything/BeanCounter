@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 *	Donations - View all items
+	 *	Pensions - View all items
 	 */
 
 	// initialise ViewSnippet object - for automatic HTML creation
@@ -33,9 +33,7 @@
 				<tr>
 					<th scope="col">Date</th>
 					<th scope="col">Title</th>
-					<th scope="col">Cause</th>
 					<th scope="col">Amount</th>
-					<th scope="col">Gift aid</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -62,9 +60,7 @@
 							</ul>
 						</div>
 					</td>
-					<td><?php echo $charity_title; ?></td>
 					<td><?php echo currency($amount); ?></td>
-					<td><?php echo currency($gift_aid); ?></td>
 				</tr>
 			<?php endif; endfor; ?>
 			</tbody>
