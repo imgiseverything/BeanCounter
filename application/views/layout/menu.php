@@ -60,7 +60,7 @@ if(isset($objAuthorise)):
 	    		<li><a href="/mileage/add/">Add some mileage</a>
 				<li<?php echo isURLSelected('outgoings/categories'); ?>><a href="/outgoings/categories/">Expense categories</a></li>
 				<li<?php echo isURLSelected('donations'); ?>><a href="/donations/">Donations</a></li>
-				<li<?php echo isURLSelected('pensions'); ?>><a href="/pensions/">Pension payments</a></li>
+				<li<?php echo isURLSelected('pensions'); ?>><a href="/pensions/">Pension contributions</a></li>
 			</ul>
 	    </li>
 	    <?php if($objAuthorise->getStatus() && $objAuthorise->getLevel() == 'Superuser'): // show the following options to superusers  ?>

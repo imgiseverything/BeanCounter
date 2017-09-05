@@ -38,6 +38,17 @@
 					<th scope="col">Gift aid</th>
 				</tr>
 			</thead>
+			<tfoot>
+				<tr>
+					<th scope="row" colspan="3">Subtotal</th>
+					<td><?php echo currency($objScaffold->getSubTotal()); ?></td>
+					<td><?php echo currency($objScaffold->getGiftAidTotal()); ?></td>
+				</tr>
+				<tr>
+					<th scope="row" colspan="3">Total</th>
+					<td colspan="2"><?php echo currency($objScaffold->getGrandTotal()); ?></td>
+				</tr>
+			</tfoot>
 			<tbody>
 			<?php
 			// Loop through all properites show we can show basic details and links for each one

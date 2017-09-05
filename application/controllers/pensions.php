@@ -41,6 +41,10 @@
 	$properties = $objScaffold->getProperties();
 	$properties_size = sizeof($properties);
 
+	// Tax year variables
+	$tax_start_day = substr($objScaffold->getFirstYear(), 0, 2);
+	$tax_start_month = substr($objScaffold->getFirstYear(), 5, 2);
+	$tax_start_year = substr($objScaffold->getFirstYear(), 0, 4);
 
 	// Work out which 'view' to show
 	// Controller object

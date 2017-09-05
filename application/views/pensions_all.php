@@ -36,6 +36,20 @@
 					<th scope="col">Amount</th>
 				</tr>
 			</thead>
+			<tfoot>
+				<tr>
+					<th scope="row" colspan="2">Subtotal</th>
+					<td><?php echo currency($objScaffold->getSubTotal()); ?></td>
+				</tr>
+				<tr>
+					<th scope="row" colspan="2">Tax Relief</th>
+					<td><?php echo currency($objScaffold->getTaxReliefTotal()); ?></td>
+				</tr>
+				<tr>
+					<th scope="row" colspan="2">Total</th>
+					<td><?php echo currency($objScaffold->getGrandTotal()); ?></td>
+				</tr>
+			</tfoot>
 			<tbody>
 			<?php
 			// Loop through all properites show we can show basic details and links for each one
