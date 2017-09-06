@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+    <id type="integer">123456</id>
+    <email>jon@doe.ca</email>
+    <closed-at type="dateTime" nil="true"/>
+    <created-at type="dateTime">2016-03-22T09:29:32-04:00</created-at>
+    <updated-at type="dateTime">2016-03-22T09:29:32-04:00</updated-at>
+    <number type="integer">234</number>
+    <note nil="true"/>
+    <token nil="true"/>
+    <gateway nil="true"/>
+    <test type="boolean">true</test>
+    <total-price type="decimal">234.94</total-price>
+    <subtotal-price type="decimal">224.94</subtotal-price>
+    <total-weight type="integer">0</total-weight>
+    <total-tax type="decimal">0.00</total-tax>
+    <taxes-included type="boolean">false</taxes-included>
+    <currency>USD</currency>
+    <financial-status>voided</financial-status>
+    <confirmed type="boolean">false</confirmed>
+    <total-discounts type="decimal">5.00</total-discounts>
+    <total-line-items-price type="decimal">229.94</total-line-items-price>
+    <cart-token nil="true"/>
+    <buyer-accepts-marketing type="boolean">true</buyer-accepts-marketing>
+    <name>#9999</name>
+    <referring-site nil="true"/>
+    <landing-site nil="true"/>
+    <cancelled-at type="dateTime">2016-03-22T09:29:32-04:00</cancelled-at>
+    <cancel-reason>customer</cancel-reason>
+    <total-price-usd type="decimal" nil="true"/>
+    <checkout-token nil="true"/>
+    <reference nil="true"/>
+    <user-id type="integer" nil="true"/>
+    <location-id type="integer" nil="true"/>
+    <source-identifier nil="true"/>
+    <source-url nil="true"/>
+    <processed-at type="dateTime" nil="true"/>
+    <device-id type="integer" nil="true"/>
+    <browser-ip nil="true"/>
+    <landing-site-ref nil="true"/>
+    <order-number type="integer">1234</order-number>
+    <discount-codes type="array"/>
+    <note-attributes type="array"></note-attributes>
+    <payment-gateway-names type="array">
+        <payment-gateway-name>bogus</payment-gateway-name>
+    </payment-gateway-names>
+    <processing-method></processing-method>
+    <checkout-id nil="true"/>
+    <source-name>web</source-name>
+    <fulfillment-status>pending</fulfillment-status>
+    <tax-lines type="array"/>
+    <tags></tags>
+    <contact-email>jon@doe.ca</contact-email>
+    <line-items type="array">
+        <line-item>
+            <id type="integer">56789</id>
+            <variant-id type="integer" nil="true"/>
+            <title>Sledgehammer</title>
+            <quantity type="integer">1</quantity>
+            <price type="decimal">199.99</price>
+            <grams type="integer">5000</grams>
+            <sku>SKU2006-001</sku>
+            <variant-title nil="true"/>
+            <vendor nil="true"/>
+            <fulfillment-service>manual</fulfillment-service>
+            <product-id type="integer">327475578523353102</product-id>
+            <requires-shipping type="boolean">true</requires-shipping>
+            <taxable type="boolean">true</taxable>
+            <gift-card type="boolean">false</gift-card>
+            <name>Sledgehammer</name>
+            <variant-inventory-management nil="true"/>
+            <properties type="array"></properties>
+            <product-exists type="boolean">true</product-exists>
+            <fulfillable-quantity type="integer">1</fulfillable-quantity>
+            <total-discount>0.00</total-discount>
+            <fulfillment-status nil="true"/>
+            <tax-lines type="array"/>
+        </line-item>
+        <line-item>
+            <id type="integer">98765</id>
+            <variant-id type="integer" nil="true"/>
+            <title>Wire Cutter</title>
+            <quantity type="integer">1</quantity>
+            <price type="decimal">29.95</price>
+            <grams type="integer">500</grams>
+            <sku>SKU2006-020</sku>
+            <variant-title nil="true"/>
+            <vendor nil="true"/>
+            <fulfillment-service>manual</fulfillment-service>
+            <product-id type="integer">327475578523353102</product-id>
+            <requires-shipping type="boolean">true</requires-shipping>
+            <taxable type="boolean">true</taxable>
+            <gift-card type="boolean">false</gift-card>
+            <name>Wire Cutter</name>
+            <variant-inventory-management nil="true"/>
+            <properties type="array"></properties>
+            <product-exists type="boolean">true</product-exists>
+            <fulfillable-quantity type="integer">1</fulfillable-quantity>
+            <total-discount>5.00</total-discount>
+            <fulfillment-status nil="true"/>
+            <tax-lines type="array"/>
+        </line-item>
+    </line-items>
+    <shipping-lines type="array">
+        <shipping-line>
+            <id type="integer" nil="true"/>
+            <title>Generic Shipping</title>
+            <price type="decimal">10.00</price>
+            <code nil="true"/>
+            <source>shopify</source>
+            <phone nil="true"/>
+            <tax-lines type="array"/>
+        </shipping-line>
+    </shipping-lines>
+    <billing-address type="Address">
+        <first-name>Bob
+        </first-name>
+        <address1>123 Billing Street</address1>
+        <phone>555-555-BILL
+        </phone>
+        <city>Billtown</city>
+        <zip>K2P0B0</zip>
+        <province>Kentucky</province>
+        <country>United States</country>
+        <last-name>Biller</last-name>
+        <address2 nil="true"/>
+        <company>My Company</company>
+        <latitude type="float" nil="true"/>
+        <longitude type="float" nil="true"/>
+        <name>Bob Biller</name>
+        <country-code>US</country-code>
+        <province-code>KY</province-code>
+    </billing-address>
+    <shipping-address type="Address">
+        <first-name>Steve</first-name>
+        <address1>123 Shipping Street</address1>
+        <phone>555-555-SHIP</phone>
+        <city>Shippington</city>
+        <zip>K2P0S0</zip>
+        <province>Kentucky</province>
+        <country>United States</country>
+        <last-name>Shipper</last-name>
+        <address2 nil="true"/>
+        <company>Shipping Company</company>
+        <latitude type="float" nil="true"/>
+        <longitude type="float" nil="true"/>
+        <name>Steve Shipper</name>
+        <country-code>US</country-code>
+        <province-code>KY</province-code>
+    </shipping-address>
+    <fulfillments type="array"/>
+    <refunds type="array"/>
+    <customer>
+        <id type="integer" nil="true"/>
+        <email>john@test.com</email>
+        <accepts-marketing type="boolean">false
+        </accepts-marketing>
+        <created-at type="dateTime" nil="true"/>
+        <updated-at type="dateTime" nil="true"/>
+        <first-name>John</first-name>
+        <last-name>Smith</last-name>
+        <orders-count type="integer">0</orders-count>
+        <state>disabled</state>
+        <total-spent type="decimal">0.00</total-spent>
+        <last-order-id type="integer" nil="true"/>
+        <note nil="true"/>
+        <verified-email type="boolean">true</verified-email>
+        <multipass-identifier nil="true"/>
+        <tax-exempt type="boolean">false</tax-exempt>
+        <tags></tags>
+        <last-order-name nil="true"/>
+        <default-address>
+            <id type="integer" nil="true"/>
+            <first-name nil="true"/>
+            <last-name nil="true"/>
+            <company nil="true"/>
+            <address1>123 Elm St.</address1>
+            <address2 nil="true"/>
+            <city>Ottawa</city>
+            <province>Ontario</province>
+            <country>Canada</country>
+            <zip>K2H7A8</zip>
+            <phone>123-123-1234</phone>
+            <name></name>
+            <province-code>ON</province-code>
+            <country-code>CA</country-code>
+            <country-name>Canada</country-name>
+            <default type="boolean">true</default>
+        </default-address>
+    </customer>
+</order>
