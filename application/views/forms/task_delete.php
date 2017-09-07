@@ -3,9 +3,9 @@
 	/**
 	 *	Delete task form
 	 */
-	 
+
 	$objProject = new Project($db, array(), $properties['project']);
-	$project_details = $objProject->getProperties(); 
+	$project_details = $objProject->getProperties();
 
 	// only show form if it hasn't been completed successfully
 	if(form_success($user_feedback) !== true):
